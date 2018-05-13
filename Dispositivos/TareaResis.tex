@@ -1,0 +1,178 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish.mexico]{babel}
+\usepackage[american voltages, american currents,siunitx]{circuitikz}
+
+%para fotos
+
+\usepackage{graphicx}
+\usepackage{subcaption}
+
+\title{Resisitividad}
+\author{Pablo Vivar Colina A7\\
+Grupo 5\\
+Tarea 4
+}
+%\date{Septiembre 2017}
+
+\usepackage{natbib}
+\usepackage{graphicx}
+
+\begin{document}
+
+\maketitle
+
+\section{Conceptos de tierra y masa}
+
+\subsection{Tierra física}
+
+El término "tierra física", como su nombre indica, se refiere al potencial de la superficie de la Tierra.\citep{TT}\\
+
+ Para hacer la conexión de este potencial de tierra a un circuito eléctrico se usa un electrodo de tierra, que puede ser algo tan simple como una barra metálica (usualmente de cobre) anclada al suelo, a veces humedecida para una mejor conducción.\citep{TT}\\
+
+Por último hay que decir que el potencial de la tierra no siempre se puede considerar constante, especialmente en el caso de caída de rayos. Por ejemplo si cae un rayo, a una distancia de 1 kilómetro del lugar en que cae, la diferencia de potencial entre dos puntos separados por 10 metros será de más de 150 V en ese instante.\citep{TT}\\
+
+\subsection{Tierra analógica}
+
+La definición clásica de tierra (en inglés de Estados Unidos ground de donde viene la abreviación GND, earth en inglés de Reino Unido) es un punto que servirá como referencia de tensiones en un circuito (0 voltios). El problema de la anterior definición es que, en la práctica, esta tensión varía de un punto a otro, es decir, debido a la resistencia de los cables y a la corriente que pasa por ellos, habrá una diferencia de tensión entre un punto y otro cualquiera de un mismo cable.\citep{TT}\\
+
+Una definición más útil es que masa es la referencia de un conductor que es usado como retorno común de las corrientes.\citep{TT}\\
+
+\section{Tierra virtual}
+
+En electrónica, un tierra virtual es un nodo de un circuito que se mantiene a un potencial de referencia constante, sin estar conectado directamente con el potencial de referencia. En algunos casos se considera el potencial de referencia de la superficie de la tierra, y al nodo de referencia se llama "tierra" o "tierra" como consecuencia de ello.\citep{TieV}\\
+
+El concepto de tierra virtual SIDA análisis de circuito amplificador operacional y otros circuitos y proporciona efectos útiles circuito práctico que serían difíciles de lograr por otros medios.\citep{TieV}\\
+
+En teoría de circuitos, un nodo puede tener cualquier valor de corriente o voltaje pero implementaciones físicas de un suelo virtual tendrá limitaciones de capacidad de manejo actual y un cero impedancia que pueden tener efectos secundarios prácticos.\citep{TieV}\\
+
+\section{Resisitividad}
+
+La resistividad es la resistencia eléctrica específica de un determinado material. Se designa por la letra griega rho minúscula ($\rho$) y se mide en $[\Omega m]$.\citep{Res}\\
+
+\begin{equation}
+    \rho=R\frac{S}{l}
+\end{equation}
+
+
+en donde $R$ es la resistencia en ohms, $S$ S la sección transversal en $m^2$ y $l$ la longitud en $[m]$.\citep{Res}\\
+
+Su valor describe el comportamiento de un material frente al paso de corriente eléctrica: un valor alto de resistividad indica que el material es mal conductor mientras que un valor bajo indica que es un buen conductor.\citep{Res}\\
+
+La resistividad es la inversa de la conductividad eléctrica; por tanto, $\rho=frac{1}{\sigma}$. Usualmente, la magnitud de la resistividad 
+($\rho$) es la proporcionalidad entre el campo eléctrico $E$ y la densidad de corriente de conducción $J$.\citep{Res}\\
+
+\begin{equation}
+    E=\rho J
+\end{equation}
+
+
+Como ejemplo, un material de 1 m de largo por 1 m de ancho por 1 m de altura que tenga 1 $\Omega$ de resistencia tendrá una resistividad (resistencia específica, coeficiente de resistividad) de 1 $[\Omega m]$.\citep{Res}\\
+
+Generalmente la resistividad de los metales aumenta con la temperatura, mientras que la resistividad de los semiconductores disminuye ante el aumento de la temperatura.\citep{Res}\\
+
+\section{Fusibles}
+
+En electricidad, se denomina fusible a un dispositivo constituido por un soporte adecuado y un filamento o lámina de un metal o aleación de bajo punto de fusión que se intercala en un punto determinado de una instalación eléctrica para que se funda (por efecto Joule) cuando la intensidad de corriente supere (por un cortocircuito o un exceso de carga) un determinado valor que pudiera hacer peligrar la integridad de los conductores de la instalación con el consiguiente riesgo de incendio o destrucción de otros elementos.\citep{Fus}
+
+\section{Tiristor}
+
+El tiristor es una familia de componentes electrónicos constituido por elementos semiconductores que utiliza realimentación interna para producir una conmutación. Los materiales de los que se compone son de tipo semiconductor, es decir, dependiendo de la temperatura a la que se encuentren pueden funcionar como aislantes o como conductores. Son dispositivos unidireccionales (SCR) o bidireccionales (Triac) o (DIAC). Se emplea generalmente para el control de potencia eléctrica.\citep{Tirs}\\
+
+Para los SCR el dispositivo consta de un ánodo y un cátodo, donde las uniones son de tipo P-N-P-N entre los mismos. Por tanto se puede modelar como 2 transistores típicos P-N-P y N-P-N, por eso se dice también que el tiristor funciona con tensión realimentada. Se crean así 3 uniones (denominadas J1, J2, J3 respectivamente), el terminal de puerta está a la unión J2 (unión NP).\citep{Tirs}\\
+
+Algunas fuentes definen como sinónimos al tiristor y al rectificador controlado de silicio (SCR); Aunque en realidad la forma correcta es clasificar al SCR como un tipo de tiristor, a la par que los dispositivos DIAC y TRIAC.\citep{Tirs}\\
+
+Este elemento fue desarrollado por ingenieros de General Electric en los años 1960. Aunque un origen más remoto de este dispositivo lo encontramos en el SCR creado por William Shockley (premio Nobel de física en 1956) en 1950, el cual fue defendido y desarrollado en los laboratorios Bell en 1956. Gordon Hall lideró el desarrollo en Morgan Stanley para su posterior comercialización por parte de Frank W. "Bill" Gutzwiller, de General Electric.\citep{Tirs}\\
+
+
+
+
+\begin{figure}[h!]
+    \centering
+    \begin{subfigure}[b]{0.3\textwidth}
+        \includegraphics[width=\textwidth]{Imagenes/scr-c106m.jpg}
+        \caption{SCR}
+        \label{fig:scr}
+    \end{subfigure}
+    ~ %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc. 
+      %(or a blank line to force the subfigure onto a new line)
+    \begin{subfigure}[b]{0.3\textwidth}
+        \includegraphics[width=\textwidth]{Imagenes/diac.png}
+        \caption{DIAC}
+        \label{fig:diac}
+    \end{subfigure}
+    ~ %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc. 
+    %(or a blank line to force the subfigure onto a new line)
+    \begin{subfigure}[b]{0.3\textwidth}
+        \includegraphics[width=\textwidth]{Imagenes/triac-q4015l5.jpg}
+        \caption{TRIAC}
+        \label{fig:triac}
+    \end{subfigure}
+    \caption{Ejemplos Tiristor}\label{fig:animals}
+\end{figure}
+
+
+
+%\section{Circuito a resolver}
+
+%\begin{figure}[h!]
+ %   \centering
+   % \includegraphics{}
+  %  \begin{circuitikz}
+%\draw
+
+%(-1,0)--(-1,-1)
+%(-1,-1) to[V,l=$28v$](-1,-2) 
+% (-1,-2)--(-1,-3)
+ 
+ %(-1,-3)--(2,-3)
+ 
+% (-1,0) to[R,l=$50 \Omega $](2,0)
+ 
+ 
+% (2,-3)to[R,l=$5 \Omega$](2,0)
+ 
+% (2,0)--(4,0)
+% (2,-3)--(4,-3)
+ 
+ % (4,-3)to[R,l=$10 \Omega$](4,0)
+ 
+ 
+%;
+
+%\draw[thick,arrows=->]
+%(2.5,0)--(2.5,-1)
+%;
+ 
+%\end{circuitikz}
+ %   \caption{Circuito a resolver}
+  %  \label{fig:circuito}
+%\end{figure}
+
+%\subsection{Resultados}
+
+%Para resolver el circuito se hicieron equivalente los resistores de 5 y 10 $\Omegas$ para obtener el voltaje en esas ramas, así se pudo deducir la corriente en la rama del resistor de 50 $\Omega$ y el circuito equivalente, posterirmente se usaron las leyes de Kirchhoff para deducir los voltajes y las corrientes respectivamente.
+
+%\begin{table}[h!]
+%\centering
+
+%\begin{tabular}{|c|c|c|}
+%\hline
+%Componente & V {[}V{]} & I {[}A{]} \\ \hline
+%R 50       & 26.25     & 0.525     \\ \hline
+%R 10       & 1.75      & 0.173     \\ \hline
+%R 5        & 1.75      & 0.352     \\ \hline
+%V fuente   & 28        & 0.525     \\ \hline
+%\end{tabular}
+%\caption{Tabla de Resultados}
+%\label{tabla-resultados}
+
+%\end{table}
+
+%.\\[100cm]
+\bibliographystyle{plain}
+\bibliography{TareaResis.bib}
+
+
+\end{document}

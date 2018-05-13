@@ -1,0 +1,347 @@
+\input{portada.tex} %agregar portada
+
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish.mexico]{babel}
+
+\title{Dispositivos}
+\author{Pablo Vivar Colina}
+\date{Septiembre 2017}
+
+\usepackage{natbib}
+\usepackage{graphicx}
+
+
+%Circuitos
+\usepackage{tikz}
+\usepackage[american voltages, american currents,siunitx]{circuitikz}
+
+%Plotting
+
+\usepackage{pgfplots}
+\pgfplotsset{width=10cm,compat=1.9} 
+ %\usepgfplotslibrary{external}
+\tikzexternalize 
+
+
+
+\begin{document}
+
+
+%\maketitle
+
+\input{portada.tex} %agregar portada
+
+\section{Marco teórico}
+
+\subsection{Valor Eficaz}
+
+Se denomina valor eficaz al valor cuadrático medio de una magnitud eléctrica. El concepto de valor eficaz se utiliza especialmente para estudiar las formas de onda periódicas, a pesar de ser aplicable a todas las formas de onda, constantes o no. En ocasiones se denomina con el extranjerismo RMS (del inglés, root mean square).\citep{valorEficazWiki}\\
+
+ \begin{figure}[h!]
+     \centering
+     \includegraphics[scale=0.2]{Imagenes/Sine_wave_voltages.png}
+     \caption{RMS}
+     \label{fig:my_label}
+ \end{figure}
+ 
+ \section{Amplificador Operacional}
+
+Un amplificador operacional, a menudo conocido op-amp por sus siglas en inglés (operational amplifier) es un dispositivo amplificador electrónico de alta ganancia acoplado en corriente continua que tiene dos entradas y una salida. En esta configuración, la salida del dispositivo es, generalmente, de cientos de miles de veces mayor que la diferencia de potencial entre sus entradas.\citep{AmplificadorOperacional}
+
+\subsection{Seguidor de Voltaje o tensión}
+
+Es aquel circuito que proporciona a la salida la misma tensión que a la entrada. Presenta la ventaja de que la impedancia de entrada es elevada, la de salida prácticamente nula, y es útil como un buffer, para eliminar efectos de carga o para adaptar impedancias (conectar un dispositivo con gran impedancia a otro con baja impedancia y viceversa) y realizar mediciones de tensión de un sensor con una intensidad muy pequeña que no afecte sensiblemente a la medición.\citep{AmplificadorOperacional}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.5\textwidth]{Imagenes/Buffer.png}
+    \caption{Amplificador operacional en modo seguidor de tensión \citep{AmplificadorOperacional}}
+    \label{fig:buffer}
+\end{figure}
+
+\subsection{Integrador ideal}
+
+Este montaje integra e invierte la señal de entrada ${\displaystyle V_{in}} {\displaystyle V_{in}}$ produciendo como salida:
+
+\begin{equation}
+    {\displaystyle V_{\rm {out}}=\int _{0}^{t}-{V_{\rm {in}} \over RC}\,dt+V_{\rm {inicial}}} 
+\end{equation}
+
+En esta ecuación ${\displaystyle V_{\rm {inicial}}}$  es la tensión de origen al iniciarse el funcionamiento.\citep{AmplificadorOperacional}\\
+
+Este integrador no se usa en la práctica de forma discreta ya que cualquier señal pequeña de corriente directa en la entrada puede ser acumulada en el condensador hasta saturarlo por completo; sin mencionar la característica de desplazamiento de tensión del amplificador operacional, que también es acumulada. Este circuito se usa de forma combinada en sistemas retroalimentados que son modelos basados en variables de estado (valores que definen el estado actual del sistema) donde el integrador conserva una variable de estado en el voltaje de su condensador.\citep{AmplificadorOperacional}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.5\textwidth]{Imagenes/Opampintegrating.png}
+    \caption{Amplificador integrador.\citep{AmplificadorOperacional}}
+    \label{fig:opAmpIntegrador}
+\end{figure}
+
+ 
+ \section{Material}
+
+\begin{itemize}
+    \item Circuito integrado 741
+    \item Resistencias de 10 [10 k$\Omega$]
+    \item Resistencias 100 [100 k$\Omega$]
+    \item Capacitor de 0.047 [$\mu$F]
+\end{itemize}
+
+\section{Desarrollo}
+
+\subsection{Circuito Integrador}
+
+Para el primer circuito se usó el generador de funciones con las siguientes características:\\
+
+\begin{itemize}
+    \item $V_{pp}$ 30 [V]
+    \item Señal senoidal
+    \item Frecuencia de 1 [kHz]
+    \Sin Offset
+\end{itemize}
+
+Se compararon las señales de entrada y salida del osciloscopio, la señal de entrada se colocó en la entrada inversora del circuito Integrado 741.\\
+
+\begin{figure}[h!]
+    \centering
+    \begin{circuitikz}
+    
+      \draw
+    %resistencia1
+    (-1,0.5)to[R,l=$R_1$](-4,0.5)
+    
+    
+     %Capacitor
+    (-1,0.5)--(-1,1.5)
+    (-1,1.5)to[C,l=$C$](2,1.5)
+    (2,1.5)--(2,0)
+    
+    %Resistor
+    (-1,1.5)--(-1,2.5)
+    (-1,2.5)to[R,l=$R_3$](2,2.5)
+    (2,2.5)--(2,0)
+    
+      %salida
+    (1,0)--(3,0)
+    
+    %generador de función de onda seno
+    
+      (-4,0.5)to[vco,l=$G$](-4,-2.5)
+    
+    %tierra del generador de señal seno no invesora
+   (-4,-3)  to  (-4,-2.5) node[ground]{}
+    
+    
+    %resistencia de tierra a no inversora
+     (-1.22,-0.5)to[R,l=$R_2$]     (-1.22,-2.5)
+    
+    
+    %tierra a no invesora
+    (-1.22,-3)  to  (-1.22,-2.5) node[ground]{}
+    ;
+    
+    \draw (0,0) node[op amp] (opamp1) {741};
+ 
+  
+    \end{circuitikz}
+    \caption{Circuito Integrador}
+    \label{fig:circuitoIntegrador}
+\end{figure}
+
+\begin{itemize}
+    \item $R_1$=10 [k$\Omega$]
+     \item $R_2$=10 [k$\Omega$]
+      \item $R_3$=100 [k$\Omega$]
+\end{itemize}
+
+
+
+\begin{figure}
+    \centering
+    
+   
+\begin{tikzpicture}
+\begin{axis}[
+    axis lines = left,
+    xlabel = $x$,
+    ylabel = {$f(x)$},
+]
+%Below the red parabola is defined
+\addplot [
+    domain=-(1*3.14159):+(1*3.14159), 
+    samples=100, 
+    color=red,
+]
+{15*sin(deg(x))};
+\addlegendentry{$15 V_{pp}$}
+%Here the blue parabloa is defined
+%\addplot [
+ %   domain=-10:10, 
+  %  samples=100, 
+    color=blue,
+   % ]
+    %{x^2 + 2*x + 1};
+%\addlegendentry{$x^2 + 2x + 1$}
+ 
+\end{axis}
+\end{tikzpicture}
+
+ \caption{Señal senoidal 15 Vpp}
+    \label{fig:seno15Vpp}
+\end{figure}
+
+
+\section{Circuito Buffer}
+
+Para éste arreglo de componentes se utilizó una señal conectada a la entrada no inversora de amplificador operacional, con las siguientes características.\\
+
+\begin{itemize}
+    \item $V_{pp}$ 3 [V]
+    \item 1 [kHz]
+    \item señal seno
+    \item sin Offset
+\end{itemize}
+
+\begin{figure}[h!]
+    \centering
+    \begin{circuitikz}
+    
+      \draw
+    %resistencia1
+    (-1,0.5)--(-4,0.5)
+    
+    
+     %Puente
+    (-1,-0.5)--(-1,-1.5)
+    (-1,-1.5)--(2,-1.5)
+    (2,-1.5)--(2,0)
+    
+    
+    
+      %salida
+    (1,0)--(3,0)
+    
+    %generador de función de onda seno
+    
+      (-4,0.5)to[vco,l=$G$](-4,-2.5)
+    
+    %tierra del generador de señal seno no invesora
+   (-4,-3)  to  (-4,-2.5) node[ground]{}
+    
+    
+  
+    ;
+    
+    \draw (0,0) node[op amp] (opamp2) {741};
+ 
+  
+    \end{circuitikz}
+    \caption{Circuito Buffer}
+    \label{fig:circuitoBuffer}
+\end{figure}
+
+\section{Circuito Integrador}
+
+\begin{figure}[h!]
+    \centering
+    \begin{circuitikz}
+    
+      \draw
+    %resistencia9
+    (-1,0.5)to[R,l=$R_9$](-4,0.5)
+    
+    %verticales tenedor
+    (-4,0.5)--(-4,2.5)
+    (-4,0.5)--(-4,-1.5)
+    
+    %horizontales tenedor
+    (-4,2.5)--(-6,2.5)
+    (-4,0.5)--(-6,0.5)
+    (-4,-1.5)--(-6,-1.5)
+    
+    %generador
+    
+    (-8,2.5)--(-6,2.5)
+    (-8,0.5)--(-8,2.5)
+    
+    
+    (-8,-2.5)--(-8,-3.5)
+    (-8,-3.5)--(-6,-3.5)
+    
+    %resistencia9 (vertical)
+    (-6,2.5)to[R,l=$R_9$]  (-6,0.5)
+    
+     %resistencia7 (vertical)
+    (-6,0.5) to[R,l=$R_7$]  (-6,-1.5)
+    
+     %resistencia5 (vertical)
+    (-6,-1.5) to[R,l=$R_5$]  (-6,-3.5)
+    
+     %Capacitor
+    (-1,0.5)--(-1,1.5)
+    (-1,1.5)to[R,l=$R_{10}$](2,1.5)
+    (2,1.5)--(2,0)
+    
+    
+    
+      %salida
+    (1,0)--(3,0)
+    
+    %generador de función de onda seno
+      (-8,0.5)to[vco,l=$G$](-8,-2.5)
+    
+    %tierra resistores
+   (-6,-4)  to  (-6,-3.5) node[ground]{}
+    
+    
+    %tierra a no invesora
+    (-1.22,-1)  to  (-1.22,-0.5) node[ground]{}
+    ;
+    
+    \draw (0,0) node[op amp] (opamp1) {741};
+ 
+  
+    \end{circuitikz}
+    \caption{Circuito Integrador}
+    \label{fig:circuitoIntegrador}
+\end{figure}
+
+Después de polarizar adecuadamente el circuitoo de la figura \ref{fig:circuitoIntegrador} se ingresaron 3 señales diferentes y las respuestas de dichas señales se registraron en el cuadro \ref{senyalIntegrador}, las señales utilizadas fueron las siguientes:\\
+
+\begin{itemize}
+    \item Senoidal (1[kHz], 1 [Vpp])
+    \item Cuadrada (1[kHz], 1 [Vpp])
+    \item Onda triangular (1[kHz], 1 [Vpp], 50$\%$ en simetría)
+\end{itemize}
+
+
+
+
+
+\begin{table}[h!]
+\centering
+
+\begin{tabular}{|c|c|c|}
+\hline
+Señal      & Defasamiento & Vpp  \\ \hline
+Senoidal   & 90           & 0.4  \\ \hline
+Cuadrad    & 90           & 0.56 \\ \hline
+Triangular & 0            & 0.36 \\ \hline
+\end{tabular}
+
+\caption{Respuesta de señales de circuito Integrador}
+\label{senyalIntegrador}
+
+\end{table}
+
+.\\[10cm]
+
+\section{Conclusiones}
+
+En ésta práctica se corroboró el funcionamiento del amplificador operacional como inegrador, ésto es un uso que demuestra que éste tipo de componentes electrónicos también sirven para trabajos de cálculo matemáticos, aunque no se puede hablar de ganancia para el experimento de la figura \ref{fig:circuitoIntegrador}, se puede apreciar que hay una pérdida en la señal de entrada, es decir se puede apreciar que para ese experimento no es importante amplificar la señal, sino obtener la forma de la señal de salida.
+
+\bibliographystyle{plain}
+\bibliography{Referencias}
+\end{document}

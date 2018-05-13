@@ -1,0 +1,117 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish.mexico]{babel}
+
+\title{Dispositivos y circuitos Electrónicos}
+\author{Pablo Vivar Colina}
+\date{Septiembre 2017}
+
+\usepackage{natbib}
+\usepackage{graphicx}
+
+\usepackage{tikz}
+\usepackage[american voltages, american currents,siunitx]{circuitikz}
+
+\begin{document}
+
+
+\maketitle
+
+%\input{portada.tex} %agregar portada
+
+\section{Previo 10}
+
+\section{Circuito}
+
+En el experimento de la práctica 8 se construyó un rectificador de onda completa, que se puede apreciar en la figura \ref{fig:rectificadorOndaCompleta} y se intercambiaron los valores del resistor y del capacitor en orden de obtener una mejor señal del generador par qué el voltaje de rizado fuera menor.\\
+
+\begin{figure}[h!]
+    \centering
+    \begin{circuitikz}
+    
+        \draw (0,0) node [transformer](T){};
+        \draw  (1,0) to[D,v=A](3,0); 
+        \draw  (1,-2.1) to[D,v=B](3,-2.1)
+        (3,-2.1)--(3,-1.3)
+        (3,-1.3) arc (-90:90:0.25) 
+        (3,0)--(3,-0.8)
+        
+        ; 
+        
+        \draw (4,0)to[C,l=C](4,-1.05)
+        (3,0)--(6,0)
+        (0,-1.05)--(6,-1.05)
+        
+       ;
+        \draw  (5.5,0) to[R,l=R](5.5,-1.05)
+        
+        ;
+        
+    \end{circuitikz}
+    \caption{Rectificador Onda Completa}
+    \label{fig:rectificadorOndaCompleta}
+\end{figure}
+
+
+\begin{table}[ht!]
+\centering
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline
+Prueba & V rizo       & V directa & V pico   & C       & R    \\ \hline
+1      & 7V           & 5V        & 12V      & 0.047uF & 1k   \\ \hline
+2      & 3V           & 6V        & 9V       & 10uF    & 1k   \\ \hline
+3      & 50mV         & 6V        & 7V       & 1000uF  & 1k   \\ \hline
+4      & 9mV          & 7V        & 7V       & 1000uF  & 1k   \\ \hline
+5      & 0.5V         & 6V        & 6V       & 10uF    & 10k  \\ \hline
+6      & 6.8V         & 4V        & 10.8V    & 0.047uF & 10k  \\ \hline
+7      & 5V           & 5V        & 10V      & 0.047uF & 100k \\ \hline
+8      & 0.5mV        & 7V        & 7.005V   & 0.057uF & 100k \\ \hline
+9      & \textless5mV & 8V        & aprox 8V & 1000uF  & 100k \\ \hline
+\end{tabular}
+
+
+\caption{Registro de datos}
+\label{datosRectificadorOC}
+\end{table}
+
+De acuerdo a la tabla del experiemnto del rectificador de onda completa \ref{datosRectificadorOC} se puede apreciar que la combinación de valores uqe ha resultado mejor es un capacitor de 1000 $\mu$F y un resitor de 100k$\Omega$ ya que presenta un valor de voltaje de rizo menor a los demás y un voltaje de directa mayor a los demás.\\
+
+\section{Circuito Práctica 9}
+
+\begin{figure}[h!]
+    \centering
+    \begin{circuitikz}
+    
+    
+      \draw
+      (0,-3)--(0,-2)
+      (0,-3)--(6,-3)
+      (0,0) to [battery1,l=F](0,-2)
+      ;
+       \draw
+       (3,0)to[R,l=R](6,0)
+       (6,0)to[zzD,l=D](6,-3)
+      ;
+        \draw
+    
+        (0,0)to[ammeter](3,0);
+        
+    \end{circuitikz}
+    \caption{Regulador diodo Zener Directa}
+    \label{fig:reguladorZ}
+\end{figure}
+
+%Determine el valor de Rx para el circuito regulador de la práctica 9 del diodo zener
+
+%¿Qué no hace un diodo?
+
+Es importante recordar en los parámetros de diseño que un diodo no amplifica ni altera señales.\\
+
+%Circuito rectificador de media onda con mejor filtro de la práctica 8
+
+
+
+
+%\bibliographystyle{plain}
+%\bibliography{referenciasPrev10}
+\end{document}

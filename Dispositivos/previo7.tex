@@ -1,0 +1,234 @@
+
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish.mexico]{babel}
+
+\title{Dispositivos}
+\author{Pablo Vivar Colina}
+\date{Abril 2018}
+
+\usepackage{natbib}
+\usepackage{graphicx}
+
+
+%Circuitos
+\usepackage{tikz}
+\usepackage[american voltages, american currents,siunitx]{circuitikz}
+
+%Plotting
+
+\usepackage{pgfplots}
+\pgfplotsset{width=10cm,compat=1.9} 
+ %\usepgfplotslibrary{external}
+\tikzexternalize 
+
+
+
+\begin{document}
+
+
+\maketitle
+
+
+\subsection{Rectificador de media onda}
+
+El rectificador de media onda es un circuito empleado para eliminar la parte negativa o positiva de una señal de corriente alterna de lleno conducen cuando se polarizan inversamente. Además su voltaje es positivo.\citep{circuitoMediaOnda}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics{Circuito_rectificador_media_onda.png}
+    \caption{Rectificador de Media onda}
+    \label{fig:rectificadorMedia}
+\end{figure}
+
+\subsection{Rectificador de onda completa}
+
+Un rectificador de onda completa es un circuito empleado para convertir una señal de corriente alterna de entrada (Vi) en corriente de salida (Vo) pulsante. A diferencia del rectificador de media onda, en este caso, la parte negativa de la señal se convierte en positiva o bien la parte positiva de la señal se convertirá en negativa, según se necesite una señal positiva o negativa de corriente continua.
+
+Existen dos alternativas, bien empleando dos diodos o empleando cuatro (puente de Graetz).\citep{circuitoOnda}
+
+\subsection{Tensión rectificada}
+
+\begin{itemize}
+    \item  Vo (corriente continua de salida) = Vi ( corriente alterna de entrada) = Vs/2 en el rectificador con diodos.
+    \item  Vo = Vi = Vs en el rectificador con puente de Graetz.
+\end{itemize}
+
+   
+
+Si consideramos la caída de tensión típica en los diodos en conducción, aproximadamente 0,7V; tendremos que para el caso del rectificador de doble onda la Vo = |Vi| - 1,4V.\citep{circuitoOnda}\\
+
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[scale=0.8]{OndaCompleta.png}
+   % \caption{Onda Completa}
+    \label{fig:my_label}
+\end{figure}
+
+\subsection{Puente rectificador}
+
+El puente rectificador es un circuito electrónico usado en la conversión de corriente alterna en corriente continua. También es conocido como circuito o puente de Graetz, en referencia al físico alemán Leo Graetz (1856-1941), que popularizó este circuito inventado por el científico de origen polaco; Karol Franciszek Pollak (15 Nov. 1859 - 17 Dic.1928.)\citep{puente}
+
+
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[scale=0.5]{PuenteDiodos.png}
+    \caption{Puente de Diodos}
+    \label{fig:puente de diodos}
+\end{figure}
+
+
+\section{Circuito Multiplicador}
+
+
+Un Multiplicador de tensión es un circuito eléctrico que convierte tensión desde una fuente de corriente alterna a otra de corriente continua de mayor voltaje mediante etapas de diodos y condensadores.\citep{multTensWiki}\\
+
+\begin{figure}[ht!]
+    \centering
+    \includegraphics[scale=0.5]{Imagenes/Vmult.png}
+    \caption{Multiplicador de tensión con una fuente de 220 VCA.}
+    \label{fig:vmult}
+\end{figure}
+
+\subsubsection{Funcionamiento}
+
+Un multiplicador de tensión sin cargar con una impedancia se comporta como un condensador, pudiendo proporcionar transitorios de elevada corriente, lo que los hace peligrosos cuando son de alta tensión. Habitualmente se agrega una resistencia en serie con la salida para limitar este transitorio a valores seguros, tanto para el propio circuito como ante accidentes eventuales.\citep{multTensWiki}\\
+
+\begin{figure}[ht!]
+    \centering
+    \includegraphics[scale=0.125]{Imagenes/voltageMult.png}
+    \caption{Multiplicador de tensión de cuatro etapas.}
+    \label{fig:vmult2}
+\end{figure}
+
+\subsubsection{Voltaje de ruptura}
+
+Mientras esta configuración puede ser utilizada para generar miles de voltios a la salida, los componentes de las etapas individuales no requieren soportar toda la tensión sino solo el voltaje entre sus terminales, esto permite aumentar la cantidad de etapas según sea necesario sin aumentar los requerimientos individuales de los componentes.Lo cual es una gran ventaja en la producción de este tipo de circuitos que son de un muy gran provecho.\citep{multTensWiki}\\
+
+\subsubsection{Usos}
+
+Este circuito se utiliza para la generación del alto voltaje requerido en los tubos de rayos catódicos, tubos de rayos X, para alimentar fotomultiplicadores para detectores de rayos gamma. También se utiliza para la generación de altos voltajes para experimentos de física de alta energía.\citep{multTensWiki}\\
+
+%180 V
+
+\section{Diodo Zener}
+
+ Los diodos zener, zener diodo o simplemente zener, son diodos que están diseñados para mantener un voltaje constante en su terminales, llamado Voltaje o Tensión Zener (Vz) cuando se polarizan inversamente, es decir cuando está el cátodo con una tensión positiva y el ánodo negativa. Un zener en conexión con polarización inversa siempre tiene la misma tensión en sus extremos (tensión zener).\citep{dZener}\\
+
+\begin{figure}[ht!]
+   \centering
+\includegraphics[scale=0.5]{Imagenes/diodo-zener.jpg}
+\caption{}
+     \label{fig:zener}
+ \end{figure}
+ 
+ \subsection{Cómo Funciona un Diodo Zener}
+
+ Cuando lo polarizamos inversamente y llegamos a Vz el diodo conduce y mantiene la tensión Vz constante aunque nosotros sigamos aumentando la tensión en el circuito. La corriente que pasa por el diodo zener en estas condiciones se llama corriente inversa (Iz).
+ Se llama zona de ruptura por encima de Vz. Antes de llegar a Vz el diodo zener NO Conduce.\citep{dZener}\\
+
+ Como ves es un regulador de voltaje o tensión. Fijate en la gráfica de funcionamiento del zener más abajo.\citep{dZener}\\
+
+ Cuando está polarizado directamente el zener se comporta como un diodo normal.\citep{dZener}\\
+
+ Pero OJO mientras la tensión inversa sea inferior a la tensión zener, el diodo no conduce, solo conseguiremos tener la tensión constante Vz, cuando esté conectado a una tensión igual a Vz o mayor. Aquí puedes ver una la curva característica de un zener:\citep{dZener}\\
+ 
+ \begin{figure}[ht!]
+     \centering
+     \includegraphics[scale=0.5]{Imagenes/curva-diodo-zener.jpg}
+     \caption{Caption}
+     \label{fig:curvaZener}
+ \end{figure}
+ 
+
+\section{Regulación de Voltaje}
+
+Un regulador de tensión o regulador de voltaje es un dispositivo electrónico diseñado para mantener un nivel de tensión constante.\citep{regTensWiki}\\
+
+Los reguladores electrónicos de tensión se encuentran en dispositivos como las fuentes de alimentación de los computadores, donde estabilizan las tensiones de Corriente Continua usadas por el procesador y otros elementos. En los alternadores de los automóviles y en las plantas generadoras, los reguladores de tensión controlan la salida de la planta. En un sistema de distribución de energía eléctrica, los reguladores de tensión pueden instalarse en una subestación o junto con las líneas de distribución de forma que todos los consumidores reciban una tensión constante independientemente de qué tanta potencia exista en la línea.\citep{regTensWiki}\\
+
+\begin{figure}[ht!]
+    \centering
+    \includegraphics[scale=1]{Imagenes/50px-Voltage_Regulator.png}
+    \caption{Terminales 	Entrada, tierra/ajuste y salida}
+    \label{fig:simb}
+\end{figure}
+
+\section{Regulador de voltaje con diodo Zener}
+
+\subsection{Características de los reguladores de voltaje con diodo zener}
+
+El diodo Zener se puede utilizar para regular una fuente de voltaje. Este semiconductor se fabrica en una amplia variedad de voltajes y potencias. Estos van desde menos de 2 voltios hasta varios cientos de voltios, y la potencia que pueden disipar va desde 0.25 watts hasta 50 watts o más.\citep{regZener}\\
+
+La potencia que disipa un diodo zener es simplemente la multiplicación del voltaje para el que fue fabricado por la corriente que circula por él. $P_z = (V_z)(I_z)$. Esto significa que la máxima corriente que puede atravesar un diodo zener es: $I_z = \frac{P_z}{V_z}$. (en amperios). Donde:\citep{regZener}\\
+
+\begin{itemize}
+    \item  $I_z$ = Corriente que pasa por el diodo Zener
+     \item  $P_z$ = Potencia del diodo zener (dato del fabricante)
+     \item $V_z$ = Voltaje del diodo zener (dato del fabricante)
+\end{itemize}
+
+Ejemplo: La corriente máxima que un diodo zener de 10 Voltios y 50 Watts puede aguantar, será: $I_z = \frac{P_z}{V_z}= \frac{50}{10} = 5$ amperios.\citep{regZener}\\
+
+
+\begin{figure}[ht!]
+    \centering
+    \begin{circuitikz}
+    
+
+        \draw  (0,0) to[R,l=$R_s$](3,0); 
+        \draw   (3,-3)to[zzDo,v=Vz](3,0)
+        (0,-3)--(6,-3)
+        (3,0)--(6,0)
+        
+        ;
+        
+        \node[draw] at (-0.4,0) {$V_{in}$};
+        \node[draw] at (6.5,0) {$V_{out}$};
+        
+       
+    \end{circuitikz}
+    \caption{Rectificador Onda Completa}
+    \label{fig:rectificadorOndaCompleta}
+\end{figure}
+
+\subsection{Cálculo de resistor limitador de corriente $R_s$}
+
+El cálculo del resistor Rs está determinado por la corriente que pedirá la carga (lo que vamos a conectar a esta fuente de voltaje). Ver esquema del regulador de voltaje con diodo zener, con el resistor Rs conectado entre $V_{in}$ y el cátodo del zener. Este resistor se puede calcular con la siguiente fórmula: $R_s = (\frac{V_{enmin} – V_z}{1.1} ) IL_{max}$, donde:\\
+
+\begin{itemize}
+    \item     $V_{enmin}$: es el valor mínimo del voltaje de entrada. (acordarse que es un voltaje no regulado y puede variar)
+    \item $IL _{max}$: es el valor de la máxima corriente que pedirá la carga.
+\end{itemize}
+
+Una vez conocido $R_s$, se obtiene la potencia máxima del diodo zener, con ayuda de la siguiente fórmula: $PD = (\frac{V_{enmin}-V_z}{R_s-IL_{min}})V_z$ \citep{regZener}\\
+
+
+\subsubsection{Ejemplo de un diseño de regulador de voltaje con zener}
+
+Una fuente de voltaje de 15 voltios debe alimentar una carga con 9 Voltios, que consume una corriente que varía entre 200 y 350 mA. (miliamperios). Se escoge un diodo zener de 9.1 voltios (muy cercano a 9 voltios:\\
+
+\begin{itemize}
+    \item Cálculo de $R_s: Rs =\frac{(15-9.1)}{(1.1×0.35)}= 15 \Omega$
+\item Cálculo de la potencia del diodo zener: PD = (\frac{(15 – 9.1)}{15})9.1 = 3.58 [W]
+\end{itemize}
+
+Como no hay un diodo zener de 3.58 Vatios, se escoge uno de 5 vatios que es el más cercano.\\
+
+\begin{itemize}
+    \item Potencia de $R_s$: Un cálculo adicional es la potencia del resistor $R_s$. Este se hace con la fórmula: $P = I2 x R$. Ver Potencia en una resistencia (ley de Joule)
+\end{itemize}
+
+Los datos actuales son: I (max) = 350 miliamperios = 0.35 amperios y Rs = 15 Ohmios. Aplicando la fórmula, PRs = 0.352 x 15 = 1.84 Watts. Esto significa que a la hora de comprar este resistor deberá ser de 2 Watts o más.\citep{regZener}\\[2cm]
+ 
+ 
+ 
+
+
+
+\bibliographystyle{plain}
+\bibliography{Referencias.bib}
+
+\end{document}

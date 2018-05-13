@@ -1,0 +1,150 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish.mexico]{babel}
+\usepackage[american voltages, american currents,siunitx]{circuitikz}
+
+%para fotos
+
+\usepackage{graphicx}
+\usepackage{subcaption}
+
+\title{Modelo atómico}
+\author{Pablo Vivar Colina A7\\
+Grupo 5\\
+Tarea 6
+}
+%\date{Septiembre 2017}
+
+\usepackage{natbib}
+\usepackage{graphicx}
+
+\begin{document}
+
+\maketitle
+
+Semi: Parcial.\\
+adjetivo. Solo de una parte.\citep{Parc}\\
+
+\section{Teoría de bandas}
+
+En física de estado sólido, teoría según la cual se describe la estructura electrónica de un material como una estructura de bandas electrónicas, o simplemente estructura de bandas de energía. La teoría se basa en el hecho de que en una molécula los orbitales de un átomo se solapan produciendo un número discreto de orbitales moleculares.\citep{TeorB}\\
+
+ \subsection{Bandas de energía}
+ 
+ \begin{itemize}
+    
+     \item La banda de valencia (BV): está ocupada por los electrones de valencia de los átomos, es decir, aquellos electrones que se encuentran en la última capa o nivel energético de los átomos. Los electrones de valencia son los que forman los enlaces entre los átomos, pero no intervienen en la conducción eléctrica.
+     \citep{TeorB}
+     \item  La banda de conducción (BC): está ocupada por los electrones libres, es decir, aquellos que se han desligado de sus átomos y pueden moverse fácilmente. Estos electrones son los responsables de conducir la corriente eléctrica.
+     \citep{TeorB}
+
+ \end{itemize}
+ 
+ En consecuencia, para que un material sea buen conductor de la corriente eléctrica debe haber poca o ninguna separación entre la BC y la BV (que pueden llegar a solaparse), de manera que los electrones puedan saltar entre las bandas. Cuando la separación entre bandas sea mayor, el material se comportará como un aislante. En ocasiones, la separación entre bandas permite el salto entre las mismas de solo algunos electrones. En estos casos, el material se comportará como un semiconductor. Para que el salto de electrones entre bandas en este caso se produzca deben darse alguna o varias de las siguientes situaciones: que el material se encuentre a altas presiones, a una temperatura elevada o se le añadan impurezas (que aportan más electrones).\citep{TeorB}
+
+Entre la banda de valencia y la de conducción existe una zona denominada banda prohibida o gap, que separa ambas bandas y en la cual no pueden encontrarse los electrones.\citep{TeorB}
+
+\begin{figure}
+    \centering
+    \includegraphics[scale=0.5]{Imagenes/bandasEnergia.png}
+    \caption{Representación esquemática de las bandas de energía en un sólido.}
+    \label{fig:bandasEnergia}
+\end{figure}
+
+\section{Átomo}
+
+El término átomo proviene del griego ἄτομον («átomon»), unión de dos vocablos: α (a), que significa "sin", y τομον (tomon), que significa "división" ("indivisible", algo que no se puede dividir), y fue el nombre que se dice les dio Demócrito de Abdera, discípulo de Leucipo de Mileto, a las partículas que él concebía como las de menor tamaño posible. Un átomo es la unidad constituyente más pequeña de la materia que tiene las propiedades de un elemento químico.\citep{Atomo}
+
+%Cada sólido, líquido, gas y plasma se compone de átomos neutros o ionizados. Los átomos son muy pequeños; los tamaños típicos son alrededor de 100 p.m. (diez mil millonésima parte de un metro). No obstante, los átomos no tienen límites bien definidos y hay diferentes formas de definir su tamaño que dan valores diferentes pero cercanos. Los átomos son lo suficientemente pequeños para que la física clásica dé resultados notablemente incorrectos. A través del desarrollo de la física, los modelos atómicos han incorporado principios cuánticos para explicar y predecir mejor su comportamiento.\citep{Atomo}
+
+\section{Modelo de Bohr}
+
+El modelo atómico de Bohr es un modelo clásico del átomo, pero fue el primer modelo atómico en el que se introduce una cuantización a partir de ciertos postulados. Dado que la cuantización del momento es introducida en forma ad hoc, el modelo puede considerarse transicional en cuanto a que se ubica entre la mecánica clásica y la cuántica. Fue propuesto en 1913 por el físico danés Niels Bohr, para explicar cómo los electrones pueden tener órbitas estables alrededor del núcleo y por qué los átomos presentaban espectros de emisión característicos (dos problemas que eran ignorados en el modelo previo de Rutherford). Además el modelo de Bohr incorporaba ideas tomadas del efecto fotoeléctrico, explicado por Albert Einstein en 1905.\citep{BohrAtomo}
+
+\begin{figure}
+    \centering
+    \includegraphics[scale=0.5]{Imagenes/BohrAtomo.png}
+    \caption{ Diagrama del modelo atómico de Bohr}
+    \label{fig:bohrAtomo}
+\end{figure}
+
+\section{Clasificación Circuitos Integrados}
+
+Atendiendo al nivel de integración —número de componentes— los circuitos integrados se pueden clasificar en:\citep{CirI}\\
+
+
+\begin{itemize}
+    \item   SSI (Small Scale Integration) pequeño nivel: de 10 a 100 transistores
+    \item   MSI (Medium Scale Integration) medio: 101 a 1 000 transistores
+    \item   LSI (Large Scale Integration) grande: 1 001 a 10 000 transistores
+    \item   VLSI (Very Large Scale Integration) muy grande: 10 001 a 100 000 transistores
+    \item   ULSI (Ultra Large Scale Integration) ultra grande: 100 001 a 1 000 000 transistores
+    \item   GLSI (Giga Large Scale Integration) giga grande: más de un millón de transistores
+
+\end{itemize}
+  
+
+
+
+%\section{Circuito a resolver}
+
+%\begin{figure}[h!]
+ %   \centering
+   % \includegraphics{}
+  %  \begin{circuitikz}
+%\draw
+
+%(-1,0)--(-1,-1)
+%(-1,-1) to[V,l=$28v$](-1,-2) 
+% (-1,-2)--(-1,-3)
+ 
+ %(-1,-3)--(2,-3)
+ 
+% (-1,0) to[R,l=$50 \Omega $](2,0)
+ 
+ 
+% (2,-3)to[R,l=$5 \Omega$](2,0)
+ 
+% (2,0)--(4,0)
+% (2,-3)--(4,-3)
+ 
+ % (4,-3)to[R,l=$10 \Omega$](4,0)
+ 
+ 
+%;
+
+%\draw[thick,arrows=->]
+%(2.5,0)--(2.5,-1)
+%;
+ 
+%\end{circuitikz}
+ %   \caption{Circuito a resolver}
+  %  \label{fig:circuito}
+%\end{figure}
+
+%\subsection{Resultados}
+
+%Para resolver el circuito se hicieron equivalente los resistores de 5 y 10 $\Omegas$ para obtener el voltaje en esas ramas, así se pudo deducir la corriente en la rama del resistor de 50 $\Omega$ y el circuito equivalente, posterirmente se usaron las leyes de Kirchhoff para deducir los voltajes y las corrientes respectivamente.
+
+%\begin{table}[h!]
+%\centering
+
+%\begin{tabular}{|c|c|c|}
+%\hline
+%Componente & V {[}V{]} & I {[}A{]} \\ \hline
+%R 50       & 26.25     & 0.525     \\ \hline
+%R 10       & 1.75      & 0.173     \\ \hline
+%R 5        & 1.75      & 0.352     \\ \hline
+%V fuente   & 28        & 0.525     \\ \hline
+%\end{tabular}
+%\caption{Tabla de Resultados}
+%\label{tabla-resultados}
+
+%\end{table}
+
+%.\\[100cm]
+\bibliographystyle{plain}
+\bibliography{TareaSilicio.bib}
+
+
+\end{document}

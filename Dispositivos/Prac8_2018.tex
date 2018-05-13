@@ -1,0 +1,236 @@
+\input{portada.tex} %agregar portada
+
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish.mexico]{babel}
+
+\title{Dispositivos}
+\author{Pablo Vivar Colina}
+\date{Septiembre 2017}
+
+\usepackage{natbib}
+\usepackage{graphicx}
+
+
+%Circuitos
+\usepackage{tikz}
+\usepackage[american voltages, american currents,siunitx]{circuitikz}
+
+%Plotting
+
+\usepackage{pgfplots}
+\pgfplotsset{width=10cm,compat=1.9} 
+ %\usepgfplotslibrary{external}
+\tikzexternalize 
+
+\input{portada.tex} %agregar portada
+
+\begin{document}
+
+
+%\maketitle
+
+
+
+\section{Marco teórico}
+
+\section{Diodo Zener}
+
+ Los diodos zener, zener diodo o simplemente zener, son diodos que están diseñados para mantener un voltaje constante en su terminales, llamado Voltaje o Tensión Zener (Vz) cuando se polarizan inversamente, es decir cuando está el cátodo con una tensión positiva y el ánodo negativa. Un zener en conexión con polarización inversa siempre tiene la misma tensión en sus extremos (tensión zener).\citep{dZener}\\
+
+\begin{figure}[ht!]
+   \centering
+\includegraphics[scale=0.5]{Imagenes/diodo-zener.jpg}
+\caption{}
+     \label{fig:zener}
+ \end{figure}
+ 
+ \subsection{Cómo Funciona un Diodo Zener}
+
+ Cuando lo polarizamos inversamente y llegamos a Vz el diodo conduce y mantiene la tensión Vz constante aunque nosotros sigamos aumentando la tensión en el circuito. La corriente que pasa por el diodo zener en estas condiciones se llama corriente inversa (Iz).
+ Se llama zona de ruptura por encima de Vz. Antes de llegar a Vz el diodo zener NO Conduce.\citep{dZener}\\
+
+ Como ves es un regulador de voltaje o tensión. Fijate en la gráfica de funcionamiento del zener más abajo.\citep{dZener}\\
+
+ Cuando está polarizado directamente el zener se comporta como un diodo normal.\citep{dZener}\\
+
+ Pero OJO mientras la tensión inversa sea inferior a la tensión zener, el diodo no conduce, solo conseguiremos tener la tensión constante Vz, cuando esté conectado a una tensión igual a Vz o mayor. Aquí puedes ver una la curva característica de un zener:\citep{dZener}\\
+ 
+ \begin{figure}[ht!]
+     \centering
+     \includegraphics[scale=0.5]{Imagenes/curva-diodo-zener.jpg}
+     \caption{Curva Diodo Zener}
+     \label{fig:curvaZener}
+ \end{figure}
+ 
+
+
+
+
+
+ \section{Material}
+
+\begin{itemize}
+    \item Resistores de distintos valores
+        \item Diodo zener 5[V] @ 1/2 [W]
+    
+\end{itemize}
+
+\section{Desarrollo}
+
+\subsection{Zener Polarización Directa}
+
+
+En el primer experimento se utilizó el circuito mostrado en la figura \ref{fig:zenerDireta}, en él se ingresaba una fuente de voltaje variable, se conecto un multímetro para apreciar el valor de corriente, y para el valor de corriente asignado en una columna se midió el voltaje zener con un osciloscopio tomando como referencia la tierra. los registros se anotaron en el cuadro \ref{tab:polDirecta}.\\ 
+
+\begin{figure}[h!]
+    \centering
+    \begin{circuitikz}
+    
+
+        \draw  (0,0) to[R,l=$R_s$](3,0); 
+        \draw   (3,-3)to[zzDo,v=Vz](3,0)
+        (0,-3)--(6,-3)
+        (3,0)--(6,0)
+        
+        ;
+        
+        \node[draw] at (-0.4,0) {$V_{in}$};
+        \node[draw] at (6.5,0) {$V_{out}$};
+        
+       
+    \end{circuitikz}
+    \caption{Diodo Zener en polarización Directa}
+    \label{fig:zenerDireta}
+\end{figure}
+
+\begin{table}[h!]
+\centering
+
+\begin{tabular}{|c|c|}
+\hline
+$I [mu_A]$ & $[V_Z]$ \\ \hline
+10          & 2.8  \\ \hline
+30          & 3.2  \\ \hline
+50          & 3.4  \\ \hline
+100         & 3.6  \\ \hline
+200         & 3.8  \\ \hline
+\end{tabular}
+\quad
+\begin{tabular}{|c|c|}
+\hline
+$I_mA$ & $V_Z$ \\ \hline
+1          & 4.2  \\ \hline
+2          & 4.6  \\ \hline
+3          & 4.6  \\ \hline
+4          & 4.65 \\ \hline
+5          & 4.65 \\ \hline
+6          & 4.8  \\ \hline
+7          & 4.8  \\ \hline
+8          & 4.8  \\ \hline
+9          & 4.8  \\ \hline
+10         & 4.8  \\ \hline
+15         & 4.8  \\ \hline
+20         & 4.85 \\ \hline
+25         & 4.85 \\ \hline
+30         & 4.85 \\ \hline
+35         & 4.85 \\ \hline
+40         & 5    \\ \hline
+50         & 5    \\ \hline
+60         & 5    \\ \hline
+\end{tabular}
+
+\caption{Resultados Polarización directa}
+\label{tab:polDirecta}
+\end{table}
+
+
+
+
+
+
+\subsection{Zener Polarización Inversa}
+
+En el segundo experimento se utilizó el circuito mostrado en la figura \ref{fig:zenerInversa}, en él se ingresaba una fuente de voltaje variable, se conectó un multímetro para apreciar el valor de corriente, y para el valor de corriente asignado en una columna se midió el voltaje zener con un osciloscopio tomando como referencia la tierra. los registros se anotaron en el cuadro \ref{tab:polInversa}.\\ 
+
+
+\begin{figure}[h!]
+    \centering
+    \begin{circuitikz}
+    
+
+        \draw  (0,0) to[R,l=$R_s$](3,0); 
+        \draw   (3,0)to[zzDo,v=Vz](3,-3)
+        (0,-3)--(6,-3)
+        (3,0)--(6,0)
+        
+        ;
+        
+        \node[draw] at (-0.4,0) {$V_{in}$};
+        \node[draw] at (6.5,0) {$V_{out}$};
+        
+       
+    \end{circuitikz}
+    \caption{Diodo Zener en polarización Inversa}
+    \label{fig:zenerInversa}
+\end{figure}
+
+\begin{table}[h!]
+\centering
+
+\begin{tabular}{|c|c|}
+\hline
+$I_muA$ & $V_Z$ \\ \hline
+10          & 0.6  \\ \hline
+30          & 0.62 \\ \hline
+50          & 0.64 \\ \hline
+100         & 0.66 \\ \hline
+200         & 0.68 \\ \hline
+\end{tabular}
+\quad
+\begin{tabular}{|c|c|}
+\hline
+$I_muA$ & $V_Z$ \\ \hline
+1          & 0.72 \\ \hline
+2          & 0.73 \\ \hline
+3          & 0.74 \\ \hline
+4          & 0.75 \\ \hline
+5          & 0.76 \\ \hline
+6          & 0.76 \\ \hline
+7          & 0.76 \\ \hline
+8          & 0.77 \\ \hline
+9          & 0.78 \\ \hline
+10         & 0.78 \\ \hline
+15         & 0.78 \\ \hline
+20         & 0.8  \\ \hline
+25         & 0.8  \\ \hline
+30         & 0.84 \\ \hline
+35         & 0.84 \\ \hline
+40         & 0.84 \\ \hline
+50         & 0.84 \\ \hline
+60         & 0.84 \\ \hline
+\end{tabular}
+
+\caption{Diodo Polarización Inversa}
+\label{tab:polInversa}
+
+\end{table}
+
+\section{Conclusiones}
+
+En la práctica se pudo observar el compartamiento del diodo zener en polarización directa e inversa, se pudo apreciar su característica como regulador de voltaje montado como bipuerto ya que al intruducirle un valor mayor de voltaje al de fabricación el diodo mantuvo sin mucha variación el voltaje de salida, ésto lo podemos relacionar con la curva de polarización en el marco teórico, y como los resultados obtenidos corresponden a que en la polarización en el cuadro \ref{tab:polDirecta} a valore mayores a el voltaje de fabricación (5V) el diodo zener mantiene éste voltaje y que en que en reversa de ésta polarización los valores de voltaje no suben, hay una variación mínima ya que se encuentra en corto circuito.
+
+
+%######## AQUI VA LA PRACTICA ########
+
+%mbi armiya naroda! :D
+%https://www.youtube.com/watch?v=3D5-pleHkdk
+
+
+
+
+
+\bibliographystyle{plain}
+\bibliography{Referencias.bib}
+
+\end{document}

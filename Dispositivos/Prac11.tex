@@ -1,0 +1,163 @@
+\input{portada.tex} %agregar portada
+
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish.mexico]{babel}
+
+\title{Dispositivos}
+\author{Pablo Vivar Colina}
+\date{Septiembre 2017}
+
+\usepackage{natbib}
+\usepackage{graphicx}
+
+
+%Circuitos
+\usepackage{tikz}
+
+\usepackage[american voltages, american currents,siunitx]{circuitikz}
+
+%Plotting
+
+\usepackage{pgfplots}
+\pgfplotsset{width=10cm,compat=1.9} 
+ %\usepgfplotslibrary{external}
+%\tikzexternalize 
+
+
+\input{portada.tex} %agregar portada
+
+\begin{document}
+
+
+%\maketitle
+
+
+\section{Transistor de unión bipolar}
+
+El transistor de unión bipolar (del inglés bipolar junction transistor, o sus siglas BJT) es un dispositivo electrónico de estado sólido consistente en dos uniones PN muy cercanas entre sí, que permite aumentar la corriente y disminuir el voltaje, además de controlar el paso de la corriente a través de sus terminales. La denominación de bipolar se debe a que la conducción tiene lugar gracias al desplazamiento de portadores de dos polaridades (huecos positivos y electrones negativos), y son de gran utilidad en gran número de aplicaciones; pero tienen ciertos inconvenientes, entre ellos su impedancia de entrada bastante baja.\citep{TBJwiki}\\
+
+Los transistores bipolares son los transistores más conocidos y se usan generalmente en electrónica analógica aunque también en algunas aplicaciones de electrónica digital, como la tecnología TTL o BICMOS.\citep{TBJwiki}\\
+
+Un transistor de unión bipolar está formado por dos Uniones PN en un solo cristal semiconductor, separados por una región muy estrecha. De esta manera quedan formadas tres regiones:\citep{TBJwiki}\\
+
+\subsection{Principio de funcionamiento}
+
+En una configuración normal, la unión base-emisor se polariza en directa y la unión base-colector en inversa.6​ Debido a la agitación térmica los portadores de carga del emisor pueden atravesar la barrera de potencial emisor-base y llegar a la base. A su vez, prácticamente todos los portadores que llegaron son impulsados por el campo eléctrico que existe entre la base y el colector.\citep{TBJwiki}\\
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[scale=0.125]{Imagenes/TBJ.png}
+    \caption{Característica idealizada de un transistor bipolar.}
+    \label{fig:curvaTBJ}
+\end{figure}
+
+Un transistor NPN puede ser considerado como dos diodos con la región del ánodo compartida. En una operación típica, la unión base-emisor está polarizada en directa y la unión base-colector está polarizada en inversa. En un transistor NPN, por ejemplo, cuando una tensión positiva es aplicada en la unión base-emisor, el equilibrio entre los portadores generados térmicamente y el campo eléctrico repelente de la región agotada se desbalancea, permitiendo a los electrones excitados térmicamente inyectarse en la región de la base. Estos electrones "vagan" a través de la base, desde la región de alta concentración cercana al emisor hasta la región de baja concentración cercana al colector. Estos electrones en la base son llamados portadores minoritarios debido a que la base está dopada con material P, los cuales generan "huecos" como portadores mayoritarios en la base.\citep{TBJwiki}\\
+
+La región de la base en un transistor debe ser constructivamente delgada, para que los portadores puedan difundirse a través de esta en mucho menos tiempo que la vida útil del portador minoritario del semiconductor, para minimizar el porcentaje de portadores que se recombinan antes de alcanzar la unión base-colector. El espesor de la base debe ser menor al ancho de difusión de los electrones.\citep{TBJwiki}\\
+
+
+\begin{itemize}
+    \item  Emisor, que se diferencia de las otras dos por estar fuertemente dopada, comportándose como un metal. Su nombre se debe a que esta terminal funciona como emisor de portadores de carga.
+       \item Base, la intermedia, muy estrecha, que separa el emisor del colector.
+       \item Colector, de extensión mucho mayor.
+\end{itemize}
+   
+La técnica de fabricación más común es la deposición epitaxial. En su funcionamiento normal, la unión base-emisor está polarizada en directa, mientras que la base-colector en inversa. Los portadores de carga emitidos por el emisor atraviesan la base, porque es muy angosta, hay poca recombinación de portadores, y la mayoría pasa al colector. El transistor posee tres estados de operación: estado de corte, estado de saturación y estado de actividad.\citep{TBJwiki}\\
+
+%aqui va la practica
+
+
+\section{Experimento}
+
+En el experimento se hizo uso del siguiente circuito:\\
+
+
+\begin{figure}[h!]
+    \centering
+    \begin{circuitikz}
+    
+
+    \draw
+    %resistor
+    (0,0)to[R,l=$10k\Omega$](3,0)
+    (0,0)--(0,-1)
+    
+    %capacitor
+    (0,-1)to[C,l=$V_{bb}$](0,-2)
+  
+    
+    %tierra
+    (0,-2)  to  (0,-2.5) node[ground]{}
+    
+    
+
+ %tierra NPN
+    (3.9,-0.8)  to  (3.9,-1.3) node[ground]{}
+    
+    %resistor
+    (4,0.5) to[R,l=$1k\Omega$](5,0.5)
+    
+    %capacitor
+     (5,0.5) to[C,l=$V_{cc}$](5,-2.5)
+     
+      %tierra
+    (5,-2.5)  to  (5,-2.7) node[ground]{}
+    
+    ;
+    
+    \draw
+    %NPN
+    (3.9,0)
+node [npn,xscale=1] (npn) {} 
+(npn.collector) ;
+    ;
+   
+
+        
+       
+    \end{circuitikz}
+    \caption{Circuito operación experimento TBJ}
+    \label{fig:circuito TBJ}
+\end{figure}
+
+
+En el experimento se hicieron varias pruebas con el circuito modificando el valor de la corriente en la base y midiendo la valor del colector.\'
+
+
+\begin{table}[h!]
+\centering
+\label{my-label}
+\begin{tabular}{|c|c|c|c|c|c|c|}
+\hline
+$V_{CE}$ & $I_C0=0\mu A$ & $I_C1=5mA$ & $I_C2=8\mu A$ & $I_C3=20\mu A$ & $I_C4=25\muA\$ & $I_C5=30\mu A$ \\ \hline
+1        & $2.47\muA$   & 1.28mA     & 3.03mA       & 6.3mA         & 7.86mA          & 9.22mA        \\ \hline
+2        & $3.61\muA$   & 1.42mA     & 3.10mA       & 6.513mA       & 8.05mA          & 9.63mA        \\ \hline
+3        & $4.49\muA$   & 1.43mA     & 3.13mA       & 6.64mA        & 8.17mA          & 9.86mA        \\ \hline
+4        & $5.52\muA$   & 1.45mA     & 3.17mA       & 6.76mA        & 8.3mA           & 10.06mA       \\ \hline
+5        & $6.53\muA$   & 1.47mA     & 3.21mA       & 6.89mA        & 8.47mA          & 10.29mA       \\ \hline
+6        & $7.52\muA$   & 1.48mA     & 3.25mA       & 7.05mA        & 8.6mA           & 10.5mA        \\ \hline
+7        & $8.51\muA$   & 1.49mA     & 3.3mA        & 7.17mA        & 8.9mA           & 10.8mA        \\ \hline
+8        & $9.49\muA$   & 1.51mA     & 3.34mA       & 7.32mA        & 9.1mA           & 11.1mA        \\ \hline
+9        & $10.51\muA$  & 1.52mA     & 3.41mA       & 7.69mA        & 9.5mA           & 11.57mA       \\ \hline
+10       & $11.4\muA$   & 1.54mA     & 3.41mA       & 7.69mA        & 9.5mA           & 11.57mA       \\ \hline
+$I_B$    & $-0.005\muA$ & 4.6mA      & 9.86mA       & 21.6mA        & 26.3mA          & 31.3mA        \\ \hline
+\end{tabular}
+\caption{Registro de resultados}
+\end{table}
+
+Se corroboró el funcionamiento de éste tipo de transistores y su funcionamiento experimentalmente.
+
+%######## AQUI VA LA PRACTICA ########
+
+%mbi armiya naroda! :D
+%https://www.youtube.com/watch?v=3D5-pleHkdk
+
+
+
+
+
+\bibliographystyle{plain}
+\bibliography{referencias11.bib}
+
+\end{document}

@@ -1,0 +1,49 @@
+%\input{portada.tex} %agregar portada
+
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish.mexico]{babel}
+
+\title{Dispositivos y circuitos Electrónicos}
+\author{Pablo Vivar Colina}
+\date{Septiembre 2017}
+
+\usepackage{natbib}
+\usepackage{graphicx}
+
+\usepackage{tikz}
+\usepackage[american voltages, american currents,siunitx]{circuitikz}
+
+\begin{document}
+
+
+\maketitle
+
+%\input{portada.tex} %agregar portada
+
+\section{Previo 5}
+
+\section{Integrador ideal (Amplificador integrador)}
+
+Este montaje integra e invierte la señal de entrada $V_in$ produciendo como salida:\\
+
+\begin{equation}
+    V_{\rm out} = \int_0^t - {V_{\rm in} \over RC} \, dt + V_{\rm inicial}
+\end{equation}
+
+En esta ecuación $V_{inicial}$ es la tensión de origen al iniciarse el funcionamiento.\\
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[scale=0.1]{Imagenes/Opampintegrating.png}
+    \caption{Circuito de funcionamiento}
+    \label{fig:my_label}
+\end{figure}
+
+Este integrador no se usa en la práctica de forma discreta ya que cualquier señal pequeña de corriente directa en la entrada puede ser acumulada en el condensador hasta saturarlo por completo; sin mencionar la característica de desplazamiento de tensión del amplificador operacional, que también es acumulada. Este circuito se usa de forma combinada en sistemas retroalimentados que son modelos basados en variables de estado (valores que definen el estado actual del sistema) donde el integrador conserva una variable de estado en el voltaje de su condensador.\citep{opampWiki}\\
+
+
+
+\bibliographystyle{plain}
+\bibliography{referenciasPrev5}
+\end{document}

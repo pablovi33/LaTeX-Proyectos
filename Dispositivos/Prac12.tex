@@ -1,0 +1,354 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish.mexico]{babel}
+
+\title{Dispositivos}
+\author{Pablo Vivar Colina}
+\date{Septiembre 2017}
+
+\usepackage{natbib}
+\usepackage{graphicx}
+
+
+%Experimental
+%\usetikzlibrary{positioning}
+
+%Circuitos
+\usepackage{tikz}
+
+\usepackage[american voltages, american currents,siunitx]{circuitikz}
+
+%Plotting
+
+\usepackage{pgfplots}
+\pgfplotsset{width=10cm,compat=1.9} 
+ %\usepgfplotslibrary{external}
+%\tikzexternalize 
+
+
+\input{portada.tex} %agregar portada
+
+
+\begin{document}
+
+
+%\maketitle
+
+
+\section{Transistor de unión bipolar}
+
+El transistor de unión bipolar (del inglés bipolar junction transistor, o sus siglas BJT) es un dispositivo electrónico de estado sólido consistente en dos uniones PN muy cercanas entre sí, que permite aumentar la corriente y disminuir el voltaje, además de controlar el paso de la corriente a través de sus terminales. La denominación de bipolar se debe a que la conducción tiene lugar gracias al desplazamiento de portadores de dos polaridades (huecos positivos y electrones negativos), y son de gran utilidad en gran número de aplicaciones; pero tienen ciertos inconvenientes, entre ellos su impedancia de entrada bastante baja.\citep{TBJwiki}\\
+
+Los transistores bipolares son los transistores más conocidos y se usan generalmente en electrónica analógica aunque también en algunas aplicaciones de electrónica digital, como la tecnología TTL o BICMOS.\citep{TBJwiki}\\
+
+Un transistor de unión bipolar está formado por dos Uniones PN en un solo cristal semiconductor, separados por una región muy estrecha. De esta manera quedan formadas tres regiones:\citep{TBJwiki}\\
+
+\subsection{Principio de funcionamiento}
+
+En una configuración normal, la unión base-emisor se polariza en directa y la unión base-colector en inversa.6​ Debido a la agitación térmica los portadores de carga del emisor pueden atravesar la barrera de potencial emisor-base y llegar a la base. A su vez, prácticamente todos los portadores que llegaron son impulsados por el campo eléctrico que existe entre la base y el colector.\citep{TBJwiki}\\
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[scale=0.125]{Imagenes/TBJ.png}
+    \caption{Característica idealizada de un transistor bipolar.}
+    \label{fig:curvaTBJ}
+\end{figure}
+
+Un transistor NPN puede ser considerado como dos diodos con la región del ánodo compartida. En una operación típica, la unión base-emisor está polarizada en directa y la unión base-colector está polarizada en inversa. En un transistor NPN, por ejemplo, cuando una tensión positiva es aplicada en la unión base-emisor, el equilibrio entre los portadores generados térmicamente y el campo eléctrico repelente de la región agotada se desbalancea, permitiendo a los electrones excitados térmicamente inyectarse en la región de la base. Estos electrones "vagan" a través de la base, desde la región de alta concentración cercana al emisor hasta la región de baja concentración cercana al colector. Estos electrones en la base son llamados portadores minoritarios debido a que la base está dopada con material P, los cuales generan "huecos" como portadores mayoritarios en la base.\citep{TBJwiki}\\
+
+La región de la base en un transistor debe ser constructivamente delgada, para que los portadores puedan difundirse a través de esta en mucho menos tiempo que la vida útil del portador minoritario del semiconductor, para minimizar el porcentaje de portadores que se recombinan antes de alcanzar la unión base-colector. El espesor de la base debe ser menor al ancho de difusión de los electrones.\citep{TBJwiki}\\
+
+
+\begin{itemize}
+    \item  Emisor, que se diferencia de las otras dos por estar fuertemente dopada, comportándose como un metal. Su nombre se debe a que esta terminal funciona como emisor de portadores de carga.
+       \item Base, la intermedia, muy estrecha, que separa el emisor del colector.
+       \item Colector, de extensión mucho mayor.
+\end{itemize}
+   
+La técnica de fabricación más común es la deposición epitaxial. En su funcionamiento normal, la unión base-emisor está polarizada en directa, mientras que la base-colector en inversa. Los portadores de carga emitidos por el emisor atraviesan la base, porque es muy angosta, hay poca recombinación de portadores, y la mayoría pasa al colector. El transistor posee tres estados de operación: estado de corte, estado de saturación y estado de actividad.\citep{TBJwiki}\\
+
+
+\section{Corriente TBJ}
+
+
+En los experimentos realizados en el laboratorio se utilizó una señal de $1[kHz]$ con amplitud de voltaje mínima.\\
+
+En el primer experimento se hizo uso el circuito mostrado en la figura \ref{fig:circuito TBJ}.\\
+
+
+\begin{figure}[ht!]
+    \centering
+    \begin{circuitikz}
+    
+\draw
+(-0.85,2)--(-0.85,3)
+(-0.85,2)to[R,l=$12k\Omega$](-0.85,0)
+(-0.85,-2)to[R,l=$2k\Omega$](-0.85,0)
+(-0.85,-2)--(-0.85,-3)
+
+
+(0,0.75)to[R,l=$3.3k\Omega$](0,3)
+(0,-0.75)to[R,l=$1k\Omega$](0,-3)
+
+%12V
+(-0.425,3)--(-0.425,3.5)
+
+%lineas horizontales
+(-0.85,3)--(0,3)
+(-0.85,-3)--(0,-3)
+
+%tierra
+(-0.425,-3)  to  (-0.425,-3.5) node[ground]{}
+
+;
+    
+    
+    \draw
+    %NPN
+    (0,0)
+node [npn,xscale=1] (npn) {} 
+(npn.collector) ;
+    
+    \node[draw] at (-0.5,3.8) {12[V]};
+   
+
+        
+       
+    \end{circuitikz}
+    \caption{Circuito operación corriente TBJ}
+    \label{fig:circuito TBJ}
+\end{figure}
+
+En el circuito de la figura \ref{fig:circuito TBJ} se midieron La corriente de la base, la corriente del emisor y el voltaje entre las terminales del colector y el emisor, hay que notar que en éste circuito no se encuentra ningún elemento de salida conectado.\\
+
+\begin{itemize}
+    \item $I_B$ = 3.98 $[\mu A]$
+    \item $I_E$ = 1.23 $[\mu A]$
+    \item $V_{CE}$ = 6.73 $[V]$
+\end{itemize}
+
+
+\section{Corriente TBJ}
+
+En el segundo experimento se hizo uso del circuito mostrado en la figura \ref{fig:circuito TBJ 1}.\\
+
+
+\begin{figure}[ht!]
+    \centering
+    \begin{circuitikz}
+    
+\draw
+(-0.85,2)--(-0.85,3)
+(-0.85,2)to[R,l=$12k\Omega$](-0.85,0)
+(-0.85,-2)to[R,l=$2k\Omega$](-0.85,0)
+(-0.85,-2)--(-0.85,-3)
+
+
+(0,0.75)to[R,l=$3.3k\Omega$](0,3)
+(0,-0.75)to[R,l=$1k\Omega$](0,-3)
+
+%12V
+(-0.425,3)--(-0.425,3.5)
+
+%lineas horizontales
+(-0.85,3)--(0,3)
+(-0.85,-3)--(0,-3)
+
+%tierra
+(-0.425,-3)  to  (-0.425,-3.5) node[ground]{}
+
+;
+    
+    
+    \draw
+    %NPN
+    (0,0)
+node [npn,xscale=1] (npn) {} 
+(npn.collector) ;
+    
+    \node[draw] at (-0.5,3.8) {12[V]};
+   
+
+        
+       
+    \end{circuitikz}
+    \caption{Circuito operación corriente TBJ 1}
+    \label{fig:circuito TBJ 1}
+\end{figure}
+
+En el circuito de la figura \ref{fig:circuito TBJ 1} se midieron La corriente en la base y en la entrada del transistor además del voltaje de colector a emisor.\\
+
+\begin{itemize}
+    \item $I_B$ = 4.06 $[\mu A]$
+    \item $I_E$ = 1.23 $[\mu A]$
+    \item $V_{CE}$ = 4.24 $[V]$
+\end{itemize}
+
+Para ello se observaron los señales de entrada y de salida del circuito en el osciloscopio y la medición registrada se realizó justo cuando la señal de salida no se distorsionaba.\\
+
+
+\section{Ganancia con salida en colector TBJ}
+
+Al igual que en los dos experimentos anteriores se realizaron las mediciones correspondientes cuando la señal de salida no representaba distorsión.\\
+
+\begin{figure}[ht!]
+    \centering
+    \begin{circuitikz}
+    
+\draw
+(-0.85,2)--(-0.85,3)
+(-0.85,2)to[R,l=$12k\Omega$](-0.85,0)
+
+%Capacitor de salida
+(0,0.3)to[C,l=$10\mu F$](2,0.3)
+
+
+(-0.85,-2)to[R,l=$2k\Omega$](-0.85,0)
+(-0.85,-2)--(-0.85,-3)
+
+
+(0,0.75)to[R,l=$3.3k\Omega$](0,3)
+(0,-0.75)to[R,l=$1k\Omega$](0,-3)
+
+%12V
+(-0.425,3)--(-0.425,3.5)
+
+%lineas horizontales
+(-0.85,3)--(0,3)
+(-0.85,-3)--(0,-3)
+
+%tierra resistencias (2k y 1k)
+(-0.425,-3)  to  (-0.425,-3.5) node[ground]{}
+
+%Capacitor de entrada
+(-3,0)to[C,l=$10\mu F$](-0.8,0)
+
+%Capacitor de entrada
+(-3,0)to[sV,l=$S$](-3,-2)
+
+%tierra fuente
+(-3,-2)  to (-3,-2.5) node[ground]{}
+
+
+
+;
+    
+    
+    \draw
+    %NPN
+    (0,0)
+node [npn,xscale=1] (npn) {} 
+(npn.collector) ;
+    
+    \node[draw] at (-0.5,3.8) {12[V]};
+   
+
+        
+       
+    \end{circuitikz}
+    \caption{Ganancia en colector TBJ}
+    \label{fig:circuito TBJ A}
+\end{figure}
+
+En el circuito de la figura \ref{fig:circuito TBJ A} se midieron los voltajes de entrada y de salida del circuito, características del circuito.\\
+
+\begin{itemize}
+    \item $V_{ent}$ = 1.2 [V]
+    \item $V_{sal}$ = 6.6 [V]
+    \item Ganancia = 5.5
+    \item Ánglulo de defasamiento = 180°
+\end{itemize}
+
+
+\section{Ganancia con salida en emisor TBJ}
+
+\begin{figure}[ht!]
+    \centering
+    \begin{circuitikz}
+    
+\draw
+(-0.85,2)--(-0.85,3)
+(-0.85,2)to[R,l=$12k\Omega$](-0.85,0)
+
+%Capacitor de salida
+(0,-0.3)to[C,l=$10\mu F$](2,-0.3)
+
+
+(-0.85,-2)to[R,l=$2k\Omega$](-0.85,0)
+(-0.85,-2)--(-0.85,-3)
+
+
+(0,0.75)to[R,l=$3.3k\Omega$](0,3)
+(0,-0.75)to[R,l=$1k\Omega$](0,-3)
+
+%12V
+(-0.425,3)--(-0.425,3.5)
+
+%lineas horizontales
+(-0.85,3)--(0,3)
+(-0.85,-3)--(0,-3)
+
+%tierra resitencias (2k y 1k)
+(-0.425,-3)  to  (-0.425,-3.5) node[ground]{}
+
+%Capacitor de entrada
+(-3,0)to[C,l=$10\mu F$](-0.8,0)
+
+%Fuente
+(-3,0)to[sV,l=$S$](-3,-2)
+
+%tierra fuente
+(-3,-2)  to (-3,-2.5) node[ground]{}
+
+;
+    
+    
+    \draw
+    %NPN
+    (0,0)
+node [npn,xscale=1] (npn) {} 
+(npn.collector) ;
+    
+    \node[draw] at (-0.5,3.8) {12[V]};
+   
+
+        
+       
+    \end{circuitikz}
+    \caption{Circuito operación experimento TBJ}
+    \label{fig:circuito TBJ B}
+\end{figure}
+
+En el circuito de la figura \ref{fig:circuito TBJ B} se midieron los voltajes de entrada y de salida del circuito, características del circuito.\\
+
+\begin{itemize}
+    \item $V_{ent}$ = 2.2 $[V]$
+    \item $V_{sal}$ = 2.2 $[V]$
+    \item Ganancia = 1
+    \item Ánglulo de defasamiento 0°
+\end{itemize}
+
+
+
+%aqui va la prac
+
+
+\section{Conclusiones}
+
+Se corroboró el funcionamiento de éste tipo de transistores y su funcionamiento experimentalmente. Se hizo la comparación de la ganancia obtenida tanto al conectarlo e en el emisor como en el colector, el ángulo de defasamiento que se provoca en ambos casos, , en el caso en dónde la salida se conectó en el colector se produjo una ganancia de 5.5 y un ángulo de defasamiento, lo cual quiere decir que el transistor amplificó la señal de entrada, es decir, actuó como amplificador, y alteró la señal, y en el caso en donde se conectó en el emisor no existió, simplemente se mantuvo la señal de la misma forma, por lo tanto funcionó como interruptor.\\
+
+En la práctica se pudo observar 2 tipos de funcionamiento del transistor y comparar su comportamiento.\\
+
+%######## AQUI VA LA PRACTICA ########
+
+%mbi armiya naroda! :D
+%https://www.youtube.com/watch?v=3D5-pleHkdk
+
+
+
+
+
+\bibliographystyle{plain}
+\bibliography{referencias11.bib}
+
+\end{document}

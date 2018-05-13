@@ -1,0 +1,125 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish.mexico]{babel}
+\usepackage[american voltages, american currents,siunitx]{circuitikz}
+
+%para fotos
+
+\usepackage{graphicx}
+\usepackage{subcaption}
+
+\title{Energía}
+\author{Pablo Vivar Colina A7\\
+Grupo 5\\
+Tarea 5
+}
+%\date{Septiembre 2017}
+
+\usepackage{natbib}
+\usepackage{graphicx}
+
+\begin{document}
+
+\maketitle
+
+\section{Resistividades}
+
+\begin{itemize}
+    \item Cobre $1.72 x 10-8 [\Omega m]$ \citep{RS}
+    \item Germanio puro  $0.60 [\Omega m]$ \citep{RS}
+\item Silicio puro $2300 [\Omega m]$ \citep{RS}
+\item  Grafeno $1 x 10-4 [\Omega m]$ \citep{Graf}
+\end{itemize}
+
+
+\section{Teorema de Noether}
+
+El teorema de Noether es un resultado central en física teórica. Expresa que cualquier simetría diferenciable, proveniente de un sistema físico, tiene su correspondiente ley de conservación. El teorema se denomina así por la matemática alemana Emmy Noether, que lo formuló en 1915.1​ Además de permitir aplicaciones físicas prácticas, este teorema constituye una explicación de por qué existen leyes de conservación y magnitudes físicas que no cambian a lo largo de la evolución temporal de un sistema físico.\citep{TN}
+
+\section{Energía Eléctrica}
+
+Se denomina energía eléctrica a la forma de energía que resulta de la existencia de una diferencia de potencial entre dos puntos, lo que permite establecer una corriente eléctrica entre ambos cuando se los pone en contacto por medio de un conductor eléctrico. La energía eléctrica puede transformarse en muchas otras formas de energía, tales como la energía lumínica o luz, la energía mecánica y la energía térmica.\citep{EE}
+
+\section{Electricidad}
+
+La electricidad (del griego ήλεκτρον élektron, cuyo significado es ‘ámbar’) es el conjunto de fenómenos físicos relacionados con la presencia y flujo de cargas eléctricas. Se manifiesta en una gran variedad de fenómenos como los rayos, la electricidad estática, la inducción electromagnética o el flujo de corriente eléctrica. Es una forma de energía tan versátil que tiene un sinnúmero de aplicaciones, por ejemplo: transporte, climatización, iluminación y computación.\citep{Elec}
+
+La electricidad se manifiesta mediante varios fenómenos y propiedades físicas:\citep{Elec}
+
+
+\begin{itemize}
+   
+
+     \item Carga eléctrica: una propiedad de algunas partículas subatómicas, que determina su interacción electromagnética. La materia eléctricamente cargada produce y es influida por los campos electromagnéticos.\citep{Elec}
+     
+     \item Corriente eléctrica: un flujo o desplazamiento de partículas cargadas eléctricamente por un material conductor. Se mide en amperios.\citep{Elec}
+     
+     \item Campo eléctrico: un tipo de campo electromagnético producido por una carga eléctrica, incluso cuando no se está moviendo. El campo eléctrico produce una fuerza en toda otra carga, menor cuanto mayor sea la distancia que separa las dos cargas. Además, las cargas en movimiento producen campos magnéticos.\citep{Elec}
+     
+     \item Potencial eléctrico: es la capacidad que tiene un campo eléctrico de realizar trabajo. Se mide en voltios.
+    Magnetismo: la corriente eléctrica produce campos magnéticos, y los campos magnéticos variables en el tiempo generan corriente eléctrica.\citep{Elec}
+
+\end{itemize}
+
+%\section{Circuito a resolver}
+
+%\begin{figure}[h!]
+ %   \centering
+   % \includegraphics{}
+  %  \begin{circuitikz}
+%\draw
+
+%(-1,0)--(-1,-1)
+%(-1,-1) to[V,l=$28v$](-1,-2) 
+% (-1,-2)--(-1,-3)
+ 
+ %(-1,-3)--(2,-3)
+ 
+% (-1,0) to[R,l=$50 \Omega $](2,0)
+ 
+ 
+% (2,-3)to[R,l=$5 \Omega$](2,0)
+ 
+% (2,0)--(4,0)
+% (2,-3)--(4,-3)
+ 
+ % (4,-3)to[R,l=$10 \Omega$](4,0)
+ 
+ 
+%;
+
+%\draw[thick,arrows=->]
+%(2.5,0)--(2.5,-1)
+%;
+ 
+%\end{circuitikz}
+ %   \caption{Circuito a resolver}
+  %  \label{fig:circuito}
+%\end{figure}
+
+%\subsection{Resultados}
+
+%Para resolver el circuito se hicieron equivalente los resistores de 5 y 10 $\Omegas$ para obtener el voltaje en esas ramas, así se pudo deducir la corriente en la rama del resistor de 50 $\Omega$ y el circuito equivalente, posterirmente se usaron las leyes de Kirchhoff para deducir los voltajes y las corrientes respectivamente.
+
+%\begin{table}[h!]
+%\centering
+
+%\begin{tabular}{|c|c|c|}
+%\hline
+%Componente & V {[}V{]} & I {[}A{]} \\ \hline
+%R 50       & 26.25     & 0.525     \\ \hline
+%R 10       & 1.75      & 0.173     \\ \hline
+%R 5        & 1.75      & 0.352     \\ \hline
+%V fuente   & 28        & 0.525     \\ \hline
+%\end{tabular}
+%\caption{Tabla de Resultados}
+%\label{tabla-resultados}
+
+%\end{table}
+
+%.\\[100cm]
+\bibliographystyle{plain}
+\bibliography{TareaEnergia.bib}
+
+
+\end{document}

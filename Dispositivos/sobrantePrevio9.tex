@@ -1,0 +1,32 @@
+\subsubsection{Voltaje de ruptura}
+
+Mientras esta configuración puede ser utilizada para generar miles de voltios a la salida, los componentes de las etapas individuales no requieren soportar toda la tensión sino solo el voltaje entre sus terminales, esto permite aumentar la cantidad de etapas según sea necesario sin aumentar los requerimientos individuales de los componentes.Lo cual es una gran ventaja en la producción de este tipo de circuitos que son de un muy gran provecho.\citep{multTensWiki}\\
+
+\subsubsection{Usos}
+
+Este circuito se utiliza para la generación del alto voltaje requerido en los tubos de rayos catódicos, tubos de rayos X, para alimentar fotomultiplicadores para detectores de rayos gamma. También se utiliza para la generación de altos voltajes para experimentos de física de alta energía.\citep{multTensWiki}\\
+
+%180 V
+
+\section{Circuito Multiplicador}
+
+
+Un Multiplicador de tensión es un circuito eléctrico que convierte tensión desde una fuente de corriente alterna a otra de corriente continua de mayor voltaje mediante etapas de diodos y condensadores.\citep{multTensWiki}\\
+
+\begin{figure}[ht!]
+    \centering
+    \includegraphics[scale=0.5]{Imagenes/Vmult.png}
+    \caption{Multiplicador de tensión con una fuente de 220 VCA.}
+    \label{fig:vmult}
+\end{figure}
+
+\subsubsection{Funcionamiento}
+
+Un multiplicador de tensión sin cargar con una impedancia se comporta como un condensador, pudiendo proporcionar transitorios de elevada corriente, lo que los hace peligrosos cuando son de alta tensión. Habitualmente se agrega una resistencia en serie con la salida para limitar este transitorio a valores seguros, tanto para el propio circuito como ante accidentes eventuales.\citep{multTensWiki}\\
+
+\begin{figure}[ht!]
+    \centering
+    \includegraphics[scale=0.125]{Imagenes/voltageMult.png}
+    \caption{Multiplicador de tensión de cuatro etapas.}
+    \label{fig:vmult2}
+\end{figure}

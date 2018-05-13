@@ -1,0 +1,246 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish.mexico]{babel}
+
+\title{Dispositivos}
+\author{Pablo Vivar Colina}
+\date{Septiembre 2017}
+
+\usepackage{natbib}
+\usepackage{graphicx}
+
+
+%Experimental
+%\usetikzlibrary{positioning}
+
+%Circuitos
+\usepackage{tikz}
+
+\usepackage[american voltages, american currents,siunitx]{circuitikz}
+
+%Plotting
+
+\usepackage{pgfplots}
+\pgfplotsset{width=10cm,compat=1.9} 
+ %\usepgfplotslibrary{external}
+%\tikzexternalize 
+
+
+\input{portada.tex} %agregar portada
+
+
+\begin{document}
+
+
+%\maketitle
+
+
+\section{Transistor de unión bipolar}
+
+El transistor de unión bipolar (del inglés bipolar junction transistor, o sus siglas BJT) es un dispositivo electrónico de estado sólido consistente en dos uniones PN muy cercanas entre sí, que permite aumentar la corriente y disminuir el voltaje, además de controlar el paso de la corriente a través de sus terminales. La denominación de bipolar se debe a que la conducción tiene lugar gracias al desplazamiento de portadores de dos polaridades (huecos positivos y electrones negativos), y son de gran utilidad en gran número de aplicaciones; pero tienen ciertos inconvenientes, entre ellos su impedancia de entrada bastante baja.\citep{TBJwiki}\\
+
+Los transistores bipolares son los transistores más conocidos y se usan generalmente en electrónica analógica aunque también en algunas aplicaciones de electrónica digital, como la tecnología TTL o BICMOS.\citep{TBJwiki}\\
+
+Un transistor de unión bipolar está formado por dos Uniones PN en un solo cristal semiconductor, separados por una región muy estrecha. De esta manera quedan formadas tres regiones:\citep{TBJwiki}\\
+
+\subsection{Principio de funcionamiento}
+
+En una configuración normal, la unión base-emisor se polariza en directa y la unión base-colector en inversa.6​ Debido a la agitación térmica los portadores de carga del emisor pueden atravesar la barrera de potencial emisor-base y llegar a la base. A su vez, prácticamente todos los portadores que llegaron son impulsados por el campo eléctrico que existe entre la base y el colector.\citep{TBJwiki}\\
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[scale=0.125]{Imagenes/TBJ.png}
+    \caption{Característica idealizada de un transistor bipolar.}
+    \label{fig:curvaTBJ}
+\end{figure}
+
+Un transistor NPN puede ser considerado como dos diodos con la región del ánodo compartida. En una operación típica, la unión base-emisor está polarizada en directa y la unión base-colector está polarizada en inversa. En un transistor NPN, por ejemplo, cuando una tensión positiva es aplicada en la unión base-emisor, el equilibrio entre los portadores generados térmicamente y el campo eléctrico repelente de la región agotada se desbalancea, permitiendo a los electrones excitados térmicamente inyectarse en la región de la base. Estos electrones "vagan" a través de la base, desde la región de alta concentración cercana al emisor hasta la región de baja concentración cercana al colector. Estos electrones en la base son llamados portadores minoritarios debido a que la base está dopada con material P, los cuales generan "huecos" como portadores mayoritarios en la base.\citep{TBJwiki}\\
+
+La región de la base en un transistor debe ser constructivamente delgada, para que los portadores puedan difundirse a través de esta en mucho menos tiempo que la vida útil del portador minoritario del semiconductor, para minimizar el porcentaje de portadores que se recombinan antes de alcanzar la unión base-colector. El espesor de la base debe ser menor al ancho de difusión de los electrones.\citep{TBJwiki}\\
+
+
+\begin{itemize}
+    \item  Emisor, que se diferencia de las otras dos por estar fuertemente dopada, comportándose como un metal. Su nombre se debe a que esta terminal funciona como emisor de portadores de carga.
+       \item Base, la intermedia, muy estrecha, que separa el emisor del colector.
+       \item Colector, de extensión mucho mayor.
+\end{itemize}
+   
+La técnica de fabricación más común es la deposición epitaxial. En su funcionamiento normal, la unión base-emisor está polarizada en directa, mientras que la base-colector en inversa. Los portadores de carga emitidos por el emisor atraviesan la base, porque es muy angosta, hay poca recombinación de portadores, y la mayoría pasa al colector. El transistor posee tres estados de operación: estado de corte, estado de saturación y estado de actividad.\citep{TBJwiki}\\
+
+
+\section{Corriente TBJ}
+
+
+En los experimentos realizados en el laboratorio se utilizó una señal de $1[kHz]$ con 5 $V_{pp}$ de amplitud. Además de que se suministró una señal senoidal en la resistencia de 10 $k \Omega$ la cual se puede apreciar en la figura \ref{fig:circuito TBJ}.\\
+
+
+\begin{figure}[ht!]
+    \centering
+    \begin{circuitikz}
+    
+\draw
+
+(-0.85,0)to[R,l=$10k\Omega$](-3,0)
+(0,0.8)to[R,l=$1k\Omega$](0,3)
+
+%tierra trans
+(0,-0.75)to (0,-1) node[ground]{}
+[R,l=$1k\Omega$](0,-3)
+
+
+(0,3)--(0,3.5)
+
+%medicion
+(0,0.75)--(2,0.75)
+
+;
+    
+    
+    \draw
+    %NPN
+    (0,0)
+node [npn,xscale=1] (npn) {} 
+(npn.collector) ;
+    
+    \node[draw] at (0,3.8) {5[V]};
+   
+
+        
+       
+    \end{circuitikz}
+    \caption{Circuito operación corriente TBJ}
+    \label{fig:circuito TBJ}
+\end{figure}
+
+En éste experiemtno se midieron:\\
+
+\begin{itemize}
+    \item $V_{in}$ = 5 [V]
+    \item $V_{sal}$= 5 [V]
+    \item Ángulo de defasamiento = 180°
+    \item Ganancia = 1    
+\end{itemize}
+
+Además de que se midió el tiempo de retardo, en este caso fué de t=0.2 [ms], como se puede apreciar en la gráfica \ref{fig:teimpoRetardo}\\
+
+
+\begin{figure}[ht!]
+    \begin{tikzpicture}
+\begin{axis}[
+    axis lines = left,
+    xlabel = $t$,
+    ylabel = {$[V]$},
+]
+
+\addplot [
+    domain=-(0.1):+(0.1), 
+    samples=100, 
+    color=blue,
+]
+{-((5/0.2)*x)+2.5};
+
+\addplot [
+    domain=-(1):-(0.1), 
+    samples=100, 
+    color=blue,
+]
+{5};
+
+\addplot [
+    domain=+(0.1):+(1), 
+    samples=100, 
+    color=blue,
+]
+{0};
+
+\end{axis}
+\end{tikzpicture}
+ \caption{Tiempo de retardo}
+    \label{fig:teimpoRetardo}
+\end{figure}
+
+\section{Voltajes de entrada y de salida}
+
+El transistor oscila entre las regiones de corte y saturación, es por eso que cambia de voltajes drásticamente, y el tiempo $t$
+es el tiempo que tarada en pasar entre regiones.\\
+
+En este experimento se midieron los voltajes de entrada y de salida con.\\
+
+\begin{table}[ht!]
+\centering
+
+\begin{tabular}{|l|c|c|}
+\hline
+Vin {[}V{]} & \multicolumn{1}{l|}{Vout {[}V{]}} & \multicolumn{1}{l|}{t {[}ms{]}} \\ \hline
+0.5         & 0                                 & 0                               \\ \hline
+1           & 2                                 & 0.0006                          \\ \hline
+1.5         & 5.5                               & 0.4                             \\ \hline
+2           & 5.5                               & 0.3                             \\ \hline
+2.5         & 5.5                               & 0.12                            \\ \hline
+3           & 5.5                               & 0.16                            \\ \hline
+3.5         & 5.5                               & 0.12                            \\ \hline
+4           & 5.5                               & 0.8                             \\ \hline
+4.5         & 5.5                               & 0.8                             \\ \hline
+5           & 5.5                               & 0.8                             \\ \hline
+\end{tabular}
+
+\caption{Registro T.B.J.}
+\label{VinVout}
+\end{table}
+
+\begin{figure}[h!]
+    \centering
+ 
+\begin{tikzpicture}
+\begin{axis}[
+    title={Cambio de Región},
+    xlabel={$V_i$[V] },
+    ylabel={$V_o$[A]},
+    xmin=0, xmax=6,
+    ymin=0, ymax=6,
+    xtick={0,2,4,6},
+    ytick={0,0.06},
+    legend pos=north west,
+    ymajorgrids=true,
+    grid style=dashed,
+]
+ 
+\addplot[
+    color=blue,
+    mark=square,
+    ]
+    coordinates {(0,3.5)(0.2,3.5)
+    (5.3,0.317)(6.3,0.317)
+    };
+    
+    
+    
+   
+ 
+\end{axis}
+\end{tikzpicture}
+    
+    \caption{T.B.J.}
+    \label{fig:grafTBJ}
+\end{figure}
+
+%Aqui va la prac
+
+
+\section{Conclusiones}
+
+En la práctica a través de los diferentes registros se comprobó el funcionamiento del transistor bipolar como interruptor ya que se pudo apreciar que éste cambia de regiones según el voltaje suministrado en sus terminales esto resulta ser de gran utilidad para aplicaciones en dónde se requiera un interruptor de stado sólido.\\
+
+%######## AQUI VA LA PRACTICA ########
+
+%mbi armiya naroda! :D
+%https://www.youtube.com/watch?v=3D5-pleHkdk
+
+
+
+
+
+\bibliographystyle{plain}
+\bibliography{referencias11.bib}
+
+\end{document}

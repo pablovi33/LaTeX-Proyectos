@@ -1,0 +1,196 @@
+\input{portada.tex} %agregar portada
+
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish.mexico]{babel}
+
+\title{Dispositivos}
+\author{Pablo Vivar Colina}
+\date{Septiembre 2017}
+
+\usepackage{natbib}
+\usepackage{graphicx}
+
+%Circuitos
+\usepackage{tikz}
+
+\usepackage[american voltages, american currents,siunitx]{circuitikz}
+
+%\maketitle
+
+\input{portada.tex} %agregar portada
+
+\begin{document}
+
+\section{Marco teórico}
+
+
+\begin{itemize}
+    \item Cobre $1.72 x 10-8 [\Omega m]$ \citep{RS}
+    \item Germanio puro  $0.60 [\Omega m]$ \citep{RS}
+\item Silicio puro $2300 [\Omega m]$ \citep{RS}
+\item  Grafeno $1 x 10-4 [\Omega m]$ \citep{Graf}
+\end{itemize}
+
+
+\subsection{Energía Eléctrica}
+
+Se denomina energía eléctrica a la forma de energía que resulta de la existencia de una diferencia de potencial entre dos puntos, lo que permite establecer una corriente eléctrica entre ambos cuando se los pone en contacto por medio de un conductor eléctrico. La energía eléctrica puede transformarse en muchas otras formas de energía, tales como la energía lumínica o luz, la energía mecánica y la energía térmica.\citep{EE}
+
+\subsection{Electricidad}
+
+La electricidad (del griego ήλεκτρον élektron, cuyo significado es ‘ámbar’) es el conjunto de fenómenos físicos relacionados con la presencia y flujo de cargas eléctricas. Se manifiesta en una gran variedad de fenómenos como los rayos, la electricidad estática, la inducción electromagnética o el flujo de corriente eléctrica. Es una forma de energía tan versátil que tiene un sinnúmero de aplicaciones, por ejemplo: transporte, climatización, iluminación y computación.\citep{Elec}
+
+La electricidad se manifiesta mediante varios fenómenos y propiedades físicas:\citep{Elec}
+
+
+\begin{itemize}
+   
+
+     \item Carga eléctrica: una propiedad de algunas partículas subatómicas, que determina su interacción electromagnética. La materia eléctricamente cargada produce y es influida por los campos electromagnéticos.\citep{Elec}
+     
+     \item Corriente eléctrica: un flujo o desplazamiento de partículas cargadas eléctricamente por un material conductor. Se mide en amperios.\citep{Elec}
+     
+     \item Campo eléctrico: un tipo de campo electromagnético producido por una carga eléctrica, incluso cuando no se está moviendo. El campo eléctrico produce una fuerza en toda otra carga, menor cuanto mayor sea la distancia que separa las dos cargas. Además, las cargas en movimiento producen campos magnéticos.\citep{Elec}
+     
+     \item Potencial eléctrico: es la capacidad que tiene un campo eléctrico de realizar trabajo. Se mide en voltios.
+    Magnetismo: la corriente eléctrica produce campos magnéticos, y los campos magnéticos variables en el tiempo generan corriente eléctrica.\citep{Elec}
+
+\end{itemize}
+
+\subsection{Error relativo y absoluto}
+
+Existen dos maneras de cuantificar el error de la medida:\citep{ErrorEx}
+
+\begin{itemize}
+    \item  Mediante el llamado error absoluto, que corresponde a la diferencia entre el valor medido $fm$ y el valor real $fr$.
+    \item Mediante el llamado error relativo, que corresponde al cociente entre el error absoluto y el valor real $fr$.\citep{ErrorEx}
+\end{itemize}
+
+   
+
+Matemáticamente tenemos las siguientes expresiones:\citep{ErrorEx}\\
+
+
+\begin{eqnarray}
+    e_{abs}= f_m − f_r\\
+    e_{rel}= \frac{f_m − f_r}{f_r} 
+\end{eqnarray}
+    \citep{ErrorEx}
+
+Es importante notar que en las anteriores expresiones el valor real fr es una cantidad desconocida, por lo que el valor exacto del error absoluto y relativo es igualmente desconocido. Afortunadamente, normalmente es posible establecer un límite superior para el error absoluto y el relativo, lo cual soluciona a efectos prácticos conocer la magnitud exacta del error cometido.\citep{ErrorEx}
+
+
+\section{Circuito Experimental}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics{}
+    \begin{circuitikz}
+\draw
+
+
+(-1,0) to[V,l=$18v$](-1,-3) 
+
+ 
+ %(-1,-3)--(2,-3)
+ 
+ (-1,0) to[R,l=$47 \Omega $](2,0)
+ 
+  (-1,-3) to[R,l=$390 \Omega $](2,-3)
+ 
+ (2,-3)to[R,l=$220 \Omega$](2,0)
+ 
+ (2,0)to[R,l=$100 \Omega$](5,0)
+ (2,-3)--(5,-3)
+ 
+  (5,-3)to[R,l=$330 \Omega$](5,0)
+ 
+ 
+;
+
+%\draw[thick,arrows=->]
+%(2.5,0)--(2.5,-1)
+%;
+ 
+\end{circuitikz}
+    \caption{Circuito a resolver}
+    \label{fig:circuito}
+\end{figure}
+
+\subsection{Valores teóricos (calculados)}
+
+Se obtuvo mediante las leyes de Kirchhof las corrientes que circulaban por los componentes (47,220,y 390) $[\Omega]$ ésta fué de 0.027 [A] y después por los componentes de (100 y 330) $[\Omega]$, que resultó ser de 0.0138 [A].\\
+
+De acuerdo con la ley de ohm se pudo completar la siguente tabla.\ref{tabla-teoricos}
+\\
+
+\begin{table}[h!]
+\centering
+
+\begin{tabular}{|c|c|}
+\hline
+Componente $[\Omega]$& V {[}V{]} \\ \hline
+47         &   1.26       \\ \hline
+100        & 1.38           \\ \hline
+220        & 5.94          \\ \hline
+330        &     4.55      \\ \hline
+390        &         10.53  \\ \hline
+$V_f$        &         17.96  \\ \hline
+\end{tabular}
+
+\caption{Voltajes Calculados}
+\label{tabla-teoricos}
+\end{table}
+
+\subsection{Resultados}
+
+%Para resolver el circuito se hicieron equivalente los resistores de 5 y 10 $\Omegas$ para obtener el voltaje en esas ramas, así se pudo deducir la corriente en la rama del resistor de 50 $\Omega$ y el circuito equivalente, posterirmente se usaron las leyes de Kirchhoff para deducir los voltajes y las corrientes respectivamente.
+
+\begin{table}[h!]
+\centering
+
+\begin{tabular}{|c|c|}
+\hline
+Componente $[\Omega]$& V {[}V{]} \\ \hline
+47         &   1.284        \\ \hline
+100        & 5.141           \\ \hline
+220        & 5.98          \\ \hline
+330        &     0.184      \\ \hline
+390        &         10.68  \\ \hline
+$V_f$        &         17.96  \\ \hline
+\end{tabular}
+
+\caption{Voltajes Experimentales}
+\label{tabla-experimentales}
+\end{table}
+
+Se midió el máximo voltaje de las fuentes independiente, y sus valores fueron.\\
+
+\begin{itemize}
+    \item $Fuente_1 30.4 [V]$ 
+    \item $Fuente_2 31.4 [V]$
+\end{itemize}
+
+Se midió el máximo voltaje de las fuentes en serie y el resultado fué 63.24 [V].\\
+
+Se midió máximo el voltaje de la fuente en paralelo y el valor fué de 31.65 [V].\\
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[scale=0.25]{Imagenes/OfficeLens.jpg}
+    \caption{Datos obtenidos}
+    \label{fig:hojaFirmada}
+\end{figure}
+
+De acuerdo con la ecuación de error experimental los resultados obtenidos estuvieron en un rango aceptable ya que su porcentaje de error no supera el 25 porciento.\\
+
+\section{Conclusiones}
+Logramos comprobar experimentalmente el cumplimiento
+
+
+%.\\[100cm]
+\bibliographystyle{plain}
+\bibliography{Referencias.bib}
+
+\end{document}

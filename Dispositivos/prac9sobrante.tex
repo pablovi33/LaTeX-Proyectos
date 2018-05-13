@@ -1,0 +1,172 @@
+\subsection{Zener polarización Inversa}
+
+En la primera parte del experimento se usó el circuito que se muestra en la figura \ref{fig:reguladorZ} , en él fue registrada la corriente con un ampermetro entre la terminal positiva de la fuente de poder y la terminal negativa del diodo Zener, además se midió el la diferencia de potencial del mismo entre sus terminales a través del osciloscopio.\\
+
+\begin{figure}[h!]
+    \centering
+    \begin{circuitikz}
+    
+    
+      \draw
+      (0,-3)--(0,-2)
+      (0,-3)--(6,-3)
+      (0,0) to [battery1,l=F](0,-2)
+      ;
+       \draw
+       (3,0)to[R,l=R](6,0)
+       (6,-3)to[zzD,l=D](6,0)
+      ;
+        \draw
+    
+        (0,0)to[ammeter](3,0);
+        
+    \end{circuitikz}
+    \caption{Regulador diodo Zener Inversa}
+    \label{fig:reguladorZ}
+\end{figure}
+
+Los resultados del experiemento con el diodo Zener en polarización inversa se pueden ver expresados en el lado izquierdo de la tabla \ref{zenerI} al mismo tiempo pueden verse reflejados en la gráfica \ref{fig:CdiodoZ}.
+\\
+
+Para los experimentos realizados con el diodo Zener se usó una corriente inicial, y popsteriormente se fue incrementando el voltaje en orden para registar el voltaje medido en el osciloscopio con respecto a los valores determinados requeridos en las tablas.\\
+
+\section{Zener polarización Directa}
+
+\begin{figure}[h!]
+    \centering
+    \begin{circuitikz}
+    
+    
+      \draw
+      (0,-3)--(0,-2)
+      (0,-3)--(6,-3)
+      (0,0) to [battery1,l=F](0,-2)
+      ;
+       \draw
+       (3,0)to[R,l=R](6,0)
+       (6,0)to[zzD,l=D](6,-3)
+      ;
+        \draw
+    
+        (0,0)to[ammeter](3,0);
+        
+    \end{circuitikz}
+    \caption{Regulador diodo Zener Directa}
+    \label{fig:reguladorZ}
+\end{figure}
+
+Los resultados expresados en el lado derecho de la tabla \ref{zenerI} pueden verse reflejados en la gráfica \ref{fig:CdiodoZ}.\\
+
+De igual forma que en el experimento anterior se utilizó un valor fijo de corriente inicial y se fue variando el voltaje para obtener los valores requeridos.\\
+
+\section{Resultados}
+
+
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{|c|c|}
+\hline
+$I_z$           & $V_z [V]$  \\ \hline
+10 {[}uA{]}  & 4   \\ \hline
+50 {[}uA{]}  & 4.2 \\ \hline
+100 {[}uA{]} & 4.6 \\ \hline
+500{[}uA{]}  & 5   \\ \hline
+1 {[}mA{]}   & 5.2 \\ \hline
+10 {[}mA{]}  & 5.4 \\ \hline
+15 {[}mA{]}  & 5.4 \\ \hline
+20 {[}mA{]}  & 5.4 \\ \hline
+25 {[}mA{]}  & 5.4 \\ \hline
+30 {[}mA{]}  & 5.6 \\ \hline
+35 {[}mA{]}  & 5.6 \\ \hline
+45 {[}mA{]}  & 5.6 \\ \hline
+55 {[}mA{]}  & 5.6 \\ \hline
+60 {[}mA{]}  & 5.6 \\ \hline
+\end{tabular}
+\begin{tabular}{|c|c|}
+\hline
+$I_z$           & $V_z [V]$  \\ \hline
+10 {[}uA{]}  & 0.6 \\ \hline
+50 {[}uA{]}  & 0.7 \\ \hline
+100 {[}uA{]} & 0.7 \\ \hline
+500{[}uA{]}  & 0.8 \\ \hline
+1 {[}mA{]}   & 0.8 \\ \hline
+10 {[}mA{]}  & 0.8 \\ \hline
+15 {[}mA{]}  & 0.8 \\ \hline
+20 {[}mA{]}  & 0.9 \\ \hline
+25 {[}mA{]}  & 0.9 \\ \hline
+30 {[}mA{]}  & 0.9 \\ \hline
+35 {[}mA{]}  & 0.9 \\ \hline
+45 {[}mA{]}  & 0.9 \\ \hline
+55 {[}mA{]}  & 0.9 \\ \hline
+60 {[}mA{]}  & 0.9 \\ \hline
+\end{tabular}
+
+\caption{Comportamiento diodo Zener}
+\label{zenerI}
+\end{table}
+
+
+En la tabla \ref{zenerI} podemos apreciar ls valores en los dos anteriores experimentos, del lado izquierdo se muestran los valores obtenidos en polarización inversa, y en el lado derecho se muestran los valores obtenidos en polarización directa, nótese que los valores de corriente requerida son los mismos.\\
+
+\begin{figure}[h!]
+    \centering
+ 
+\begin{tikzpicture}
+\begin{axis}[
+    title={Polarización},
+    xlabel={$V_z$[V] },
+    ylabel={$I_z$[A]},
+    xmin=0, xmax=6,
+    ymin=0, ymax=0.06,
+    xtick={0,2,4,6},
+    ytick={0,0.06},
+    legend pos=north west,
+    ymajorgrids=true,
+    grid style=dashed,
+]
+ 
+\addplot[
+    color=blue,
+    mark=square,
+    ]
+    coordinates {(0,0)
+    (0.6,0.00001)(0.7,0.00005)(0.7,0.0001)(0.8,0.0005)(0.8,0.001)(0.8,0.002)(0.8,0.003)(0.8,0.004),(0.8,0.005),(0.8,0.006)(0.8,0.007)(0.8,0.008)(0.8,0.009)(0.8,0.01)(0.8,0.015)(0.8,0.02)(0.8,0.025)(0.8,0.03)(0.8,0.035)(0.8,0.045)(0.8,0.055)(0.8,0.06)
+    };
+    
+    
+    \addplot[
+    color=red,
+    mark=square,
+    ]
+    coordinates {(0,0)
+    (4,0.00001)(4.2,0.00005)(4.6,0.0001)(5,0.0005)(5.2,0.001)(5.2,0.002)(5.4,0.003)(5.4,0.004),(5.4,0.005),(5.4,0.006)(5.4,0.007)(5.4,0.008)(5.4,0.009)(5.4,0.01)(5.4,0.015)(5.4,0.02)(5.4,0.025)(5.6,0.03)(5.6,0.035)(5.6,0.045)(5.6,0.055)(5.6,0.06)
+    };
+    \legend{Inversa,Directa}
+   
+ 
+\end{axis}
+\end{tikzpicture}
+    
+    \caption{Comportamiento del diodo Zener}
+    \label{fig:CdiodoZ}
+\end{figure}
+
+En la tabla se puede apreciar que se encuentran los espectros de curva de voltaje contra corriente del diodo zener en polarización directa y en polarización inversa, esto con el objetivo de poder hacer una comparación entre ellos, puede notarse también que respecto a la curva es la esperada con respecto a la curva mostrada en el marco teórico.\\
+
+\section{Discusión}
+
+En el ejercicio se logró demostrar experimentalmente el comportamiento de la gráfica del diodo Zener que se presentó en los antecedentes de la misma, como se puede apreciar en la gráfica \ref{fig:CdiodoZ} tomando como eje compartido la corriente y el voltaje suministrado.\\
+
+Ésto es de vital importancia para conocer los parámetros de diseño del diodo y su utilización como componente regulador de voltaje.\\
+
+Puede notarse también que el diodo Zener mantiene su voltaje sin importar de manera sigificativa el valor de la corriente que se le suministre, eso es de utilidad vital para su funcionamiento, ya que es lo que se busca en éste tipo de dispositivo, que es mantener los valores con parámtros determinados.\\
+
+
+
+
+
+%######## AQUI VA LA PRACTICA ########
+
+%mbi armiya naroda! :D
+%https://www.youtube.com/watch?v=3D5-pleHkdk
