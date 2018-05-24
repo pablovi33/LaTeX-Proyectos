@@ -1,0 +1,114 @@
+\documentclass[]{article}
+\usepackage[spanish.mexico]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage[a4paper]{geometry}
+
+%\usepackage{natbib}
+\usepackage{cite}
+
+
+%Grafico de barras
+\usepackage{pgfplots}
+
+
+\title{Proyecto de Optimización de Energía}
+\author{Pablo Vivar Colina}
+\date{Mayo 2018}
+
+\begin{document}
+
+\maketitle
+
+\section{Introducción}
+
+En física, energía se define como la capacidad para realizar un trabajo.1​ En tecnología y economía, \textit{energía} se refiere a un recurso natural (incluyendo a su tecnología asociada) para poder extraerla, transformarla y darle un uso industrial o económico.\cite{EnergiaWiki}\\
+
+
+
+\section{Dinámica de sistemas físicos}
+
+
+\begin{figure}[h!]
+	\begin{tabular}[]{|c|}
+		\hline
+		hola \\
+		\hline
+	\end{tabular}
+\label{tabla}
+\caption{Resultados}
+\end{figure}
+
+
+\section{Suministro de Energía
+}
+
+
+\begin{figure}[h!]
+	\centering
+	\begin{tabular}[]{|c|c|}
+		\hline
+		 Suministro & Precio (MXN)\\
+		 	\hline
+		 Básico & 0.793 \\
+		 Intermedio & 0.956 \\
+		\hline
+	\end{tabular}
+	\label{cuadro:suministros}
+	\caption{Suministros}
+	
+\end{figure}
+
+
+
+\section{Historial de consumo de energía}
+
+\begin{figure}[h!]
+	\centering
+\begin{tikzpicture}
+\begin{axis}[
+symbolic x coords={A,B,C,D,E,F,G,H,I,J,K},
+xtick=data
+]
+\addplot[ybar,fill=orange] coordinates {
+	(A,   291)
+	(B,  284)
+	(C,   323)
+	(D,323)
+	(E,339)
+	(F,306)
+	(G,254)
+	(H,282)
+	(I,302)
+	(J,264)
+	(K,272)
+};
+\end{axis}
+\end{tikzpicture}
+\caption{Consumo energía eléctrica [kWh]}
+\end{figure}
+
+\begin{figure}[h!]
+	\centering
+	\begin{tabular}[]{|c|c|c|}
+		\hline
+		Nombre & Periodo & Energía consumida [kWh]\\
+		\hline
+	I & 11/8/17-12/10/17 & 323 \\
+	
+	J & 12/10/17-11/10/17 & 284 \\
+		K & 11/12/17-12/2/18 & 291 \\
+	
+		\hline
+	\end{tabular}
+	\label{cuadro:ultimosPeriodos}
+	\caption{Últimos periodos}
+	
+\end{figure}
+
+\bibliographystyle{plain}
+\bibliography{Referencias.bib}
+%\addbibresource{Referencias.bib}
+
+\end{document}
