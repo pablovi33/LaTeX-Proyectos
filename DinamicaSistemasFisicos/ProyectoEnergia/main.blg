@@ -1,0 +1,55 @@
+This is BibTeX, Version 0.99d (TeX Live 2015/Debian)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: main.aux
+The style file: plain.bst
+Database file #1: Referencias.bib.bib
+Warning--empty publisher in EnergiaWiki
+Warning--empty year in EnergiaWiki
+Warning--empty publisher in LamparaFLuorescente
+Warning--empty year in LamparaFLuorescente
+Warning--empty publisher in LamparaIncandescente
+Warning--empty year in LamparaIncandescente
+Warning--empty publisher in LamparaLED
+Warning--empty year in LamparaLED
+You've used 4 entries,
+            2118 wiz_defined-function locations,
+            510 strings with 4201 characters,
+and the built_in function-call counts, 868 in all, are:
+= -- 64
+> -- 28
+< -- 0
++ -- 12
+- -- 8
+* -- 54
+:= -- 149
+add.period$ -- 8
+call.type$ -- 4
+change.case$ -- 12
+chr.to.int$ -- 0
+cite$ -- 12
+duplicate$ -- 48
+empty$ -- 89
+format.name$ -- 8
+if$ -- 173
+int.to.chr$ -- 0
+int.to.str$ -- 4
+missing$ -- 8
+newline$ -- 19
+num.names$ -- 8
+pop$ -- 44
+preamble$ -- 1
+purify$ -- 12
+quote$ -- 0
+skip$ -- 20
+stack$ -- 0
+substring$ -- 20
+swap$ -- 4
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 8
+warning$ -- 8
+while$ -- 8
+width$ -- 5
+write$ -- 30
+(There were 8 warnings)
