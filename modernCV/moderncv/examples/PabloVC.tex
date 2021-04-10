@@ -1,0 +1,306 @@
+%% start of file `template.tex'.
+%% Copyright 2006-2015 Xavier Danaux (xdanaux@gmail.com).
+%
+% This work may be distributed and/or modified under the
+% conditions of the LaTeX Project Public License version 1.3c,
+% available at http://www.latex-project.org/lppl/.
+
+
+
+\documentclass[11pt,a4paper,sans]{moderncv}        % possible options include font size ('10pt', '11pt' and '12pt'), paper size ('a4paper', 'letterpaper', 'a5paper', 'legalpaper', 'executivepaper' and 'landscape') and font family ('sans' and 'roman')
+
+%IDIOMA
+%\usepackage[spanish.mexico]{babel}
+
+% moderncv themes
+\moderncvstyle{casual}                             % style options are 'casual' (default), 'classic', 'banking', 'oldstyle' and 'fancy'
+\moderncvcolor{blue}                               % color options 'black', 'blue' (default), 'burgundy', 'green', 'grey', 'orange', 'purple' and 'red'
+%\renewcommand{\familydefault}{\sfdefault}         % to set the default font; use '\sfdefault' for the default sans serif font, '\rmdefault' for the default roman one, or any tex font name
+%\nopagenumbers{}                                  % uncomment to suppress automatic page numbering for CVs longer than one page
+
+% character encoding
+%\usepackage[utf8]{inputenc}                       % if you are not using xelatex ou lualatex, replace by the encoding you are using
+%\usepackage{CJKutf8}                              % if you need to use CJK to typeset your resume in Chinese, Japanese or Korean
+
+% adjust the page margins
+%ORIGINAL
+%\usepackage[scale=0.75]{geometry}
+\usepackage[scale=0.84]{geometry}
+%\setlength{\hintscolumnwidth}{3cm}                % if you want to change the width of the column with the dates
+%\setlength{\makecvtitlenamewidth}{10cm}           % for the 'classic' style, if you want to force the width allocated to your name and avoid line breaks. be careful though, the length is normally calculated to avoid any overlap with your personal info; use this at your own typographical risks...
+
+% personal data
+\name{Pablo}{Vivar Colina}
+%\title{Cúrriculum vitae}                               % optional, remove / comment the line if not wanted
+%\address{Ocaso 93}{04530}{México}% optional, remove / comment the line if not wanted; the "postcode city" and "country" arguments can be omitted or provided empty
+\phone[mobile]{55 25 25 84 29}                   % optional, remove / comment the line if not wanted; the optional "type" of the phone can be "mobile" (default), "fixed" or "fax"
+\phone[fixed]{55 28 70 42}
+%\phone[fax]{+3~(456)~789~012}
+\email{pablovc@idea161.org}                               % optional, remove / comment the line if not wanted
+\homepage{www.idea161.org}                         % optional, remove / comment the line if not wanted
+%\social[linkedin]{john.doe}                        % optional, remove / comment the line if not wanted
+%\social[twitter]{jdoe}                             % optional, remove / comment the line if not wanted
+\social[github]{pablovi33}                              % optional, remove / comment the line if not wanted
+%\extrainfo{additional information}                 % optional, remove / comment the line if not wanted
+\photo[64pt][0.4pt]{pablo}                       % optional, remove / comment the line if not wanted; '64pt' is the height the picture must be resized to, 0.4pt is the thickness of the frame around it (put it to 0pt for no frame) and 'picture' is the name of the picture file
+%\quote{Some quote}                                 % optional, remove / comment the line if not wanted
+
+% bibliography adjustements (only useful if you make citations in your resume, or print a list of publications using BibTeX)
+%   to show numerical labels in the bibliography (default is to show no labels)
+\makeatletter\renewcommand*{\bibliographyitemlabel}{\@biblabel{\arabic{enumiv}}}\makeatother
+%   to redefine the bibliography heading string ("Publications")
+%\renewcommand{\refname}{Articles}
+
+% bibliography with mutiple entries
+%\usepackage{multibib}
+%\newcites{book,misc}{{Books},{Others}}
+%----------------------------------------------------------------------------------
+%            content
+%----------------------------------------------------------------------------------
+
+\begin{document}
+	%\begin{CJK*}{UTF8}{gbsn}                          % to typeset your resume in Chinese using CJK
+	%-----       resume       ---------------------------------------------------------
+	\makecvtitle
+	
+	\section{Educación}
+	
+	%\cventry{2012--}{Ingeniería eléctrica electrónica}{Universidad Nacional Autónoma de México}{Ciudad de México}{\textit{8vo Semestre}}{Actualmente estudiando}
+	
+	\cventry{2013--}{Ingeniería eléctrica electrónica}{Universidad Nacional Autónoma de México}{Ciudad de México}{}{}
+	
+	
+	%####MUERTE A LOS MARISTAS###
+	%\cventry{2010--2012}{Bachiller}{Colegio México Bachillerato A.C.}{Ciudad de México}{\textit{Bachiller}}{Preparatoria}  % arguments 3 to 6 can be left empty
+	
+	
+	\section{Cursos}
+	
+	%\cvitem{constancia}{\emph{Edición de textos científicos con LaTeX}}
+	%\cvitem{supervisores}{M. en C. José de Jesús Huezo Casillas y M. I. Marco Tulio Mendoza Rosas}
+	%\cvitem{descripción}{Por la impartición del curso intersemestral, Facultad de Ingeniería, COPADI, Ciudad Universitaria, 1ro jul 2016}
+	
+	%\cvitem{constancia}{\emph{Openscad para el desarrollo de prototipos}}
+	%\cvitem{supervisores}{M. en C. José de Jesús Huezo Casillas y M. I. Marco Tulio Mendoza Rosas}
+	%\cvitem{descripción}{por la impartición del curso intersemestral, Facultad de Ingeniería, COPADI, Ciudad Universitaria, 13 ene 2017}
+	
+	
+	
+	
+	%\cvitem{constancia}{\emph{Modelado Matemátco}}
+	%\cvitem{supervisores}{M. en C. José de Jesús Huezo Casillas}
+	%\cvitem{descripción}{Por la asistencia y participación en el curso intersemestral, Facultad de Ingeniería, COPADI, Ciudad Universitaria, 11 ene 2013}
+	
+	\cvitem{constancia}{\emph{Diseño de sistemas mecatrónicos y PCB}}
+	%\cvitem{supervisores}{M. en C. José de Jesús Huezo Casillas}
+	\cvitem{descripción}{por la asistencia y participación en el curso intersemestral, Facultad de Ingeniería, COPADI, Ciudad Universitaria, 17 ene 2014}
+	
+	\cvitem{constancia}{\emph{Desarrollo de sistemas con microcontroladores}}
+	%\cvitem{supervisores}{M. en C. José de Jesús Huezo Casillas}
+	\cvitem{descripción}{Por la asistencia y participación en el curso intersemestral, Facultad de Ingeniería, COPADI, Ciudad Universitaria, 9 ene 2015}
+	
+	\cvitem{constancia}{\emph{Diseño de PCB con KiCAD}}
+	%\cvitem{supervisores}{M. en C. José de Jesús Huezo Casillas y M. I. Marco Tulio Mendoza Rosas}
+	\cvitem{descripción}{Por la asistencia y participación en el curso intersemestral, Facultad de Ingeniería, LIDSOL, Ciudad Universitaria, 9 jul 2019}
+	
+	%\cvitem{constancia}{\emph{Diseño 3D parametrizable con OpensCAD}}
+	%\cvitem{supervisores}{M. en C. José de Jesús Huezo Casillas y M. I. Marco Tulio Mendoza Rosas}
+	%\cvitem{descripción}{Por la impartición del curso intersemestral, Facultad de Ingeniería, COPADI, Ciudad Universitaria, 26 ene 2017}
+	
+	%####Muerte a los maristas####
+	%\section{Reconocimiento académico}
+	
+	%\cvitem{reconocimiento}{\emph{Superación 2008-2009}}
+	%\cvitem{supervisores}{Lic. Rodrigo Olvera Rico y Lic. Ma. Antonia García García}
+	%\cvitem{descripción}{Superación Académica en el Colegio Mṕexico Bacchillerato A.C. 20 feb 2007}
+	
+	\section{Concursos}
+	
+	%\cvitem{reconocimiento}{\emph{Climate Connections}}
+	%\cvitem{supervisor}{Lic. Bárbara Gómez de Navarro}
+	%\cvitem{descripción}{concurso de robótica organizado por la FLL (First Lego Leage) utilizando el kit NXT Mindstorms}
+	
+	%\cvitem{reconocimiento}{\emph{Diseña los objetos del futuro}}
+	%\cvitem{supervisor}{M. en Arq y D.I. Patricia Torres Sánchez}
+	%\cvitem{descripción}{concurso de modelismo con LEGO desarrollado en eltecnológico de Monterrey campus Santa Fe}
+	
+	
+	%\cvitem{reconocimiento}{\emph{X Concurso de diseño y construcción de modelos y prototipos experimentales}}
+	%\cvitem{supervisor}{Ing. Juan Úrsul Solanes}
+	%\cvitem{descripción}{participación en el concurso Ciudad Universitaria 14 nov 2014}
+	
+	%\cvitem{constancia}{\emph{Primer concurso de programación}}
+	%\cvitem{supervisores}{M. en C. Manuel Alcántara Juárez Dra. Ma. De Luz Gasca Soto}
+	%\cvitem{descripción}{participación en el concurso, Facultad de ciencias Ciudad Universitaria 23 oct 2015}
+	
+	%\cvitem{reconocimiento }{\emph{IX Concurso de diseño y construcción de modelos y prototipos experimentales Bicentenario del palacio de Minería}}
+	%\cvitem{supervisores}{Ing. Juan Úrsul Solanes}
+	%\cvitem{descripción}{participación en el concurso, Facultad de Ingeniería Ciudad Universitaria 15 nov 2013}
+	
+	%\cvitem{reconocimiento }{\emph{Concurso Diorama Expocoleccionistas VI}}
+	%\cvitem{supervisores}{Óscar Islas Mitzy Minerva C}
+	%\cvitem{descripción}{participación en el concurso, 7 ago 2011}
+	
+	\cvitem{Primer Lugar }{\emph{Concurso de prototipos experimentales Bicentenario del Palacio de Minería (2013)}}
+	\cvitem{proyecto}{Seguridad en trenes de alta velocidad (TAV)}
+	\cvitem{supervisor}{Ing. Juan Úrsul Solanes}
+	
+		\cvitem{Primer Lugar }{\emph{Feria de proyectos división de ingeniería eléctrica  (2019)}}
+	\cvitem{proyecto}{Grúa Cartesiana}
+	\cvitem{supervisor}{Ing. Saúl de la Rosa}
+	
+	
+	
+	%#######PRIMEROS AUXILIOS Y DEPORTES########
+	%\section{Primeros auxilios y deportes}
+	
+	%\cvitem{certificado}{\emph{Paramédico}}
+	%\cvitem{supervisores}{Maestro Rodrigo Olvera Rico y Dra. Adela Torres López}
+	%\cvitem{descripción}{Por haber Aprobado el curso impartido del 1ero al 31 de marzo 2011 con duración de 60 horas}
+	
+	%cvitem{certificado}{\emph{Primeros auxilios}}
+	%\cvitem{supervisor}{Tum Liliana Gabriela Hernández González}
+	%\cvitem{descripción}{Por haber aprobado el curso de primeros auxilios Santiago de Querétaro 31 de Julio de 2009}
+	
+	%###Date cuenta xD
+	%\cvitem{reconocimiento}{\emph{Curso de Natación}}
+	%\cvitem{supervisores}{Raúl Porta Contreras y Lic. Maximiliano Aguilar Salazar}
+	%\cvitem{descripción}{30 nov 2007}
+	
+	%\section{Experiencia}
+	%\subsection{Vocacional}
+	
+	%\cventry{2013}{Maestro de Robótica}{Plenus}{Querétaro}{}{Responsable de grupos de niños en el curso de verano plenus, el objetivo era transmitir conocimientos de robótica en menos de una semana}
+	
+	%\subsection{Mercado}
+	
+	%\cventry{2016}{Cajero}{Plenus}{Querétaro}{}{Responsable de grupos de niños en el curso de verano plenus, el objetivo era transmitir conocimientos de robótica en menos de una semana}
+	
+	%\newline{}%
+	%Logros detallados:%
+	%\begin{itemize}%
+	%\item Organizar grupos en una semana;
+	%\item Achievement 2, with sub-achievements:
+	% \begin{itemize}%
+	%\item Sub-achievement (a);
+	%\item Sub-achievement (b), with sub-sub-achievements (don't do this!);
+	% \begin{itemize}
+	%\item Sub-sub-achievement i;
+	%\item Sub-sub-achievement ii;
+	%\item Sub-sub-achievement iii;
+	%\end{itemize}
+	%\item Sub-achievement (c);
+	%\end{itemize}
+	%\item Achievement 3.
+	%\end{itemize}}
+	
+	%#####No estuviste tanto tiempo en Unam Mobile#####
+	%\cventry{2016}{Desarrollo de hardware}{Unam Mobile}{Ciudad de México}{}{Desarrollo de programa en conjunto de hardware para la implementación de aplicaciones móviles}
+	
+	
+	%##Incluir LIDSOL####3
+	
+	
+	%##### ESTA REPETIDO wey xD####
+	%\subsection{Académico}
+	%\cventry{2016}{Colaborador en curso}{COPADI (FI-UNAM)}{Ciudad de México}{}{Impartir entre los estudiantes de la facultad de ingeniería, los conocimientos básicos para el uso del entorno de edición de textos científicos con el lenguaje/plataforma LaTeX\newline{}}
+	
+	%\cventry{2017}{Instructor en curso}{COPADI (FI-UNAM)}{Ciudad de México}{}{Impartir entre los estudiantes de la facultad de ingeniería, los conocimientos básicos con el lenguaje/plataforma OpenSCAD \newline{}}
+	\section{Habilidades}
+	
+	%\cvitem{}{}
+	%\cvitem{}{}
+	
+	\cvdoubleitem{Herramientas de laboratorio}{Cautín osciloscopio, multimetro}{Conocimiento}{Electrónica analógica y digital}
+	
+	\cvdoubleitem{}{Ensamblado de prototipos}{}{Lectura de datasheets}	
+	
+	\section{Idiomas}
+	\cvitemwithcomment{Inglés}{Avanzado}{leer,escribir,entablar conversacion}
+	\cvitemwithcomment{Alemán}{Intermedio}{leer y escribir}
+	
+	
+	\section{Computación}
+	\cvdoubleitem{Dibujo}{Autocad,Openscad,Inkscape,Librecad}{PCB}{Eagle, KiCAD}
+	%\cvdoubleitem{Documentos}{Word,sintaxis LaTeX}{Presentaciones}{Power Point, sintaxis LaTeX}
+	%\cvdoubleitem{Cálculo}{Excel, GNU Octave}{Edición de video}{Pitivi, Blender}
+	\cvitem{Cálculo}{Hojas de Cálculo, Edición de código m}
+	
+	
+	
+	%###La estrella murió :(####
+	%{Primer lugar en concurso de diorama expocoleccionistas VI por modelo desmontable de la estrella de la muerte (2011)}
+	
+	%#####Reservado Ditac######
+	%\section{Intereses}
+	%\cvitem{Robótica}{Desarrollo des sistemas mecatrónicos con plataformas como Arduino y Ditac}
+	%\cvitem{Ditac}{Desarrollo de piezas para el sistema de construcción Ditac, patente en trámite}
+	%\cvitem{Lego}{Coleccionar sets de construcción}
+	
+	
+	%\cvlistdoubleitem{Item 2}{Item 5\cite{book1}}
+	%\cvlistdoubleitem{Item 3}{Item 6. Like item 3 in the single column list before, this item is particularly long to wrap over several lines.}
+	
+	%########TUS MAMADAS DE DEPORTES XD #########
+	%\section{Deportes}
+	%\cvlistitem{Natación Profesional}
+	%\cvlistitem{Ciclismo}
+	%\cvlistitem{Patineta}
+	
+	%\section{References}
+	%\begin{cvcolumns}
+	% \cvcolumn{Category 1}{\begin{itemize}\item Person 1\item Person 2\item Person 3\end{itemize}}
+	% \cvcolumn{Category 2}{Amongst others:\begin{itemize}\item Person 1, and\item Person 2\end{itemize}(more upon request)}
+	%\cvcolumn[0.5]{All the rest \& some more}{\textit{That} person, and \textbf{those} also (all available upon request).}
+	%\end{cvcolumns}
+	
+	% Publications from a BibTeX file without multibib
+	%  for numerical labels: \renewcommand{\bibliographyitemlabel}{\@biblabel{\arabic{enumiv}}}% CONSIDER MERGING WITH PREAMBLE PART
+	%  to redefine the heading string ("Publications"): \renewcommand{\refname}{Articles}
+	%IMPORTANTE____________________
+	%\nocite{*}
+	%\bibliographystyle{plain}
+	%\bibliography{publications}  
+	
+	%FIN IMPORTANTE
+	
+	% 'publications' is the name of a BibTeX file
+	
+	% Publications from a BibTeX file using the multibib package
+	%\section{Publications}
+	%\nocitebook{book1,book2}
+	%\bibliographystylebook{plain}
+	%\bibliographybook{publications}                   % 'publications' is the name of a BibTeX file
+	%\nocitemisc{misc1,misc2,misc3}
+	%\bibliographystylemisc{plain}
+	%\bibliographymisc{publications}                   % 'publications' is the name of a BibTeX file
+	%IMPOIRTANTE
+	%\clearpage__________________
+	%-----       letter       ---------------------------------------------------------
+	% recipient data
+	
+	%MUY IMPORTANTE CARTA!:::
+	%\recipient{Company Recruitment team}{Company, Inc.\\123 somestreet\\some city}
+	%\date{January 01, 1984}
+	%\opening{Dear Sir or Madam,}
+	%\closing{Yours faithfully,}
+	%\enclosure[Attached]{curriculum vit\ae{}}          % use an optional argument to use a string other than "Enclosure", or redefine \enclname
+	%\makelettertitle
+	
+	%Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ullamcorper neque sit amet lectus facilisis sed luctus nisl iaculis. Vivamus at neque arcu, sed tempor quam. Curabitur pharetra tincidunt tincidunt. Morbi volutpat feugiat mauris, quis tempor neque vehicula volutpat. Duis tristique justo vel massa fermentum accumsan. Mauris ante elit, feugiat vestibulum tempor eget, eleifend ac ipsum. Donec scelerisque lobortis ipsum eu vestibulum. Pellentesque vel massa at felis accumsan rhoncus.
+	
+	
+	
+	%Albert Einstein discovered that $e=mc^2$ in 1905.
+	
+	%\[ e=\lim_{n \to \infty} \left(1+\frac{1}{n}\right)^n \]
+	
+	%\makeletterclosing
+	
+	%\clearpage\end{CJK*}                              % if you are typesetting your resume in Chinese using CJK; the \clearpage is required for fancyhdr to work correctly with CJK, though it kills the page numbering by making \lastpage undefined
+\end{document}
+
+
+
+%% end of file `template.tex'.
+\grid

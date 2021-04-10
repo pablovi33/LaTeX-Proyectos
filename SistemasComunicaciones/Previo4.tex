@@ -1,0 +1,54 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish.mexico]{babel}
+\usepackage[american voltages, american currents,siunitx]{circuitikz}
+
+%Plotting
+
+\usepackage{pgfplots}
+\pgfplotsset{width=10cm,compat=1.9} 
+ \usepgfplotslibrary{external}
+\tikzexternalize 
+
+
+
+
+\title{Previo 4: Análisis de señales aleatorias}
+\author{Pablo Vivar Colina\\
+Grupo 13
+}
+%\date{Septiembre 2017}
+
+\usepackage{natbib}
+\usepackage{graphicx}
+
+\begin{document}
+
+\maketitle
+
+\section{Señales aleatorias}
+
+Una señal aleatoria, tiene mucha fluctuación respecto a su comportamiento. Los valores futuros de una señal aleatoria no se pueden predecir con exactitud, solo se pueden basar en los promedios de conjuntos de señales con características similares. No se pueden representar unívocamente por una función del tiempo. Cada una de las funciones que la componen se llama realización o muestra.\citep{SenialesDeterministicas}\\
+
+\section{Frecuencia cero}
+
+Teniendo en cuenta un sistema acústico, la frecuencia cero (0) es imposible de escuchar porque quiere decir que no se está presentando oscilación alguna en el sistema, por lo tanto no se presenta perturbación del medio alguno, y sin éste último fenómeno el sonido no puede existir.\\
+
+\section{Frecuencia voz y oído}
+
+ El oído humano percibe aquellos sonidos cuyas frecuencias se encuentran entre 20 y 20.000 vibraciones por segundo (frecuencias audibles). La frecuencia se mide en ciclos por segundo y se expresa en hercios (Hz). El rango de frecuencias conversacionales de la voz humana está entre 250 y 3.000 Hz, si bien algunos fonemas se encuentran situados entre los 4.000 y los 8.000 Hz.\citep{TransmisionVoz}\\
+ 
+ 
+ La voz masculina tiene un tono fundamental de entre 100 y 200 Hz, mientras que la voz femenina es más aguda, típicamente está entre 150 y 300 Hz. Las voces infantiles son aún más agudas. Sin el filtrado por resonancia que produce la cavidad buco nasal nuestras emisiones sonoras no tendrían la claridad necesaria para ser audibles. Ese proceso de filtrado es precisamente lo que permite generar los diversos formantes de cada unidad segmental del habla.\citep{TransmisionVoz}\\
+ 
+ Entonces, el rango de frecuencia de la voz es menor al del oído para que éste pueda captar sin problemas variaciones dentro del mismo, es decir el rango de frecuencias del oído contiene el rango de frecuencias de la voz para que no tenga problemas al captar éste rango entre otros rangos de frecuencias.
+ 
+
+ 
+
+
+\bibliographystyle{plain}
+\bibliography{Referencias.bib}
+
+
+\end{document}

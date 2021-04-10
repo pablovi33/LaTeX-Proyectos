@@ -1,0 +1,20 @@
+\babel@toc {spanish}{}
+\contentsline {section}{\numberline {1}Biolog\IeC {\'\i }a Elemental}{2}% 
+\contentsline {section}{\numberline {2}Los efectos biol\IeC {\'o}gicos de la radiaci\IeC {\'o}n}{4}% 
+\contentsline {subsection}{\numberline {2.1}Mecanismos de los efectos de la radiaci\IeC {\'o}n.}{5}% 
+\contentsline {section}{\numberline {3}Muerte Celular}{6}% 
+\contentsline {section}{\numberline {4}C\IeC {\'a}ncer}{9}% 
+\contentsline {subsection}{\numberline {4.1}Efectos gen\IeC {\'e}ticos}{10}% 
+\contentsline {section}{\numberline {5}Efecto de la radiaci\IeC {\'o}n en los humanos}{10}% 
+\contentsline {subsection}{\numberline {5.1}Grandes dosis agudas: efectos tempranos}{11}% 
+\contentsline {subsection}{\numberline {5.2}Grandes dosis agudas: efectos tard\IeC {\'\i }os}{11}% 
+\contentsline {subsection}{\numberline {5.3}Mutaciones}{13}% 
+\contentsline {subsection}{\numberline {5.4}Efectos degenerativos}{14}% 
+\contentsline {subsection}{\numberline {5.5}Acortamiento de la vida}{14}% 
+\contentsline {subsection}{\numberline {5.6}Dosis bajas cr\IeC {\'o}nicas}{15}% 
+\contentsline {section}{\numberline {6}La radiaci\IeC {\'o}n LET alta y baja induce de manera diferencial la normalidad Se\IeC {\~n}ales de da\IeC {\~n}o tisular}{15}% 
+\contentsline {subsection}{\numberline {6.1}Prop\IeC {\'o}sito}{15}% 
+\contentsline {subsection}{\numberline {6.2}M\IeC {\'e}todos y materiales}{16}% 
+\contentsline {subsection}{\numberline {6.3}Resultados}{16}% 
+\contentsline {subsection}{\numberline {6.4}Conclusiones}{16}% 
+\contentsline {section}{\numberline {7}Estad\IeC {\'\i }sticas del da\IeC {\~n}o del cancer en M\IeC {\'e}xico}{16}% 

@@ -1,0 +1,160 @@
+\documentclass[]{article}
+\usepackage[spanish.mexico]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+%\usepackage{lmodern}
+\usepackage[a4paper]{geometry}
+
+%Plotting
+
+\usepackage{pgfplots}
+\pgfplotsset{width=10cm,compat=1.9} 
+%\usepgfplotslibrary{external}
+%\tikzexternalize 
+
+%Graficos e imagenes
+\usepackage{graphicx}
+%\graphicspath{ Imagenes/ }
+
+\usepackage{natbib}
+%\usepackage{cite}
+
+\usepackage{subcaption}
+
+%Grafico de barras
+%\usepackage{pgfplots}
+
+
+\usepackage{tikz}
+\usepackage[american voltages, american currents,siunitx]{circuitikz}
+
+\title{Apuntes Nuclear}
+\author{Pablo Vivar Colina}
+%\date{Mayo 2018}
+
+
+\begin{document}
+	
+%\input{portada.tex} %agregar portada
+
+\maketitle
+
+%\tableofcontents  % Write out the Table of Contents
+
+%\listoffigures  % Write out the List of Figures
+
+Prueba de cambios y compilqacion
+
+\section{Energía de ligadura}
+
+Ionización de un electrón de un átomo
+
+\begin{equation}
+  Es=[M_n+M(^{A-1}Z)-M(^AZ)]931MeV
+\end{equation}
+
+$Es$ es la suficiente para remover el último neutrón del núcleo sin proveerle energía cinética alguna. Si el proceso fuera al revés, y un neutrón sin energía cinética es absorbido por el núcleo, la energía $E$ es liberada.\\
+
+\begin{equation}
+  m_0 n+mC^{12}+mC^{13}
+\end{equation}
+
+\begin{equation}
+  (1.008664923+12-13.003354838)*931.5MeV=4.946344178MeV
+\end{equation}
+
+\subsection{Ejercicio}
+
+El tritio $(^3H)$ puede producirse a través de la absorción de neutrones de baja energía por el Deuterio $(^2H)$, la reacción es:\\
+
+\begin{equation}
+  ^2H+n->^3H+ \gamma
+\end{equation}
+
+Donde los rayos gamma tienen una energía de 6.250 MeV.\\
+
+\begin{enumerate}
+	\item Muestre que la energía en retroceso del núcleo de $^3H$ es aprox 7 kEV
+	\item Cual es el valor Q de la reacción
+	\item Calcule la energía de separación del último neutrón del Tritio
+	\item Utilizando la energía de ligadura del $^2H$ como 2.23 MeV y el resueltro del inciso 3, calcule la energía de ligadura total del $^3H$ 
+\end{enumerate}
+
+\begin{equation}
+Q=931.5*(3.016029310-(2.014001778+1.008664923))=6.27438913MeV
+\end{equation}
+
+Se sabe que la energía de ligadura del Deuterio es de 2.23MeV.\\
+
+\begin{equation}
+2.23+6.25=8.48 MeV
+\end{equation}
+
+Debemos notar que los núcleos que contienen 2,6,8,14,20,28,50,82 o 126 neutrones o protones son especialmente estables.\\
+
+
+
+\section{Equivalencias de unidades}
+
+\begin{equation}
+   1ev=1.60219x10^{-19} [J]
+\end{equation}
+
+\begin{equation}
+   1uma=931.5meV
+\end{equation}
+
+
+\section{Partículas}
+
+\subsection{Masa del Hidrógeno (proton y electrón)}
+
+masa del Hidrógeno  1.007825032.\\
+
+\section{Reactor HTGMR}
+
+GT-HMR.\\
+
+reactor fr turbina de gas.\\
+
+reactor modular de helio de turbina de gas, minimiza el uso de tuberías para su refrigeración
+la zona activa nunca puede fundirse, debido a la termodinamica y a los materiales con los que se construye.\\
+
+Buques centrales nucleares móviles.\\
+
+akademik lomolosov.\\
+
+KLT40-S 35 MW de electricidad.\\
+
+htgmr combustible en esferas recubrimiento de grafíto pirolitica esferas pequeñas
+pvmr cama de esferas ambos de éstos reactores usan gas como refrigerante
+el grafito funcikna como moderaqdor del combustible.\\
+
+usar agua solo permite elevar la temperatura entre 200 y 300 grados C.\\
+
+usar gas permite utilizar mayores temperaturas alrededor de 1000 grados o 11000
+esto permite tener una mejor eficiencia.\\
+
+velocidad de reactores de neutrones rápidos $14 000 000  \frac{m}{s}$.\\
+
+\section{Reservas Uranio}
+
+Reservas Razonablemente Aseguradas (RRA) 80 USD por kilo de uranio.\\
+
+\section{Sistemas de Seguridad}
+
+ECCS Sistemas de nefriamiento del núcleo.\\
+Accidente de base de diseño, ruptura de tubo de bomba de recirculación.\\
+grosor de la vasija 16 cm en ABWR.\\
+en PWR en 24cm de ancho por mayor presion.\\
+
+
+
+%\section{Referencias}
+
+%\bibliographystyle{plain}
+%\bibliography{Referencias.bib}
+
+
+
+\end{document}

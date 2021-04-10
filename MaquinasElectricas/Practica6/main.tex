@@ -1,0 +1,136 @@
+\documentclass[]{article}
+\usepackage[spanish.mexico]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+%\usepackageB.\\{lmodern}
+\usepackage[a4paper]{geometry}
+
+%\usepackage{natbib}
+\usepackage{cite}
+
+
+%Grafico de barras
+\usepackage{pgfplots}
+
+%Graficos e imagenes
+\usepackage{graphicx}
+\usepackage{subcaption}
+
+%circuitos
+\usepackage{tikz}
+\usepackage[american voltages, american currents,siunitx]{circuitikz}
+
+%Plotting
+
+\usepackage{pgfplots}
+\pgfplotsset{width=10cm,compat=1.9} 
+
+
+%\title{Proyecto de Optimización de Energía}
+%\author{Pablo Vivar Colina}
+%\date{Mayo 2018}
+
+%agregar portada
+
+\begin{document}
+	
+	\input{portada.tex} 
+	
+
+	%\maketitle
+	
+	%\tableofcontents  % Write out the Table of Contents
+	
+	%\listoffigures  % Write out the List of Figures
+		
+	\section{Introducción}
+	
+	\subsection{Histéresis magnética}
+
+En física se encuentra, por ejemplo, histéresis magnética si al magnetizar un ferromagneto éste mantiene la señal magnética tras retirar el campo magnético que la ha inducido. También se puede encontrar el fenómeno en otros comportamientos electromagnéticos, o los elásticos.\\
+
+[...]\\
+
+En electrotecnia se define la histéresis magnética como el retraso de la inducción magnética respecto al campo magnético que lo acciona.\\
+
+Se produce histéresis al someter al núcleo o a la sustancia ferromagnética a un campo magnético alterno, los imanes (o dipolos) elementales giran para orientarse según el sentido del campo magnético. Al decrecer el campo, la mayoría de los imanes elementales recuperan su posición inicial, sin embargo, otros no llegan a alcanzarla debido a los rozamientos moleculares conservando en mayor o menor grado parte de su orientación forzada, haciendo que persista un magnetismo remanente que manifieste aún un cierto nivel de inducción magnética.\\
+
+Las pérdidas por histéresis representan una pérdida de energía que se manifiesta en forma de calor en los núcleos magnéticos y esto hace que se reduzca el rendimiento del dispositivo. Con el fin de reducir al máximo estas pérdidas, los núcleos se construyen de materiales magnéticos de características especiales, como por ejemplo acero al silicio. Por ejemplo, para la fabricación de imanes permanentes se eligen materiales que posean un campo coercitivo lo más grande posible.\\
+
+La pérdida de potencia es directamente proporcional al área de la curva de histéresis.\cite{WikiHisteresis} \\
+
+		
+	\section{Objetivos}
+	
+  Compare las pérdidas por histéresis, que en los casos reales no es posible reducir su área a cero, circulación de corrientes parásitas que no es posible eliminar.\\
+  
+  Las pérdidas magnéticas se miden prácticamente, excitando el trasformador en cualquier devanado y el otro en circuito abierto, incluyendo los siguientes instrumentos:\\
+  
+  \begin{itemize}
+  	\item   Un frecuencímetro
+  	\item Uno o tres amperímetros
+  	\item Uno dos o tres wattímetros
+  	\item Voltímetro de valor eficaz, voltímetro de tensión media.
+  \end{itemize}
+
+    
+	\section{Resultados}
+	
+	\begin{figure}[h!]
+		\centering
+		\begin{circuitikz}
+			
+			\draw
+			
+			%Generador de funciones
+			
+			(0,0)to[vco,l=$V$](0,2)
+			
+			%(-6,0.5) to   (-6,-0.5) node[ground]{}
+			%(-6,0.5)--(-5,0.5)
+			%(0,0)to[vco,l=$V_1$](2,0)
+			%(0,0)--(0,-0.5)
+			%(2,0)--(2,-0.5)
+			
+			%(2,-1) node {$H_2$}
+			%(0,-1) node {$H_1$}
+			
+			
+			%(2,-0.5)--(3,-0.5)
+			%(3,-0.5) to[voltmeter,l=$V_m$](3,-2.5) 
+			
+			%(5,-1.5) node {$110 [V]$}
+			
+			%(0,-0.5)--(-1,-0.5)
+			%(-1,-0.5)--(-1,-2.5)
+			
+			%(-1,-3) node {$X_1$}
+			%(3,-3) node {$X_2$}
+			
+			
+			
+			
+			;
+			
+		\end{circuitikz}
+		\caption{Prueba de descarga inductiva}
+		\label{fig:PruebaDescargaInductiva}
+	\end{figure}
+    
+	
+	\section{Conclusiones}
+	
+	El objetivo de la práctica se cumplió porque logramos verificar de manera presencial el desfasamiento fasorial que se producen entre las conexiones delta y estrela que pueden presentar los transformadores.
+
+	\section{Referencias}
+	
+
+	\bibliographystyle{plain}
+    \bibliography{Referencias}
+    
+
+
+	
+	
+\end{document}
+

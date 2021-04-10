@@ -1,0 +1,234 @@
+\documentclass[]{article}
+\usepackage[spanish.mexico]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+%\usepackage{lmodern}
+\usepackage[a4paper]{geometry}
+
+%Graficos e imagenes
+\usepackage{graphicx}
+%\graphicspath{ Imagenes/ }
+
+\usepackage{cite}
+
+%Grafico de barras
+%\usepackage{pgfplots}
+
+
+\usepackage{tikz}
+\usepackage[american voltages, american currents,siunitx]{circuitikz}
+
+%\title{Proyecto de Optimización de Energía}
+%\author{Pablo Vivar Colina}
+%\date{Mayo 2018}
+
+
+
+\begin{document}
+	
+\input{portada.tex} %agregar portada
+
+%\maketitle
+
+\tableofcontents  % Write out the Table of Contents
+
+%\listoffigures  % Write out the List of Figures
+
+\section{Resumen}
+
+\section{Introducción}
+
+
+\subsection{NI ELVIS}
+
+Para crear una aplicación completa de NI ELVIS, explore otras soluciones de laboratorio para NI ELVIS.\\
+
+Proporciona una experiencia de aprendizaje basada en proyectos, usando medidas en línea y diseño práctico y embebido.\\
+
+El NI Educational Laboratory Virtual Instrumentation Suite (NI ELVIS) es un dispositivo modular de laboratorio educativo de ingeniería desarrollado específicamente para la academia. Con este enfoque práctico, los profesores pueden ayudar a los estudiantes a aprender habilidades de ingeniería prácticas y experimentales. NI ELVIS incluye un osciloscopio, multímetro digital, generador de funciones, fuente de alimentación variable, analizador de Bode y otros instrumentos comunes de laboratorio. Puede conectar una PC al NI ELVIS usando USB y desarrollar circuitos en su protoboard desmontable.\cite{NationalInstruments2018}\\
+
+
+\section{Objetivos}
+
+	\begin{itemize}
+			\item Utilizar la herramientas de National Instruments para verificar las ecuaciones de función de transferencia
+	\end{itemize}
+
+
+\section{Materiales y métodos}
+
+	\begin{itemize}
+		\item NI Elvis
+		\item Computadora con Suite de herramientas Texas Instruments
+	\end{itemize}
+	
+\section{Resultados}
+
+
+\begin{table}[h!]
+	\begin{tabular}{|c|c|c|c|}
+		\hline
+		Lecturas cada 20 segundos. & Temperatura $[^oC]$ (Tambiente = $22[^oC]$) & SST V & Voltaje de error \\ \hline
+		1                          & 23                                & 1.278 & -3.12            \\ \hline
+		2                          & 24                                & 1.311 & -3.12            \\ \hline
+		3                          & 27                                & 1.456 & -3.12            \\ \hline
+		4                          & 32                                & 1.610 & -3.12            \\ \hline
+		5                          & 38                                & 1.896 & -3.12            \\ \hline
+		6                          & 43                                & 2.121 & -3.12            \\ \hline
+		7                          & 48                                & 2.425 & -3.12            \\ \hline
+		8                          & 53                                & 2.798 & -3.12            \\ \hline
+		9                          & 58                                & 3.102 & -3.12            \\ \hline
+		10                         & 64                                & 3.201 & -3.12            \\ \hline
+		11                         & 69                                & 3.535 & -3.12            \\ \hline
+		12                         & 73                                & 3.644 & -3.12            \\ \hline
+		13                         & 78                                & 3.958 & -3.12            \\ \hline
+		14                         & 80                                & 4.165 & -3.12            \\ \hline
+	\end{tabular}
+\end{table}
+
+%AQUI VAMOS
+
+Se usa el circuito operacional con realimentacion negativa.\\
+
+\begin{itemize}
+	
+	\item 2->Entrada Inversora
+	\item 3->Entrada no inversora
+	\item 4->Fuente -10[V]
+	\item 5->Vacío
+	\item 6->Salida
+	\item 7->Fuente +10[V]
+\end{itemize}
+
+\begin{equation}
+  \frac{1.42}{s^2+2.42s+1.42}
+\end{equation}
+
+Función de transferencia
+
+
+
+\begin{table}[h!]
+	\centering
+	\begin{tabular}{|c|c|c|}
+		\hline
+		Presión {[}bar{]} & Ventrada {[}V{]} & Vsalida {[}V{]} \\ \hline
+		0                 & 0                & 0               \\ \hline
+		0.2               & 0.764            & 0.888           \\ \hline
+		0.4               & 1.373            & 1.513           \\ \hline
+		0.6               & 1.787            & 1.935           \\ \hline
+		0.8               & 2.245            & 2.399           \\ \hline
+		1                 & 3.577            & 3.75            \\ \hline
+		1.2               & 4.23             & 4.409           \\ \hline
+		1.4               & 4.833            & 5.018           \\ \hline
+		1.6               & 5.966            & 5.1966          \\ \hline
+		1.8               & 7.14             & 7.35            \\ \hline
+		2                 & 7.35             & 7.57            \\ \hline
+	\end{tabular}
+	\caption{Resulatados Presión}
+	\label{tablaPresion}
+\end{table}
+
+
+\begin{table}[h!]
+	\centering
+	\begin{tabular}{|c|c|c|}
+		\hline
+		kc   & Ti    & Td   \\ \hline
+		1.67 & 0.355 & 0.83 \\ \hline
+		1.67 & 1     & 0.5  \\ \hline
+		1.67 & 3     & 1    \\ \hline
+		1.67 & 4     & 1.5  \\ \hline
+		1.67 & 5     & 2    \\ \hline
+	\end{tabular}
+	\caption{PID}
+	\label{experimentoPID}
+\end{table}
+
+
+%AQUI VAMOS
+
+\begin{figure}[h!]
+	\centering
+	\begin{circuitikz}
+		
+		\draw
+		
+		%Generador de funciones
+		
+		(-6,0.5) to   (-6,-0.5) node[ground]{}
+		(-6,0.5)--(-5,0.5)
+		(-5,0.5)to[vco,l=$G$](-4,0.5)
+		
+		
+		%resistencia1
+		(-1,0.5)to[R,l=$R_1$](-4,0.5)
+				
+			%resistencia5
+		(-1.75,0.5)--(-1.75,-2.5)
+		(-1.75,-2.5)to[R,l=$R_5$](5,-2.5)
+		(5,-2.5)--(5,-0.5)
+		
+	
+	    (1,1.5)--(1.5,1.5)
+	     (2,1.5) node {$V_S$}
+	
+		%Resistencia2
+		(-1,0.5)--(-1,1.5)
+		(-1,1.5)to[R,l=$R_2$](1,1.5)
+		(1,1.5)--(1,0)
+	
+	(0,0) node[op amp] (opamp1) {741}
+	%tierra a no invesora
+	(-1.25,-0.5)  to  (-1.25,-1) node[ground]{}
+	
+	%Resistencia 3 
+	(1,0)to[R,l=$R_3$](3,0)
+	
+	%Resistencia4
+	(3,0)--(3,1)
+	(3,1)to[R,l=$R_4$](5,1)
+	(5,1)--(5,-0.5)
+	
+	(4,-0.5) node[op amp] (opamp1) {741}
+		%tierra a no invesora(-1,-3) node {$X_1$}
+		(2.75,-1)  to  (2.75,-1.5) node[ground]{}
+		
+		(5.5,-0.5) node {$V_X$}
+		;
+
+	\end{circuitikz}
+	\caption{Circuito de Amplificadores operacionales}
+	\label{fig:OpAmpCircuito}
+\end{figure}
+
+En la figura \ref{fig:OpAmpCircuito} se puede pareciar el circuito que se ocupó en la experimentación.\\
+
+
+En la figura \ref{fig:primerCircuito} se puede apreciar la configuración del generador de funciones el cual genera una señal senoidal de 100 [Hz] y con 0.25 [Vpp].\\
+
+
+
+En la figura \ref{fig:OpAmpCircuito} se aprecia la respuesta del circuito mostrado anteriormente.\\
+
+
+
+
+
+
+
+\section{Análisis de Resultados}
+
+
+
+\section{Conclusiones}
+
+
+\section{Referencias}
+
+\bibliographystyle{plain}
+\bibliography{Referencias.bib}
+
+
+
+\end{document}

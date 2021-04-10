@@ -1,0 +1,328 @@
+\documentclass[]{article}
+\usepackage[spanish.mexico]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+%\usepackage{lmodern}
+\usepackage[a4paper]{geometry}
+
+%DIAGRAMAS
+\usepackage{smartdiagram}
+\usesmartdiagramlibrary{additions}
+%ARBOLES
+%\usetikzlibrary{trees}
+
+%Plotting
+
+\usepackage{pgfplots}
+\pgfplotsset{width=10cm,compat=1.9} 
+%\usepgfplotslibrary{external}
+%\tikzexternalize 
+
+%Graficos e imagenes
+\usepackage{graphicx}
+%\graphicspath{ Imagenes/ }
+\usetikzlibrary{arrows}
+
+\usepackage{natbib}
+\usepackage{cite}
+
+\usepackage{subcaption}
+
+%Grafico de barras
+%\usepackage{pgfplots}
+%Arrreglos
+\usepackage{array}
+
+\usepackage{tikz}
+\usepackage[american voltages, american currents,siunitx]{circuitikz}
+
+\title{Tarea Protección Radiológica}
+\author{Pablo Vivar Colina}
+%Comentar para obtener fecha de HOYs
+%\date{Octubre 2019}
+
+
+\begin{document}
+	
+%\input{portada.tex} %agregar portada
+
+\maketitle
+
+%\tableofcontents  % Write out the Table of Contents
+
+%\listoffigures  % Write out the List of Figures
+
+%#Puntos cubiertos en el proyecto
+
+\section{Radiaciones alpha, y beta son:}
+
+a) partículas positivas\\
+\textbf{b) partículas cargadas}\\
+c) radiación electromagnética\\
+
+\section{Ejemplos de actividades o situaciones en las que se puede presentar exposición a la radiación ($\alpha$,$\beta$,$\gamma$)}
+
+%tipo interna y dos de tipo externa.
+%3.- De las radiaciones alfa, beta y gamma
+
+La radiación tipo interna se caracteriza por la a radiación emitida por los radionúclidos absorbidos
+por el cuerpo, un ejemplo de esta seria el caso de Marie Curie, que dada a la exposición a
+materiales radiactivos se le diagnóstico anemia anaplastia, lo que implica un número reducido de
+células sanguíneas, por otro lado se tiene que la radiación tipo externa es aquella que incide en el
+mismo desde el exterior, de manera que se ejemplifica con las quemaduras de sol dada la
+exposición de rayos ultravioleta y la sobre exposición a los rayos x tienen los mismo efectos por
+no mencionar que también provoca caída de cabello.\\
+
+
+\section{De las radiaciones alfa, beta y gamma ¿cuál es la que menos fácil se detiene y cuál es la más ionizante?}
+
+De las radiaciones la más ionizante es la gamma, seguido de las betas, y por último las partículas alfa.\\
+
+
+\section{Si tenemos 1000 átomos de Rn-222 el cual tiene una vida media de 3.8 días}
+
+¿Cuántos días tendrán que
+pasar para que ya nada más se tengan 250 átomos de Rn-222? ¿Qué radioisótopo se está formando si el
+decaimiento es tipo alfa?\\
+
+Tomando en cuenta la ecuación de la vida media tenemos:\\
+
+\begin{equation}
+  T^{\frac{1}{2}}=\frac{ln(2)}{\lambda}
+  \label{lambda}
+\end{equation}
+
+Considerendo el número de átomos debido a la constante de radiactividad:\\
+
+\begin{equation}
+ n=n_0e^{-\lambda t}
+ \label{atomos}
+\end{equation}
+
+Despejando $\lambda$ de la ecuación \ref{lambda}:\\
+
+\begin{equation}
+  \lambda=\frac{ln(2)}{T^{\frac{1}{2}}}
+  \label{lambdaDesp}
+\end{equation}
+
+Sustituyendo la ecuación \ref{lambdaDesp} en \ref{atomos}:\\
+
+\begin{equation}
+ n=n_0e^{- \frac{ln(2)}{T^{\frac{1}{2}}} t}
+ \label{lambSus}
+\end{equation}
+
+Despejando $t$ de la ecuación \ref{lambSus} y aplicando leyes de los logaritmos tenemos:\\
+
+\begin{equation}
+ln(n)=ln(n_0e^{- \frac{ln(2)}{T^{\frac{1}{2}}} t})
+%\label{lambSus}
+\end{equation}
+
+
+\begin{equation}
+ln(n)=ln(n_0)+ln(e^{- \frac{ln(2)}{T^{\frac{1}{2}}} t})
+%\label{lambSus}
+\end{equation}
+
+\begin{equation}
+ln(n)=ln(n_0)- \frac{ln(2)}{T^{\frac{1}{2}}}t ln(e)
+%\label{lambSus}
+\end{equation}
+
+\begin{equation}
+-\frac{T^{\frac{1}{2}}(ln(n)-ln(n_0))}{ln(2)}=t
+%\label{lambSus}
+\end{equation}
+
+
+\begin{equation}
+-\frac{T^{\frac{1}{2}}(ln(\frac{n}{n_0}))}{ln(2)}=t
+\label{tiempo}
+\end{equation}
+
+Sustituyendo los valores del ejercicio en \ref{tiempo} obtenemos:\\
+
+
+\begin{equation}
+-\frac{\sqrt{3.8*365*24*60*60}*(ln(\frac{250}{1000}))}{ln(2)}=21893.99918[s]
+\label{tiempoSegundos}
+\end{equation}
+
+Del resultado de \ref{tiempoSegundos} lo convertimos en días obteniendo:\\
+
+\begin{equation}
+ t=\frac{21893.99918}{86400}=0.2534 [dias] 
+\end{equation}
+
+
+
+
+
+
+
+\section{Balancea las siguientes ecuaciones nucleares:}
+
+\begin{equation}
+   _{92}U^{238} \to X + _{90}Th^{234}
+   \label{Ur}
+\end{equation}
+
+En el lado derecho de la ecuación \ref{Ur} podemos notar que el uranio perdió dos unidades en $Z$ y 4 unidades en $A$ por lo que podemos deducir que $X$ es una partícula $\alpha$ $_2^4He$.\\
+
+\begin{equation}
+   _{92}U^{238} \to _2^4He + _{90}Th^{234}
+   \label{Ur2}
+\end{equation}
+
+Resultando en la ecuación \ref{Ur2}.\\
+
+\begin{equation}
+   X \to \beta + _{84}Po^{210}   
+   \label{Po}
+\end{equation}
+
+En el lado izquierdo de la ecuación podemos considerar a $X$ un elemento generador de decaimiento por partícula beta negativa por lo que resultaría un elemento $_{83}^{210}X$ 
+
+\begin{equation}
+     _{83}^{210}Bi \to \beta^- + _{84}Po^{210}+p^+ +\bar{\nu_e}   
+  \label{Po2}
+\end{equation}
+
+En la ecuación \ref{Po2} podemos notar que el elemento formado resulta ser $_{83}^{210}Bi$ y también se tiene que considerar la generación de un protón y un antineutrino.\\
+
+\begin{equation}
+   _{95}Am^{241} \to X+ _2He^4
+   \label{Am}
+\end{equation}
+
+En el lado derecho de la ecuación podemos notar que $X$ se trata de $_{93}X^{237}$.\\
+
+\begin{equation}
+_{95}Am^{241} \to _{93}Np^{237}+ _2He^4
+\label{Am2}
+\end{equation}
+
+Podemos notar en la ecuación \ref{Am2} que el elemento $_{93}Np^{237}$ Neptunio
+
+\begin{equation}
+   _{53}I^{131} \to X + _{-1}e^0
+   \label{In}
+\end{equation}
+
+En la ecuación \ref{In} podemos notar un $X$ elemento que por decaimiento de partícula $\beta^-$ deducimos que es $_{52}Te^{131}$ Telurio.\\
+
+
+\begin{equation}
+_{53}I^{131} \to _{52}Te^{131} + _{-1}e^0+p^+ +\bar{\nu_e}
+\label{In2}
+\end{equation}
+
+Por lo que resulta la ecuación \ref{In2}, también podemos notar que el elemento formado resulta ser $_{83}^{210}Bi$ y también se tiene que considerar la generación de un protón y un antineutrino.\\
+
+\begin{equation}
+  _{43}Tc^{99} \to X + \gamma
+  \label{Tc}
+\end{equation}
+
+En la ecuación \ref{Tc} podemos notar que el elemento $X$ resulta ser $_{43}Tc^{100}$, por la energía de ligadura.\\
+
+\begin{equation}
+n + _{43}Tc^{99} \to _{43}Tc^{100} + \gamma
+\label{Tc1}
+\end{equation}
+
+ \section{El roentgen (R) es la unidad de exposición a la radiación}
+
+Cuantifica la
+habilidad de ionización de los rayos gamma y X en el aire.\\
+
+\section{Si la dosis absorbida se mide en J/kg= Gy, ¿en qué se mide la razón de dosis absorbida?}
+En Sv dependiendo del factor de calidad.\\ 
+
+\begin{equation}
+1Sv=1G*Q. 
+\end{equation}
+
+\section{Si una persona absorbe una dosis de 5 mG y}
+
+¿Cuál es la dosis equivalente recibida por
+la persona? para los siguientes tipos de radiación:\\
+
+\begin{itemize}
+	\item Rayos X
+	\item Rayos $\gamma$
+\end{itemize}
+
+
+La dosis equivalente se calcula como:
+
+\begin{equation}
+E=\sum w_r D T
+\end{equation}
+
+\section{Calcular el tiempo en horas al año que puede permanecer una persona en una zona}
+
+	En dónde el trabajo en la que la razón de dosis es de 0.1 mSv/hr y el límite de dosis anual no debe
+superar 20 mSv (límite promedio en 5 años consecutivos).\\
+
+Sabiendo que el límite en un año son de 20m Sv entonces dividimos entre 0.1 mSv, lo que
+equivale a 200 hr, este es el tiempo en que la persona puede estar en la zona de trabajo sin que
+rebase el límite.\\
+
+\section{Si en algún accidente radiológico hipotético, una población de 2000 personas se expone a la radiación}
+De tal manera que a los 30 minutos 1000 personas recibieron 0.02 Sv y las otras mil reciben 0.03 Sv de dosis
+equivalente. Cuál es la dosis total equivalente de la población.
+
+
+\section{Da dos ejemplos de efectos biológicos de la radiación tipo no estocásticos y dos estocásticos}
+
+El cáncer y las mutaciones genéticas son ejemplos de Efectos estocásticos.\\
+
+Efectos no estocásticos o determinísticos: exposiciones de 600 a 1, 000 rads que producirán vómitos en 1 hora. Cambios sanguíneos severos, hemorragia, infección y pérdida de cabello. Del 80 $\%$ al 1 00$\%$ de las personas expuestas sucumbirán en 2 meses; los que sobrevivan serán convalecientes durante un largo período.                                                                                                                                                                                                                                   
+
+\section{¿Cuál es la Dosis Efectiva de una persona que absorbe en pulmón una dosis de 100}
+
+mGy de radiación con neutrones de de 50 Kev?
+
+El factor de ponderación por tejido en pulmón es $wT$ = 0.12.\\
+\begin{equation}
+  Dt=\frac{50 ke V}{550}=90.9 [\frac{J}{g}] 
+\end{equation}
+
+Para la doosis efectiva.\\
+
+\begin{equation}
+E=0.12*90.9=10.9 [\frac{J}{g}]
+\end{equation}
+
+\section{¿Cuál es el objetivo de establecer límites (recomendados por el ICRP) de dosis al POE?}
+
+Realizar un sistema de prevención y control de riesgos estocásticos sobre la base de los conocimientos actuales de la ciencia de las exposiciones y los efectos de las radiaciones, así como de los juicios de valor. Estos juicios de valor tienen en cuenta las expectativas de la sociedad, la ética y la experiencia adquirida en la aplicación del sistema.
+
+\section{Planes Especiales de Emergencia Radiológica Exterior (PEERE)}
+
+El nivel de respuesta exterior se plasma en los siguientes planes:\\
+
+Los Planes Especiales de las comunidades autónomas, que incluyen los planes especiales de actuación municipal.
+El Plan Estatal de Protección Civil ante el riesgo radiológico.\\
+
+Estos planes especiales no tienen un ámbito de aplicación concreto en torno a la instalación donde existen actividades con riesgo radiológico, sino que son planes territoriales con la especificidad de contener medidas para afrontar las emergencias radiológicas que se produzcan en esos territorios.\\
+
+En ellos se establecen cuatro situaciones de emergencia en función de las consecuencias producidas o previsibles y del nivel de responsabilidad en la toma de decisiones. Las zonas de planificación y las medidas de protección urgentes y de larga duración se establecen en la Directriz Básica de Riesgos Radiológicos (DBRR) y se recogen en los respectivos planes autonómicos.\\
+
+
+\section{Los Planes de Emergencia Interior (PEI)}
+
+ Están regulados por la normativa sobre instalaciones nucleares y radiactivas y responden a la obligación de autoprotección corporativa definida en la normativa sobre protección civil, por lo que son responsabilidad del titular de la instalación.\\
+
+Cada central nuclear tiene un PEI específico que detalla las actuaciones, medidas y responsabilidades de preparación y respuesta a las condiciones del accidente, con el objeto de mitigar sus consecuencias, proteger al personal de la instalación y notificar de forma inmediata a las autoridades competentes, incluyendo la evaluación inicial de las consecuencias potenciales de la emergencia. Además, los PEI establecen las actuaciones previstas por el titular para prestar su ayuda en las intervenciones de protección en el exterior de la instalación, conforme estable el Plan Básico  de Emergencia Nuclear.\\
+
+%\section{Conclusiones}
+
+
+%\bibliographystyle{plain}
+%\bibliography{Referencias.bib}
+
+\end{document}

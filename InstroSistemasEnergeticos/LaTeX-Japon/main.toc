@@ -1,0 +1,26 @@
+\select@language {spanish}
+\contentsline {section}{\numberline {1} Introducci\IeC {\'o}n}{3}
+\contentsline {section}{\numberline {2}Recursos Energ\IeC {\'e}ticos de Jap\IeC {\'o}n }{3}
+\contentsline {section}{\numberline {3}Fuentes Convencionales de Energ\IeC {\'\i }a}{4}
+\contentsline {subsection}{\numberline {3.1}Carb\IeC {\'o}n}{4}
+\contentsline {subsubsection}{\numberline {3.1.1}Suministro}{4}
+\contentsline {subsubsection}{\numberline {3.1.2}Demanda}{4}
+\contentsline {subsection}{\numberline {3.2}Petr\IeC {\'o}leo}{5}
+\contentsline {subsubsection}{\numberline {3.2.1}Producci\IeC {\'o}n y demanda}{5}
+\contentsline {subsubsection}{\numberline {3.2.2}Derivados del petr\IeC {\'o}leo}{6}
+\contentsline {subsubsection}{\numberline {3.2.3}Demanda}{6}
+\contentsline {subsection}{\numberline {3.3}Petr\IeC {\'o}leo crudo y gas natural l\IeC {\'\i }quido (LGN)}{7}
+\contentsline {subsection}{\numberline {3.4}Energ\IeC {\'\i }a Nuclear}{8}
+\contentsline {section}{\numberline {4}Fuentes Renovables de energ\IeC {\'\i }a}{8}
+\contentsline {subsection}{\numberline {4.1}Biocombustibles}{9}
+\contentsline {subsubsection}{\numberline {4.1.1}Hidratos de metano}{9}
+\contentsline {subsection}{\numberline {4.2}Hidr\IeC {\'a}ulica}{9}
+\contentsline {subsection}{\numberline {4.3}Solar}{10}
+\contentsline {subsection}{\numberline {4.4}Geot\IeC {\'e}rmica}{10}
+\contentsline {subsection}{\numberline {4.5}E\IeC {\'o}lica}{10}
+\contentsline {section}{\numberline {5}Oferta y Demanda de Electricidad en Jap\IeC {\'o}n}{11}
+\contentsline {subsection}{\numberline {5.1}Problemas relativos al mercado de la electricidad y al sistema de precios de la electricidad }{11}
+\contentsline {subsection}{\numberline {5.2}Oferta y Demanda}{11}
+\contentsline {section}{\numberline {6}Usos Finales}{12}
+\contentsline {subsection}{\numberline {6.1}Veh\IeC {\'\i }culos El\IeC {\'e}ctricos}{13}
+\contentsline {section}{\numberline {7}Intensidad Energ\IeC {\'e}tica}{14}

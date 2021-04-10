@@ -1,0 +1,132 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Thin Formal Letter
+% LaTeX Template
+% Version 2.0 (7/2/17)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% Original author:
+% WikiBooks (http://en.wikibooks.org/wiki/LaTeX/Letters) with modifications by 
+% Vel (vel@LaTeXTemplates.com)
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[10pt]{letter} % 10pt font size default, 11pt and 12pt are also possible
+
+\usepackage{geometry} % Required for adjusting page dimensions
+
+%\longindentation=0pt % Un-commenting this line will push the closing "Sincerely," to the left of the page
+
+\geometry{
+	paper=a4paper, % Change to letterpaper for US letter
+	top=2cm, % Top margin
+	bottom=1.5cm, % Bottom margin
+	left=3.5cm, % Left margin
+	right=3.5cm, % Right margin
+	%showframe, % Uncomment to show how the type block is set on the page
+}
+
+\usepackage[T1]{fontenc} % Output font encoding for international characters
+\usepackage[utf8]{inputenc} % Required for inputting international characters
+
+\usepackage{stix} % Use the Stix font by default
+
+\usepackage{microtype} % Improve justification
+
+%----------------------------------------------------------------------------------------
+%	YOUR NAME & ADDRESS SECTION
+%----------------------------------------------------------------------------------------
+
+\signature{Pablo Vivar Colina} % Your name for the signature at the bottom
+
+\address{ [Ciudad de México] } % Your address and phone number
+
+%----------------------------------------------------------------------------------------
+
+
+
+
+
+%\documentclass[]{article}
+\usepackage[spanish.mexico]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+%\usepackage{lmodern}
+%\usepackage[a4paper]{geometry}
+
+%\usepackage{natbib}
+\usepackage{cite}
+
+
+%Grafico de barras
+\usepackage{pgfplots}
+
+%Graficos e imagenes
+\usepackage{graphicx}
+
+%\title{Proyecto de Optimización de Energía}
+%\author{Pablo Vivar Colina}
+%\date{Mayo 2018}
+
+%\input{portada.tex} %agregar portada
+
+
+\begin{document}
+
+%----------------------------------------------------------------------------------------
+%	ADDRESSEE SECTION
+%----------------------------------------------------------------------------------------
+
+%\begin{letter}{Nathan Drake \\ LaTeXTemplates.com \\ 321 Pleasant Lane \\ City, State 12345} % Name/title of the addressee
+
+\begin{letter}{Algoritmos y estructuras de Datos 1422 \\
+		Raymundo Hugo Rangel Gutierrez \\ Grupo 2 \\ Semestre 2019-1 \\ Ingeniería Eléctrica Electrónica  } % Name/title
+
+%----------------------------------------------------------------------------------------
+%	LETTER CONTENT SECTION
+%----------------------------------------------------------------------------------------
+
+\opening{\textbf{Comentario del curso}}
+
+
+
+En el desarrollo del curso de utilizó los lenguajes C/C++. La dinámica de clase fué copiar el código del pizarrón escrito por el profesor y posteriormente correrlo en la computadora para probar su funcionalidad, él mencionaba que la computadora debía utilizarse a modo de laboratorio de pruebas en el salón de clase. En la clase se usó la notacion mex, que es una metodología para modelar estructuras de datos propias del compilador y las diseñadas por el programador, se usó porque ayuda a hacer un mejor uso y comprension de los modelos de las estructuras de datos.\\
+
+Entre los programas desarrollados en clase estuvieron: apuntadores, arreglos, funciones, clases, listas, listas ligadas, listas circulares, árboles, árboles sistémicos, etc. Pero el más importante de todos fue el árbol sistémico, su propósito es el de modelar decisiones desde las mas simples hasta las mas elaboradas, las cuales se pueden expresar de manera sistemática en el código de C/C++ y son unas de la herramientas principales en el diseño de algoritmos debido a que en todo algoritmo aparecen decisiones.\\
+
+Los ejercicios vistos en clase fueron de un nivel adecuado, pero si no se tiene un conocimiento previo de C o C++ el curso puede volverse tedioso ya que son bastante necesarios. En el curso se hicieron programas funcionales en C++ en programación orientada objetos, se desarrollaron clases y funciones asociadas a éstas.\\
+
+Por el curso recibido me llevo como aprendizaje un manejo más fluido sobre C y C++ refresqué varios conceptos que ya tenía olvidados e integré unos nuevos como la implementación de programación orientada a objetos que ya había revisado con java pero no aprendí o supe implementar de igual manera como en éste curso. De forma general diría que el curso me ayudó a mejorar mi confianza a programar y aumentó mi nivel en habilidades de programación y mi interés sobre los lenguajes de programación.\\
+
+ Para mi C y C++ son lenguajes que son importantes ya que varios proyectos de desarrollo de software libre que me interesan como OpenSCAD se basan en éste lenguaje yel saber utilizarlo me ayudará en un futuro entneder la forma en como están constituidos los programas y modificarlos de acuerdo a mis necesidades.\\
+
+% Para usuarios de GNU/Linux se le recomienda al profesor que especifique las bibliotecas dónde se encuentran las funciones en específico ya que el compilador gcc o g++ del proyecto GNU no detectan algunas librerías o compatibilidad de funciones de sistema para ciertas aplicaciones de los programas.\\
+ 
+ % Un ejemplo de lo mencionando es que para limpiar la pantalla en Windows se utiliza la línea system(cls); mientras que en GNU/Linux se utiliza la línea system(clear); éstas pequeñas diferencias entre sistemas pueden volver el curso tedioso y no compatible para usuarios de éste sistema. Se necesita saber de qué librería proviene cada función utilizada ya que un usuario alternativo puede buscar con facilidad soluciones u funciones compatibles para resolver el problema.\\
+
+ %En software y enseñanza se debe tener en cuenta la inclusión de plataformas alternativas y no tenerlo encasillado sólo para Windows. 
+ 
+
+\vspace{2\parskip} % Extra whitespace for aesthetics
+\closing{Atentamente,}
+\vspace{2\parskip} % Extra whitespace for aesthetics
+
+%###IMPORTANTE
+%\ps{P.S. You can find additional information attached to this letter.} % Postscript text, comment this line to remove it
+
+%###IMPORTANTE
+%\encl{Copyright permission form} % Enclosures with the letter, comment this line to remove it
+
+%----------------------------------------------------------------------------------------
+
+\end{letter}
+ 
+\end{document}

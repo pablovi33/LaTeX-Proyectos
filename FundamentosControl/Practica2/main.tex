@@ -1,0 +1,145 @@
+\documentclass[]{article}
+\usepackage[spanish.mexico]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage[a4paper]{geometry}
+
+%\usepackage{natbib}
+\usepackage{cite}
+
+
+%Grafico de barras
+\usepackage{pgfplots}
+
+%Graficos e imagenes
+\usepackage{graphicx}
+
+%subfiguras
+\usepackage{subcaption}
+
+
+%\title{Proyecto de Optimización de Energía}
+%\author{Pablo Vivar Colina}
+%\date{Mayo 2018}
+
+\input{portada.tex} %agregar portada
+
+\begin{document}
+
+%\maketitle
+
+\tableofcontents  % Write out the Table of Contents
+
+%\listoffigures  % Write out the List of Figures
+
+\section{Resumen}
+
+En la práctica se utilizó Simulink y MATLAB, que son herramientas base para las futuras prácticas.\\
+
+En caso particular del desarrollo de ésta práctica se construyó un modelo de circuito RLC, y se generó la función de transferencia a partir de los diagramas de bloques de MATLAB.\\
+
+\section{Introducción}
+
+En el laboratorio de fundamentos de control se utilizará MATLAB, el cual utiliza scripts con extensión ".m", para ésta tarea también se pueden utilizar alternativas libres como GNU/Octave que también pueden procesar archivos con éste tipo de extensión.\\
+
+MATLAB (laboratorio de matrices) es un entorno de cálculo numérico multiparadigma y un lenguaje de programación propietario desarrollado por MathWorks. MATLAB permite la manipulación de matrices, el trazado de funciones y datos, la implementación de algoritmos, la creación de interfaces de usuario y la interfaz con programas escritos en otros lenguajes, incluyendo C, C++, C$\#$, Java, Fortran y Python.\cite{MATLABWiki}\\
+
+Aunque MATLAB está pensado principalmente para la computación numérica, una caja de herramientas opcional utiliza el motor simbólico MuPAD, permitiendo el acceso a las capacidades de computación simbólica. Un paquete adicional, Simulink, añade simulación gráfica multidominio y diseño basado en modelos para sistemas dinámicos y embebidos.\cite{MATLABWiki}\\
+
+En 2018, MATLAB tiene más de 3 millones de usuarios en todo el mundo Los usuarios de MATLAB proceden de diversos ámbitos de la ingeniería, la ciencia y la economía.\cite{MATLABWiki}\\ 
+
+Traducción realizada con el traductor www.DeepL.com/Translator.\cite{Deepl}
+
+\section{Objetivos}
+
+\subsection{Objetivos Generales}
+
+	\begin{itemize}
+		\item Iniciar al alumno en el manejo y uso de “simulink” como una herramienta de análisis de sistemas dinámicos.
+		\item Que el alumno se inicie en el manejo y uso de la caja de herramientas de “simulink” de “matlab”, para el análisis de sistemas dinámicos. Utilizar los comandos básicos de cálculo en MATLAB
+		
+	\end{itemize}
+
+\subsection{Objetivos Particulares}
+
+	\begin{itemize}
+		\item Realizar los objetivos anteriores en GNU/Octave
+	\end{itemize}
+
+\section{Materiales y métodos}
+
+	\begin{itemize}
+		\item Computadora con editor de código "m" (MATLAB o GNU/Octave).
+		\item Computadora con MATLAB V.5.3 instalado con las caja de herramientas “simulink”.
+	\end{itemize}
+	
+\section{Resultados}
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=0.6\textwidth]{modeloConst.png}
+	\caption{modelo con entrada de voltaje constante}
+	\label{fig:modeloConst}
+\end{figure}
+
+En la figura \ref{fig:modeloConst} podemos apreciar la respuesta de la entrada constante al circuito ensamblado, podemos notar en ella que no es un sistema muy estable ya que le toma varias oscilaciones en llegar al valor deseado, además de que el sobrepaso es decasi el doble del valor deseado.\\
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=0.6\textwidth]{modeloEscalon.png}
+	\caption{Modelo con entrada de voltaje señal Escalon}
+	\label{fig:modeloEscalon}
+\end{figure}
+
+Se aplicó una señal tipo escalón al sistema, y la respuesta del sistema la podemos apreciar en la figura \ref{fig:modeloEscalon}, podemos notar que la señal es muy similar a la de la figura \ref{fig:modeloConst} con la diferencia que llegar a un punto estable le toma más tiempo, podemos notar este cambio si observamos las escalas de tiempo de ambas figuras mencionadas.\\
+
+\begin{figure}
+	\centering
+	\begin{subfigure}[b]{0.49\textwidth}
+		\includegraphics[width=\textwidth]{modelo2Const.png}
+		\caption{Modelo con entrada de voltaje constante a partir de función de transferencia}
+		\label{fig:modelo2Const}
+	\end{subfigure}
+	~ %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc. 
+	%(or a blank line to force the subfigure onto a new line)
+	\begin{subfigure}[b]{0.49\textwidth}
+		\includegraphics[width=\textwidth]{modelo2Escalon.png}
+		\caption{Modelo con entrada de voltaje señal Escalon a partir de su función de transferencia}
+		\label{fig:modelo2Escalon}
+	\end{subfigure}
+
+\end{figure}
+
+En las figuras \ref{fig:modelo2Const} y \ref{fig:modelo2Escalon} logramos apreciar los resultados que se mostraron en las figuras \ref{fig:modeloConst} y \ref{fig:modeloEscalon} ahora obtenidos por la función de transferencia a partir de los diagramas de bloques.\\
+
+
+\section{Análisis de Resultados}
+
+Se logró modelar a partir del diagrama de bloques sistemas en Simulink además de poder apreciar su comportamiento gráfcamente. No se apreció variación de resultados, porque el modelo era el mismo.\\
+
+Se modificaron los valores en el circuito RLC, y se apreció que a mayor valores de estos, la acción de control era más rápida, es decir, se estabilizaba en menor intervalo de tiempo. \\
+
+\section{Conclusiones}
+
+Logramos modelar el circuito RLC y pudimos ver su comportamiento con diversos valores de R, L, C. Entre valores más grandes en el modelo PID (excepto la parte diferencial), la acción de control se manifestaba de forma inmediata, porque su gráfica se estabilizaba en intervalos menores de tiempo.
+
+
+
+
+%\bibliographystyle{plain}
+%\bibliography{Referencias.bib}
+%\addbibresource{Referencias.bib}
+\section{Referencias}
+
+\begin{thebibliography}{widestlabel}
+	\bibitem{MATLABWiki}\textsc{Wikipedia},\textsc{MATLAB},\textsc{https://en.wikipedia.org/wiki/MATLAB},\textit{},WikimediaGroup.
+	
+   \bibitem{Deepl}\textsc{Deepl},\textsc{www.DeepL.com/Translator}
+	
+	
+	
+\end{thebibliography}
+
+
+\end{document}

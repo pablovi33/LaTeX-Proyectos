@@ -1,0 +1,17 @@
+\babel@toc {spanish}{}
+\contentsline {section}{\numberline {1}Introducci\IeC {\'o}n}{1}% 
+\babel@toc {russian}{}
+\babel@toc {spanish}{}
+\contentsline {subsection}{\numberline {1.1}Dise\IeC {\~n}os de reactores rusos}{2}% 
+\contentsline {subsubsection}{\numberline {1.1.1}Reactores VVER}{2}% 
+\contentsline {section}{\numberline {2}Reactores VVER-1200}{4}% 
+\contentsline {subsection}{\numberline {2.1}Refirgerante}{6}% 
+\contentsline {subsubsection}{\numberline {2.1.1}Tuber\IeC {\'\i }a principal del refrigerante}{6}% 
+\contentsline {subsubsection}{\numberline {2.1.2}Bomba de refrigerante del reactor}{6}% 
+\contentsline {subsection}{\numberline {2.2}Ejemplo Balakovo-3}{6}% 
+\contentsline {section}{\numberline {3}Potencia el\IeC {\'e}ctrica y t\IeC {\'e}rmica}{7}% 
+\contentsline {section}{\numberline {4}Sistemas de seguridad}{7}% 
+\contentsline {section}{\numberline {5}Ventajas y desventajas con otras tecnolog\IeC {\'\i }as}{8}% 
+\contentsline {section}{\numberline {6}Construcciones actuales VVER}{9}% 
+\contentsline {subsection}{\numberline {6.1}Reactores}{9}% 
+\contentsline {section}{\numberline {7}Conclusiones}{10}% 

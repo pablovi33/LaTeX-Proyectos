@@ -1,0 +1,236 @@
+\documentclass[]{article}
+\usepackage[spanish.mexico]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+%\usepackageB.\\{lmodern}
+\usepackage[a4paper]{geometry}
+ \geometry{
+	a4paper,
+	total={170mm,257mm},
+	left=20mm,
+	top=20mm,
+}
+
+%columnas itemize
+\usepackage{multicol}
+
+%\usepackage{natbib}
+\usepackage{cite}
+
+
+%Grafico de barras
+\usepackage{pgfplots}
+
+%Graficos e imagenes
+\usepackage{graphicx}
+
+
+\usepackage{tikz}
+\usepackage[american voltages, american currents,siunitx]{circuitikz}
+
+
+\title{Examen Máquinas Eléctricas}
+\author{Pablo Vivar Colina}
+%\date{Mayo 2018}
+
+
+
+\begin{document}
+	
+%	\input{portada.tex} %agregar portada
+
+\maketitle
+
+%\tableofcontents  % Write out the Table of Contents
+
+%\listoffigures  % Write out the List of Figures
+
+
+
+\section{Transformador}
+
+\begin{multicols}{2}
+	\begin{itemize}
+		\item P=[15 KVA]
+		\item V=2400[V] a 240 [V]
+		\item f=60 [Hz]
+		\item $R_2$=0.025 [$\Omega$]
+		\item $R_C$=32[k$\Omega$]
+		\item $X_m$=11.5 [k$\Omega$]
+		\item $X_1$=7[$\Omega$]
+		\item $X_2$=0.07[$\Omega$]
+	\end{itemize}
+\end{multicols}
+
+\section{Motor trifásico}
+
+\begin{multicols}{2}
+	\begin{itemize}
+		\item V=230 [V]
+		\item P=5[Hp]=3.7282[W]
+		\item f=60 [Hz]
+		\item V=1746 [rpm]
+		\item I=12[A]
+		\item 2.5 $\%$ rotor
+		\item 2.5 $\%$ estator
+		\item 5 $\%$ núcleo
+		\item 3 $\%$ devanado
+		\item $X_1$=2.7 [$\Omega$]
+		\item $X_R$=37 [$Omega$]
+	\end{itemize}
+
+\end{multicols}
+
+\begin{figure}[h!]
+	\centering
+%	\begin{center}
+		\begin{circuitikz}
+			
+			\draw
+			
+			
+			(0,0)to[R,l=$R_1$25](2,0)
+			(2,0)to[L,l=$L_1$7](4,0)
+			
+			
+			(4,0)to[R,l=$R_2$0.025](6,0)
+			(6,0)to[L,l=$L_2$11.5](8,0)
+			
+			(4,0)--(4,-1)
+			(3,-1)--(5,-1)
+			
+			(3,-1)to[R,l=$R_3$0.025](3,-3)
+			(5,-1)to[L,l=$L_3$0.007](5,-3)
+			
+			(3,-3)--(5,-3)
+			
+			(4,-3)--(4,-4)
+			
+			(0,-4)--(8,-4)
+			
+			(8,-4)--(8,0)
+			
+			%(8,-2)node[anchor=east] {240V}
+			(8,-2)node[anchor=west] {240V}
+			
+			
+			(8,-3)rectangle(9,-1)
+			
+			(9,-4)--(9,0)
+			
+			%LO MISMO MAS 9
+			
+			(0+9,0)to[R,l=$R_4$1K](2+9,0)
+			(2+9,0)to[L,l=$L_4$27](4+9,0)
+			
+			
+			(4+9,0)to[R,l=$R_5$1K](6+9,0)
+			(6+9,0)to[L,l=$L_5$1m](8+9,0)
+			
+			(4+9,0)--(4+9,-1)
+			(3+9,-1)--(5+9,-1)
+			
+			(3+9,-1)to[R,l=$R_6$1K](3+9,-3)
+			(5+9,-1)to[L,l=$L_6$0](5+9,-3)
+			
+			(3+9,-3)--(5+9,-3)
+			
+			(4+9,-3)--(4+9,-4)
+			
+			(9,-4)--(8+9,-4)
+			
+			(8+9,-4)--(8+9,0)
+
+
+			
+			%(8,-2)node[anchor=east] {240V}
+			(8+9,-2)node[anchor=west] {$\frac{1-s}{s}$}
+				
+          (8+9,-3)rectangle(9+9,-1)
+			
+		
+			
+			%tierras
+			(4,-3) to   (4,-4) node[ground]{}
+			(4+9,-3) to   (4+9,-4) node[ground]{}
+			
+			
+			
+			
+			%node[scale=1.2,nand port,anchor=in 1] (nand1) {}
+			%(nand1.in 2) -- (xor1.in 2|-nand1.in 2)
+			
+			%(3,0)to[push button,l=$R_1$](3,3)
+			
+			
+			%Generador de funciones
+			%(-6,0.5)--(-5,0.5)
+			%(0,3)to[V,l=$G$](0,0)
+			
+			;
+			
+		\end{circuitikz}
+		
+%\end{center}
+	
+		
+%\caption{Circuito de acción momentánea}
+%\label{fig:CircuitoMomentáneo}
+\end{figure}
+
+Determinar
+
+\begin{enumerate}
+	\item Velocidad Síncrona
+	\item Deslizamiento
+	\item La frecuencia de las corrientes del motor
+	\item Par de Salida
+	\item Corriente de suministro del motor
+	\item La eficiencia del motor
+	\item Factor de potencia
+\end{enumerate}
+
+\section{Desarrollo}
+
+\subsection{Velocidad Síncrona}
+
+
+\begin{equation}
+  n_s=\frac{120(60)}{8}(1-0.03)=900
+  \label{ns}
+\end{equation}
+
+\subsection{Deslizamiento}
+
+%Del resultado de la ecuación \ref{ns} sustituimos:\\
+
+\begin{equation}
+s=\frac{n_s-n_m}{n_s}=\frac{1800-1746}{1800}=0.03
+\end{equation}
+
+\subsection{Frecuencia de las corrientes del motor}
+
+\begin{equation}
+f_i=sf=(0.03)(60)=1.8[Hz]
+\end{equation}
+
+\subsection{Par de Salida}
+
+\begin{equation}
+ \tau=\frac{P}{v}=\frac{3.7282[kW]}{1746[rpm](\frac{1[M]}{60[s]})2 \pi}=\frac{3.7282[kW]}{182[\frac{rad}{s}]}=20[Nm]
+\end{equation}
+
+\subsection{Corriente de suministro del motor}
+
+\begin{equation}
+\eta=\frac{P_{salida}}{P_{entrada}}=\frac{3728}{4285}=0.87=87\%
+\end{equation}
+
+\subsection{Factor de potencia}
+
+
+\begin{equation}
+  F.P.=\frac{4285}{(230)(8)\sqrt{3}}=0.59  
+\end{equation}
+
+\end{document}

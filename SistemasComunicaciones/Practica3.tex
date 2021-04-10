@@ -1,0 +1,520 @@
+
+\documentclass{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage[a4paper]{geometry}
+\usepackage[spanish.mexico]{babel}
+
+%\title{Dispositivos}
+\author{Pablo Vivar Colina}
+%\date{Septiembre 2017}
+
+\usepackage{natbib}
+\usepackage{graphicx}
+
+%Circuitos
+\usepackage{tikz}
+
+\usepackage[american voltages, american currents,siunitx]{circuitikz}
+
+%Plotting
+
+\usepackage{pgfplots}
+\pgfplotsset{width=10cm,compat=1.9} 
+ \usepgfplotslibrary{external}
+\tikzexternalize 
+
+%#####Fracciones DIAGONALES :B #####
+
+\usepackage{amsmath}
+\usepackage{mathtools}
+
+%running fraction with slash - requires math mode.
+%\newcommand*\rfrac[2]{{}^{#1}\!/_{#2}}
+
+
+
+
+
+
+\begin{document}
+
+%\maketitle
+
+%\input{portada.tex} %agregar portada
+
+\tableofcontents  % Write out the Table of Contents
+
+\listoffigures  % Write out the List of Figures
+
+
+\section{Marco Teórico}
+
+\subsection{Señales determinísticas}
+
+Una señal determinística es una señal en la cual cada valor esta fijo y puede ser determinado por una expresión matemática, regla, o tabla. Los valores futuros de esta señal pueden ser calculados usando sus valores anteriores teniendo una confianza completa en los resultados.\citep{SenialesDeterministicas}\\
+
+Una señal aleatoria, tiene mucha fluctuación respecto a su comportamiento. Los valores futuros de una señal aleatoria no se pueden predecir con exactitud, solo se pueden basar en los promedios de conjuntos de señales con características similares. No se pueden representar unívocamente por una función del tiempo. Cada una de las funciones que la componen se llama realización o muestra.\citep{SenialesDeterministicas}\\
+
+\subsection{Señal Triangular}
+
+Deduzca matemáticamete el factor de cresta para una señal triangular.\\
+
+Recordando el factor de cresta es el cociente entre el valor pico de una señal y el valor promedio ($V_{RMS}$) de la misma. Para una señal triangular el valor promedio es: $V_{RMS}=\frac{V_p}{\sqrt{3}}=\frac{V_{pp}}{2\sqrt{3}}$ por lo que el factor de cresta es:\\
+
+\begin{equation}
+    F_{cresta}=\frac{2\sqrt{3}V_p}{V_{pp}}=\sqrt{3}
+\end{equation}
+
+\subsection{Señal cuadrada}
+
+Calcule matemáticamente el factor de cresta de una señal cuadrada.\\
+
+Para la señal cuadrada el valor pico es el mismo que el valor promedio, por lo que el factor de cresta es 1.\\
+
+\subsection{Tren de pulsos}
+
+Se solicita el espectro teórico de un tren de pulsos de 1 [kHz] y 20 $[V_{pp}]$.\\
+
+Considerando el tren de pulsos como una señal cuadrada con un ciclo de trabajo ($\tau$) de 5\% tenemos el espectro mostrado en la figura \ref{fig:senialCuadrada5porc}. y en el espectro de frecuencias aparecería en 1 [kHz] con amplitud de 10 [V].\\
+
+
+\begin{figure}[h!]
+    \centering
+    
+   
+\begin{tikzpicture}
+\begin{axis}[
+    axis lines = left,
+    xlabel = {t[ms]},
+    ylabel = {V[V]},
+]
+%Primer impulso
+\addplot [
+thick=0.1,
+    domain=0:0.05, 
+    samples=100, 
+    color=blue,
+]
+{10};
+\addplot [
+thick=0.1cm,
+    domain=0.05:(1), 
+    samples=100, 
+    color=blue,
+]
+{0};
+
+%Segundo impulso
+\addplot [
+thick=0.1cm,
+    domain=1:1.05, 
+    samples=100, 
+    color=blue,
+]
+{10};
+
+\addplot [
+thick=0.1cm,
+    domain=1.05:(2), 
+    samples=100, 
+    color=blue,
+]
+{0};
+
+%Tercer impulso
+\addplot [
+thick=0.1cm,
+    domain=2:2.05, 
+    samples=100, 
+    color=blue,
+]
+{10};
+
+\addplot [
+thick=0.1cm,
+    domain=2.05:(3), 
+    samples=100, 
+    color=blue,
+]
+{0};
+
+%Cuarto impulso
+\addplot [
+thick=0.1cm,
+    domain=3:3.05, 
+    samples=100, 
+    color=blue,
+]
+{10};
+
+\addplot [
+thick=0.1cm,
+    domain=3.05:(4), 
+    samples=100, 
+    color=blue,
+]
+{0};
+
+\addlegendentry{Pulsos (5 $\%$ ciclo de trabajo)}
+%Here the blue parabloa is defined
+%\addplot [
+ %   domain=-10:10, 
+  %  samples=100, 
+    %color=blue,
+   % ]
+    %{x^2 + 2*x + 1};
+%\addlegendentry{$x^2 + 2x + 1$}
+ 
+\end{axis}
+\end{tikzpicture}
+\caption{Tren de impulsos ($\tau=0.05[ms]$)}
+    \label{fig:senialCuadrada5porc}
+ 
+\end{figure}
+
+\subsection{Relación de Parseval}
+
+En matemáticas, la Relación de Parseval demuestra que la Transformada de Fourier es unitaria; es decir, que la suma (o la integral) del cuadrado de una función es igual a la suma (o a la integral) del cuadrado de su transformada. Esta relación procede de un teorema de 1799 sobre series, cuyo creador fue Marc Antoine Parseval. Esta relación se aplicó más tarde a las Series de Fourier.\citep{RelacionParseval}\\
+
+Aunque la Relación de Parseval se suele usar para indicar la unicidad de cualquier transformada de Fourier, sobre todo en física e ingeniería, la forma generalizada de este teorema es la Relación de Plancherel.\citep{RelacionParseval}\\
+
+En física e ingeniería, la Relación de Parseval se suele escribir como:\citep{RelacionParseval}
+
+    \begin{equation}
+        \int_{-\infty}^{\infty} | f(t) |^2 dt   = \int_{-\infty}^{\infty} | \mathcal{F} [ f(t) ] (\alpha ) |^2 d\alpha 
+    \end{equation}
+    
+    
+donde $\mathcal{F} [ f(t) ] (\alpha )$ representa la transformada continua de Fourier de $f(t)$ y $\alpha$ representa la frecuencia [Hz] de $f$.\citep{RelacionParseval}\\
+
+La interpretación de esta fórmula es que la energía total de la señal $f(t)$ es igual a la energía total de su transformada de Fourier $\mathcal{F} [ f(t)]$ a lo largo de todas sus componentes frecuenciales.\citep{RelacionParseval}\\
+
+Para señales de tiempo discreto, la relación es la siguiente:\citep{RelacionParseval}\\
+
+\begin{equation}
+    \sum_{n=-\infty}^{\infty} | x[n] |^2  =  \frac{1}{2\pi} \int_{-\pi}^{\pi} | X(e^{i\phi}) |^2 d\phi 
+\end{equation}
+
+
+donde $X$ es la [transformada de Fourier de tiempo discreto] (DTFT) de $x$ y $\phi$ representa la [frecuencia angular] (en [radianes]) de $x$.\citep{RelacionParseval}\\
+
+Por otro lado, para la [transformada discreta de Fourier] (DFT), la relación es:\citep{RelacionParseval}\\
+
+\begin{equation}
+    \sum_{n=0}^{N-1} | x[n] |^2  =   \frac{1}{N} \sum_{k=0}^{N-1} | X[k] |^2
+\end{equation}
+
+donde $X[k]$ es la DFT de $x[n]$, ambas de longitud $N$.\citep{RelacionParseval}\\
+
+
+\section{Desarrollo}
+
+\subsection{Señal Triangular}
+
+En la figura \ref{SenalTriangular20pp} se puede apreciar una señal triangular que se generó con las características siguientes.\\
+
+\begin{itemize}
+    \item 20 Vpp
+    \item 1 kHz
+\end{itemize}
+
+Como se tiene el marco teórico el factor de cresta de la señal triangular es de:\\
+
+\begin{equation}
+    F_{cresta}=\frac{2\sqrt{3}V_p}{V_{pp}}
+\end{equation}
+ 
+ El factor de cresta de la señal triangular es.\\
+ 
+ Con el analizador de frecuencias se obtuvieron los siguientes datos sobre las componentes espectrales de la señal triangular, y se registraron en el cuadro \ref{tablaEspectralTriang20Vpp}.\\
+ 
+ \begin{table}[h!]
+\centering
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline
+Componente            & 1era         & 2d    & 3er   & 4ta   & 5ta  \\ \hline
+Amplitud $[mV_{RMS}]$ & 5.73 {[}V{]} & 635.9 & 229.3 & 115.7 & 70.3 \\ \hline
+Frecuencia {[}kHz{]}  & 1            & 3     & 5     & 7     & 9    \\ \hline
+\end{tabular}
+
+\caption{Componentes espectrales figura \ref{SenalTriangular20pp}}
+
+\label{tablaEspectralTriang20Vpp}
+
+\end{table}
+
+
+\begin{itemize}
+    \item Vp=4.9497 [V]
+    \item $V_{RMS}$=7 [V]
+    \item frecuencia= 1[kHz]
+    \item periodo 1 [ms]
+\end{itemize}
+
+\begin{figure}[h!]
+    \centering
+
+\begin{tikzpicture}
+\begin{axis}[
+    axis lines = left,
+    xlabel = {t[ms]},
+    ylabel = {V[V]},
+]
+
+\addplot
+[thick=0.1cm,
+    domain=0:0.5, 
+    samples=100, 
+    color=green,
+]
+{40*x};
+
+\addplot
+[thick=0.1cm,
+    domain=0.5:1, 
+    samples=100, 
+    color=green,
+]
+{(40*0.5*2)-40*x};
+
+\addplot
+[thick=0.1cm,
+    domain=1:1.5, 
+    samples=100, 
+    color=green,
+]
+{(-40*0.5*2)+40*x};
+
+\addplot
+[thick=0.1cm,
+    domain=1.5:2, 
+    samples=100, 
+    color=green,
+]
+{(40*0.5*4)-40*x};
+
+\addplot
+[thick=0.1cm,
+    domain=2:2.5, 
+    samples=100, 
+    color=green,
+]
+{(-40*0.5*4)+40*x};
+
+\addplot
+[thick=0.1cm,
+    domain=2.5:3, 
+    samples=100, 
+    color=green,
+]
+{(40*0.5*6)-40*x};
+
+
+\addlegendentry{$20 V_{pp}$}
+
+\end{axis}
+\end{tikzpicture}
+\caption{Señal triangular con $20 V_{pp}
+$ y 1 [kHz]}
+\label{SenalTriangular20pp}
+\end{figure}
+
+%###SEÑAL CUADRADA####
+
+\subsection{Señal Cuadrada}
+
+De la misma forma que se generó la señal triangular, se generó una señal cuadrada que se puede ver en la figura \ref{SenalCuadrada20Vpp}.\\
+
+\begin{figure}[h!]
+    \centering
+
+\begin{tikzpicture}
+\begin{axis}[
+    axis lines = left,
+    xlabel = {t[ms]},
+    ylabel = {V[V]},
+]
+
+\addplot
+[thick=0.1cm,
+    domain=0:0.5, 
+    samples=100, 
+    color=blue,
+]
+{20};
+
+\addplot
+[thick=0.1cm,
+    domain=0.5:1, 
+    samples=100, 
+    color=blue,
+]
+{0};
+
+\addplot
+[thick=0.1cm,
+    domain=1:1.5, 
+    samples=100, 
+    color=blue,
+]
+{20};
+
+\addplot
+[thick=0.1cm,
+    domain=1.5:2, 
+    samples=100, 
+    color=blue,
+]
+{0};
+
+\addplot
+[thick=0.1cm,
+    domain=2:2.5, 
+    samples=100, 
+    color=blue,
+]
+{20};
+
+\addplot
+[thick=0.1cm,
+    domain=2.5:3, 
+    samples=100, 
+    color=blue,
+]
+{0};
+
+
+\addlegendentry{$20 V_{pp}$}
+
+\end{axis}
+\end{tikzpicture}
+\caption{Señal Cuadrada con $20 V_{pp}
+$ y 1 [kHz]}
+\label{SenalCuadrada20Vpp}
+\end{figure}
+
+De la figura \ref{SenalCuadrada20Vpp} se introdujo la señal en el analizador de espectros y se anotaron las amplitudes $[V_{RMS}]$ y $[V_{PK}]$ en los cuadros \ref{senalCuadradaTablaA} y \ref{senalCuadradaTablaB}.\\ 
+
+\begin{table}[h!]
+\centering
+
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline
+Componente           & 1era  & 2da   & 3era  & 4ta   & 5ta   \\ \hline
+Amplitud $[V_{RMS}]$ & 9.005 & 3.003 & 1.8   & 1.28  & 0.998 \\ \hline
+Amplitud $[V_{PK}]$  & 12.73 & 4.247 & 2.545 & 1.816 & 1.41  \\ \hline
+Frecuencia {[}kHz{]} & 1     & 3     & 5     & 7     & 9     \\ \hline
+\end{tabular}
+
+\caption{Componentes espectrales señal cuadrada}
+\label{senalCuadradaTablaA}
+
+\end{table}
+
+
+%###2da tabla
+
+\begin{table}[h!]
+\centering
+
+\begin{tabular}{|c|c|c|c|c|c|c|c|}
+\hline
+Componente            & 6ta           & 7ma   & 8va   & 9na   & 10ma  & 11va  & 12va  \\ \hline
+Amplitud $[mV_{RMS}]$ & 815.5         & 690   & 597   & 526.7 & 471.5 & 426.1 & 388.1 \\ \hline
+Amplitud $[mV_{PK}]$  & 1.153 {[}V{]} & 975.8 & 844.3 & 744.9 & 666.9 & 602.6 & 549.1 \\ \hline
+Frecuencia {[}kHz{]}  & 11            & 13    & 15    & 17    & 19    & 12.5  & 23    \\ \hline
+\end{tabular}
+
+\caption{Componentes espectrales señal cuadrada}
+\label{senalCuadradaTablaB}
+
+
+\end{table}
+
+
+\section{Tren de pulsos}
+
+Se realizaron mediciones para obtener el voltaje del tren de pulsos y su ciclo de trabajo, y los datos obtenidos se registraron en el cuadro \ref{cicloTrabajoTrenPulsos}.\\
+
+
+\begin{table}[h!]
+\centering
+
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline
+\% Ciclo de Trabajo & Voltaje AC $[V_{AC}]$ & Voltaje DC  $[V_{DC}]$ & $[V_{AC}]^2$ & $[V_{DC}]^2$ & $[sqrt{(V_{AC})^2+(V_{DC})^2}]$ \\ \hline
+10                  & 5.9                   & -8.01                  & 34.81        & 64.1601      & 49.48505                        \\ \hline
+20                  & 8                     & -6.01                  & 64           & 36.1201      & 50.06005                        \\ \hline
+30                  & 9.3                   & -4.01                  & 86.49        & 16.0801      & 51.28505                        \\ \hline
+40                  & 9.83                  & -2.01                  & 96.6289      & 4.0401       & 50.3345                         \\ \hline
+50                  & 10.09                 & -0.012                 & 101.8081     & 0.000144     & 50.904122                       \\ \hline
+60                  & 9.85                  & 1.98                   & 97.0225      & 3.9204       & 50.47145                        \\ \hline
+70                  & 9.27                  & 3.98                   & 85.9329      & 15.8404      & 50.88665                        \\ \hline
+80                  & 8.5                   & 5.98                   & 72.25        & 35.7604      & 54.0052                         \\ \hline
+90                  & 6.13                  & 7.99                   & 37.5769      & 63.8401      & 50.7085                         \\ \hline
+\end{tabular}
+
+\caption{Ciclo de trabajo en tren de pulsos}
+\label{cicloTrabajoTrenPulsos}
+
+\end{table}
+
+%###AQUI VA LA PRAC###
+
+
+Comenzando con un ciclo de trabajo de $10 \%$, se aumentó éste gradualmente hasta que cada n componentes espectrales se anuleara, se anotó el ciclo de trabajo, se dedujo la relación entre el ciclo de trabajo y la componente desaparecida y se anotaron los resultados que se presentan en el cuadro \ref{desaparecenComponentesEspectrales}.\\
+
+
+\begin{table}[h!]
+\centering
+
+\begin{tabular}{|c|c|c|}
+\hline
+Desaparece Componente & $\%$ Ciclo de Trabajo & Ciclo de Trabajo $\frac{N}{D}$ \\ \hline
+10                    & 10                  & $\frac{1}{10}$                 \\ \hline
+9                     & 11.11               & $\frac{1}{9}$                  \\ \hline
+8                     & 12.5                & $\frac{1}{8}$                  \\ \hline
+7                     & 15.5                & $\frac{1}{7}$                  \\ \hline
+6                     & 16.66               & $\frac{1}{6}$                  \\ \hline
+5                     & 20                  & $\frac{1}{5}$                  \\ \hline
+4                     & 25                  & $\frac{1}{4}$                  \\ \hline
+3                     & 33.33               & $\frac{1}{3}$                  \\ \hline
+2                     & 50                  & $\frac{1}{2}$                  \\ \hline
+3                     & 56.66               & $\frac{2}{3}$                  \\ \hline
+4                     & 75                  & $\frac{3}{4}$                  \\ \hline
+5                     & 80                  & $\frac{4}{5}$                  \\ \hline
+6                     & 83.33               & $\frac{5}{6}$
+\\ \hline
+7                     & 85.71               & $\frac{6}{7}$                  \\ \hline
+8                     & 87.5                & 
+$\frac{7}{8}$              \\ \hline
+9                     & 88.88               & $\frac{8}{9}$                  \\ \hline
+10                    & 90                  & $\frac{9}{10}$                 \\ \hline
+\end{tabular}
+
+\caption{Relación ciclo de trabajo y componentes espectrales}
+\label{desaparecenComponentesEspectrales}
+
+\end{table}
+
+
+
+
+
+\section{Conclusiones}
+
+La práctica de análisis espectral de señales fué satisfactoria porque logramos ver la señal senoidal con distintos parámetros y ver su comportamiento en el generador de espectro, también cómo la señal cuadrada está representada por varias funciones senoidales.
+
+Logramos ver también la combinación de dos señales senoidales y ver su espectro en el osciloscopio y en el analizador de espectros.
+
+\section{Comentarios}
+
+Es necesario un buen manejo del equipo, en particular del analizador de espectros ya que es un equipo que en los laboratorios anteriores no se ha utilizado, y que es importante para comprender la suma de señales con diferentes frecuencias.
+
+%.\\[100cm]
+\bibliographystyle{plain}
+\bibliography{Referencias.bib}
+
+\end{document}

@@ -1,0 +1,182 @@
+\documentclass[]{article}
+\usepackage[spanish.mexico]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+%\usepackageB.\\{lmodern}
+%\usepackage{lmodern}
+\usepackage[a4paper]{geometry}
+
+%\usepackage{natbib}
+\usepackage{cite}
+
+
+%Grafico de barras
+\usepackage{pgfplots}
+
+%Graficos e imagenes
+\usepackage{graphicx}
+\usepackage{subcaption}
+
+%circuitos
+\usepackage{tikz}
+\usepackage[american voltages, american currents,siunitx]{circuitikz}
+
+%Plotting
+
+\usepackage{pgfplots}
+\pgfplotsset{width=10cm,compat=1.9} 
+
+
+%\title{Proyecto de Optimización de Energía}
+%\author{Pablo Vivar Colina}
+%\date{Mayo 2018}
+
+%agregar portada
+
+\begin{document}
+	
+	\input{portada.tex} 
+	
+
+	%\maketitle
+	
+	%\tableofcontents  % Write out the Table of Contents
+	
+	%\listoffigures  % Write out the List of Figures
+		
+	\section{Introducción}
+	
+	\subsection{Histéresis magnética}
+
+En física se encuentra, por ejemplo, histéresis magnética si al magnetizar un ferromagneto éste mantiene la señal magnética tras retirar el campo magnético que la ha inducido. También se puede encontrar el fenómeno en otros comportamientos electromagnéticos, o los elásticos.\\
+
+[...]\\
+
+En electrotecnia se define la histéresis magnética como el retraso de la inducción magnética respecto al campo magnético que lo acciona.\\
+
+Se produce histéresis al someter al núcleo o a la sustancia ferromagnética a un campo magnético alterno, los imanes (o dipolos) elementales giran para orientarse según el sentido del campo magnético. Al decrecer el campo, la mayoría de los imanes elementales recuperan su posición inicial, sin embargo, otros no llegan a alcanzarla debido a los rozamientos moleculares conservando en mayor o menor grado parte de su orientación forzada, haciendo que persista un magnetismo remanente que manifieste aún un cierto nivel de inducción magnética.\\
+
+Las pérdidas por histéresis representan una pérdida de energía que se manifiesta en forma de calor en los núcleos magnéticos y esto hace que se reduzca el rendimiento del dispositivo. Con el fin de reducir al máximo estas pérdidas, los núcleos se construyen de materiales magnéticos de características especiales, como por ejemplo acero al silicio. Por ejemplo, para la fabricación de imanes permanentes se eligen materiales que posean un campo coercitivo lo más grande posible.\\
+
+La pérdida de potencia es directamente proporcional al área de la curva de histéresis.\cite{WikiHisteresis} \\
+
+		
+	\section{Objetivos}
+	
+  Compare las pérdidas por histéresis, que en los casos reales no es posible reducir su área a cero, circulación de corrientes parásitas que no es posible eliminar.\\
+  
+  Las pérdidas magnéticas se miden prácticamente, excitando el trasformador en cualquier devanado y el otro en circuito abierto, incluyendo los siguientes instrumentos:\\
+  
+  \begin{itemize}
+  	\item   Un frecuencímetro
+  	\item Uno o tres amperímetros
+  	\item Uno dos o tres wattímetros
+  	\item Voltímetro de valor eficaz, voltímetro de tensión media.
+  \end{itemize}
+
+    
+	\section{Resultados}
+
+En el laboratorio se armó el circuito mostrado en la figura \ref{fig:CircuitoCorrienteExitacion}, en el cual se corroboró la frecuencia del sistema y se comprobó la potencia del mismo.\\
+
+
+	\begin{figure}[h!]
+		\centering
+		\begin{circuitikz}
+			
+			\draw
+
+			%Generador de funciones	
+			(0,0)to[vco,l=$V$](0,2)
+			
+			(0,0)--(1.25,0)
+			(1.25,0)to[ammeter](2.75,0)
+			
+			%WATTMETRO ABAJO
+			(2.75,0)to[esource](4,0)
+				(3.35,0) node {$W$}
+			
+			(4,0)--(6,0)
+			
+			%Lineas para giro	
+				(3.45,0.4)--(3.45,0.6)
+	            (3.25,0.4)--(3.25,1.7)
+	            
+	             (3.25,1.7)--(6,1.7)
+	             (3.45,0.6)--(6,0.6)
+	             
+	             (4,1.7)to[esource](4,0.6)
+	             (4,1.1) node {$V$}
+	            
+	             (5,1.7)to[esource](5,0.6)
+	             (5,1.1) node {$VM$}
+	             
+	             %uniones a cables externos
+	             (6,0.6)--(6,0)
+	             (6,1.7)--(6,2)
+	       			
+			(0,2)--(6,2)
+				
+			(1.25,0)to[esource](1.25,2)
+			(1.25,1) node {$F$}
+					
+			(6,-0.25) node {$X_2$}
+			[black,fill=black] (6,0) circle (.5ex)
+			
+			(6,2.25) node {$X_1$}
+			[black,fill=black] (6,2) circle (.5ex)
+			
+		    (7,-0.25) node {$H_2$}
+		    [black,fill=black] (7,0) circle (.5ex)
+				
+		    (7,2.25) node {$H_1$}
+		    [black,fill=black] (7,2) circle (.5ex)
+						
+			;
+			
+		
+			\draw
+			[gray,shift={(5.75,-0.5)}](0,0)rectangle (1.5,3)
+			;
+			
+		\end{circuitikz}
+		\caption{Circuito de prueba para la corriente de exitación}
+		\label{fig:CircuitoCorrienteExitacion}
+	\end{figure}
+	
+	
+	
+	\begin{figure}[h!]
+		\centering
+		\begin{tikzpicture}
+		\draw[fill=orange!70] (-3,-3) .. controls (2.5,-3) and (-0.5,3) .. (3,3)
+		.. controls (-2.5,3) and (0.5,-3) ..(-3,-3);
+		\draw[-latex] (-4,0) -- (4,0)node[below]{$I_{exc}$};
+		\draw[-latex] (0,-4) -- (0,4)node[left]{$\Phi$};
+		\draw[dashed] (-4,3) -- (4,3);
+		\draw[dashed] (-4,-3) -- (4,-3);
+		
+		\end{tikzpicture}
+		\caption{Curva de Histéresis}
+		\label{fig:curvaHisteresis}
+	\end{figure}
+	
+	En la figura \ref{fig:curvaHisteresis} se puede pareciar la curva de histéresis característica de un transformador teniendo en el eje de las abcsias la corriente de exitación.\\
+    
+	
+	\section{Conclusiones}
+	
+	El objetivo de la práctica se cumplió porque logramos verificar de manera presencial el funcionamiento del trasnformador y verificamos el comportamiento de la curva de histéresis sobre el transformador.\\
+
+	%\section{Referencias}
+	
+
+	%\bibliographystyle{plain}
+    %\bibliography{Referencias}
+    
+
+
+	
+	
+\end{document}
+

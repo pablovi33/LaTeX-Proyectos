@@ -1,0 +1,11 @@
+\babel@toc {spanish}{}
+\contentsline {section}{\numberline {1}Introducci\IeC {\'o}n}{1}% 
+\contentsline {section}{\numberline {2}Combustible}{1}% 
+\contentsline {section}{\numberline {3}Moderador}{1}% 
+\contentsline {section}{\numberline {4}Refirgerante}{1}% 
+\contentsline {section}{\numberline {5}Potencia el\IeC {\'e}ctrica y t\IeC {\'e}rmica}{2}% 
+\contentsline {section}{\numberline {6}Sistemas de seguridad}{2}% 
+\contentsline {section}{\numberline {7}Ventajas y desventajas con otras tecnolog\IeC {\'\i }as}{2}% 
+\contentsline {section}{\numberline {8}Construcciones actuales VVER}{2}% 
+\contentsline {section}{\numberline {9}Discusi\IeC {\'o}n}{2}% 
+\contentsline {section}{\numberline {10}Conclusiones}{2}% 

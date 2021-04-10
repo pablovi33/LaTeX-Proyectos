@@ -1,0 +1,319 @@
+\documentclass[]{article}
+\usepackage[spanish.mexico]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+%\usepackageB.\\{lmodern}
+\usepackage[a4paper]{geometry}
+
+%\usepackage{natbib}
+\usepackage{cite}
+
+
+%Grafico de barras
+\usepackage{pgfplots}
+
+%Graficos e imagenes
+\usepackage{graphicx}
+
+
+\title{Plantas y generación de energía}
+\author{Pablo Vivar Colina}
+%\date{Mayo 2018}
+
+
+
+\begin{document}
+	
+%	\input{portada.tex} %agregar portada
+
+\maketitle
+
+%\tableofcontents  % Write out the Table of Contents
+
+%\listoffigures  % Write out the List of Figures
+
+
+
+\section{Campo magnético Giratorio}
+
+Es un campo magnético que rota a una velocidad uniforme (idealmente) y generado a partir de una corriente alterna trifásica.\\
+
+Fué descubierto por Galileo Ferraris en 1885 y es el fenómeno sobre el cual se fundamentan las máquinas de corriente alterna.\\
+
+\begin{figure}[h!]
+	\centering
+	
+	\begin{tikzpicture}
+	\begin{axis}[
+	axis lines = left,
+	xlabel = {t[s]},
+	ylabel = {V[V]},
+	]
+	
+	\addplot
+	[thick=0.1cm,
+	domain=0:1, 
+	samples=300, 
+	color=green,
+	]
+	{sin(2*3.14159*x*60)};
+	
+	
+	\addplot
+	[thick=0.1cm,
+	domain=0:1, 
+	samples=300, 
+	color=red,
+	]
+	{sin((2*3.14159*x*60)+120)};
+	
+	
+	
+	\addplot
+	[thick=0.1cm,
+	domain=0:1, 
+	samples=300, 
+	color=blue,
+	]
+	{sin((2*3.14159*x*60)+240)};
+	
+	%Se añade nota :D
+	\addlegendentry{Va}
+	\addlegendentry{Vb}
+	\addlegendentry{Vc}
+	
+	\end{axis}
+	\end{tikzpicture}
+	\caption{Sistema Trifásico}
+	\label{sitemaTrifasico}
+\end{figure}
+
+
+Para el T1 es en 0.25 segundos, T2 es en 0.4 y T3 en 0.55$  $ segundos aproximadamente.\\
+
+\section{Primer cálculo T1}
+
+\begin{figure}[h!]
+	\centering
+	
+	\begin{tikzpicture}
+	\begin{axis}[
+	axis lines = left,
+	xlabel = {r},
+	ylabel = {J},
+	]
+	
+	\addplot
+	[thick=0.001cm,
+	domain=0:1, 
+	samples=3, 
+	color=black,
+	]
+	{x};
+	
+	
+
+	%Se añade nota :D
+	%\addlegendentry{Va}
+	%\addlegendentry{Vb}
+	%\addlegendentry{Vc}
+	
+	\end{axis}
+	
+	%Flecha afuera Ba
+	\draw[thick=0.5cm,
+	color=red,
+	]
+	(0,0)--(0,6);
+	
+	
+	%Flecha afuera Bb con 60 grados
+	\draw[thick=0.5cm,
+	color=red,
+	]
+	(0,0)--(6,3);
+	
+	
+	%Flecha afuera S con 210 grados
+	\draw[thick=0.5cm,
+	color=red,
+	]
+	(0,0)--(-6,-3);
+	
+		%Flecha afuera Bt con 150 grados
+	\draw[thick=0.5cm,
+	color=red,
+	]
+	(0,0)--(-6,3);
+	
+	
+	\end{tikzpicture}
+	\caption{}
+	\label{}
+\end{figure}
+
+\begin{equation}
+    B_a=0+J
+\end{equation}
+
+
+\begin{equation}
+B_b=\frac{\sqrt{3}}{4}+\frac{1}{4}J
+\end{equation}
+
+
+\begin{equation}
+B_c=-\frac{\sqrt{3}}{4}+\frac{1}{4}J
+\end{equation}
+
+
+\begin{equation}
+B_T=B_a+B_b+B_c=1.5J
+\end{equation}
+
+
+\section{Segundo cálculo T2}
+
+
+\begin{figure}[h!]
+	\centering
+	
+	\begin{tikzpicture}
+	\begin{axis}[
+	axis lines = left,
+	xlabel = {r},
+	ylabel = {J},
+	]
+	
+	\addplot
+	[thick=0.001cm,
+	domain=0:1, 
+	samples=3, 
+	color=black,
+	]
+	{x};
+	
+	
+	
+	%Se añade nota :D
+	%\addlegendentry{Va}
+	%\addlegendentry{Vb}
+	%\addlegendentry{Vc}
+	
+	\end{axis}
+	
+	%Flecha afuera Ba magnitud 0.5
+	\draw[thick=0.5cm,
+	color=red,
+	]
+	(0,0)--(0,3);
+	
+	
+	%Flecha afuera Bc con 120 grados magnitud 1
+	\draw[thick=0.5cm,
+	color=red,
+	]
+	(0,0)--(-3,6);
+	
+	
+	%Flecha afuera Bb con 210 grados
+	\draw[thick=0.5cm,
+	color=red,
+	]
+	(0,0)--(-6,-3);
+	
+	
+	
+	\end{tikzpicture}
+	\caption{}
+	\label{}
+\end{figure}
+
+\begin{equation}
+B_a=0+0.5J
+\end{equation}
+
+
+\begin{equation}
+B_c=\frac{\sqrt{3}}{2}+\frac{1}{2}J
+\end{equation}
+
+
+\begin{equation}
+B_b=\frac{\sqrt{3}}{4}-\frac{1}{4}J
+\end{equation}
+
+
+\begin{equation}
+B_T=-3\frac{\sqrt{3}}{4}+\frac{3}{4}J
+\end{equation}
+
+\begin{equation}
+B_T=\sqrt{(\frac{\sqrt{3}}{4})^2+(\frac{3}{4})^2}
+\end{equation}
+
+
+\begin{equation}
+B_T=\frac{3}{2}\angle 60^0
+\end{equation}
+
+\section{Calculo para T3}
+
+
+
+\begin{equation}
+B_a=\frac{1}{4}J
+\end{equation}
+
+
+%Angulo de 210 magnitud de 1
+\begin{equation}
+   B_b=-\frac{\sqrt{3}}{2}-\frac{1}{2}J
+\end{equation}
+
+%magnitud de 0.5 con angulo de 120
+\begin{equation}
+B_c=-\frac{\sqrt{3}}{4}+\frac{1}{4}J
+\end{equation}
+
+
+\section{Apendice}
+
+La máquina síncrona conserva la velocidad del rotor a pesar de tener una carga, el motor de inducción no conserva ésta propiedad.\\
+
+\section{Referencias}
+
+%\bibliographystyle{plain}
+%\bibliography{Prac1}
+
+
+
+\begin{thebibliography}{9}
+	%\bibitem{latexcompanion} 
+	%Michel Goossens, Frank Mittelbach, and Alexander Samarin. 
+	%\textit{The \LaTeX\ Companion}. 
+	%Addison-Wesley, Reading, Massachusetts, 1993.
+	
+	%\bibitem{einstein} 
+	%Albert Einstein. 
+	%\textit{Zur Elektrodynamik bewegter K{\"o}rper}. (German) 
+	%[\textit{On the electrodynamics of moving bodies}]. 
+	%Annalen der Physik, 322(10):891–921, 1905.
+	
+	
+	%\bibitem{ebullicion} 
+	 %Punto ebullición,
+	%\\\texttt{http://www.cie.unam.mx/~ojs/pub/Liquid3/node8.html}
+	
+	
+	%\bibitem{coccion} 
+   %UnComo:Tiempo de cocción de los frijoles,
+	%\\\texttt{https://comida.uncomo.com/articulo/tiempo-de-coccion-de-los-frijoles-34777.html}
+\end{thebibliography}
+
+
+
+
+
+
+\end{document}

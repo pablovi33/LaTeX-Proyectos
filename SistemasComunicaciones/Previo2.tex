@@ -1,0 +1,65 @@
+ve\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish.mexico]{babel}
+\usepackage[american voltages, american currents,siunitx]{circuitikz}
+
+
+\title{Previo 2: Análisis espectral de una señal senoidal}
+\author{Pablo Vivar Colina\\
+Grupo 13
+}
+%\date{Septiembre 2017}
+
+\usepackage{natbib}
+\usepackage{graphicx}
+
+\begin{document}
+
+\maketitle
+
+\section{Señal Senoidal y cosenoidal}
+
+Se solicita obtener el espectro teórico de una señal senoidal y cosenoidal de $7 [V_{RMS}]$ y $1 [kHz]$
+
+\begin{figure}[h!]
+    \centering
+    
+   
+\begin{tikzpicture}
+\begin{axis}[
+    axis lines = left,
+    xlabel = {t[ms]},
+    ylabel = {V[V]},
+]
+
+\addplot
+[thick=0.1cm,
+    domain=0:2, 
+    samples=100, 
+    color=red,
+]
+{4.9497*sin(deg((2*3.1459*x))};
+\addlegendentry{$4.9497 V_{pp}$}
+%Here the blue parabloa is defined
+%\addplot [
+ %   domain=-10:10, 
+  %  samples=100, 
+    %color=blue,
+   % ]
+    %{x^2 + 2*x + 1};
+%\addlegendentry{$x^2 + 2x + 1$}
+ 
+\end{axis}
+\end{tikzpicture}
+
+\caption{Señal senoidal 4.9497 Vpp}
+    \label{fig:seno4.9497.1khzprim}
+\end{figure}
+
+
+
+\bibliographystyle{plain}
+\bibliography{Previo1.bib}
+
+
+\end{document}

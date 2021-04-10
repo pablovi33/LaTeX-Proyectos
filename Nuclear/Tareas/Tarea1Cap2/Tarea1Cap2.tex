@@ -1,0 +1,111 @@
+\documentclass[]{article}
+\usepackage[spanish.mexico]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+%\usepackage{lmodern}
+\usepackage[a4paper]{geometry}
+
+%Plotting
+
+\usepackage{pgfplots}
+\pgfplotsset{width=10cm,compat=1.9} 
+%\usepgfplotslibrary{external}
+%\tikzexternalize 
+
+%Graficos e imagenes
+\usepackage{graphicx}
+%\graphicspath{ Imagenes/ }
+
+\usepackage{natbib}
+%\usepackage{cite}
+
+\usepackage{subcaption}
+
+%Grafico de barras
+%\usepackage{pgfplots}
+
+
+\usepackage{tikz}
+\usepackage[american voltages, american currents,siunitx]{circuitikz}
+
+\title{Tarea 1 Capítulo 2}
+\author{Pablo Vivar Colina}
+%\date{Mayo 2018}
+
+
+\begin{document}
+	
+%\input{portada.tex} %agregar portada
+
+\maketitle
+
+%\tableofcontents  % Write out the Table of Contents
+
+%\listoffigures  % Write out the List of Figures
+
+
+1.- Valor 10 puntos: Cuantos neutrones y protones se encuentran en el núcleo de los siguientes átomos:
+(a) 7 Li,
+(b) 24 Mg,
+(c) 135 Xe,
+(d) 209 Bi,
+(e) 222 Rn ?
+2.- Valor 20 puntos: La fisión del núcleo de 235 U libera aproximadamente 200 MeV. Cuanta energía es
+liberada por fisión de 1 g de 235 U ? (Calcularlo en kilowatt-hora y megawatt-día).
+3.- Valor 20 puntos: a) Comparar el radio nuclear y la densidad del núcleo del 1 H y del
+2.4).
+235
+U (ver sección
+b) ¿Cuál es la proporción del espacio total del átomo de aluminio ocupádo por el núcleo (la densidad del
+aluminio es 2.7 gr/cm 3 )?
+4.- Valor 20 puntos: a). ¿Cuál es la longitud de onda de un electrón con 1 keV de energía cinética?
+b). ¿Cuál es la longitud de onda de una pelota de golf de 50 gr. Que viaja a 50 m/s?
+5.- Valor 30 puntos: Un acelerador de partículas es usado para crear rayos de electrones de alta energía.
+Si esto se logra permitiendo que los electrones se aceleren a través de un potencial de 300 V:
+a) Determinar la energía cinética del electrón, la energía total y la velocidad.
+b) Repetir los cálculos utilizando un protón en lugar de un electrón.
+c) Repetir los cálculos para el electrón y el protón si el voltaje que acelera las partículas se incrementa a 1
+MV.
+
+
+\section{Obejtivo del ejercicio}
+
+Analizar, diseñar, simular y armar el inversor lógico como circuito integrado para generar su función de transferencia y su señalización mediante diodos LED.
+
+
+\section{Inversor lógico}
+
+
+\begin{figure}[h!]
+	\centering
+%	\includegraphics[width=0.2\textwidth]{Puertas_NOT_con_transistores}
+	\caption{Compuerta NOT con transistores}
+\end{figure}
+
+
+Una variable lógica. Una variable lógica (A) a la cual se le aplica la negación se pronuncia como "no A" o "A negada".
+Puerta NOT con transistores. Se puede definir como una puerta que proporciona el estado inverso del que esté en su entrada. \\
+
+La ecuación característica que describe el comportamiento de la puerta NOT es: $F=\bar{A}$ \\
+
+%\begin{equation}
+%    F=\bar{A}
+%\end{equation}
+
+
+
+\section{Simulación}
+
+Mediante el software de logisim se agregó la compuerta con un un interruptor momentáneo.\\
+
+
+
+
+%\section{Referencias}
+
+%\bibliographystyle{plain}
+%\bibliography{Referencias.bib}
+
+
+
+\end{document}

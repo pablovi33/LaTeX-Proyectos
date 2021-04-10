@@ -1,0 +1,108 @@
+This is BibTeX, Version 0.99d (TeX Live 2019/dev/Debian)
+Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
+The top-level auxiliary file: Previo6ModulaciOnAm.aux
+The style file: plain.bst
+Database file #1: Referencias.bib
+I was expecting a `,' or a `}'---line 22 of file Referencias.bib
+ : 
+ : @book{Atomo,
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+I was expecting a `,' or a `}'---line 34 of file Referencias.bib
+ : 
+ : @book{BohrAtomo,
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+I was expecting a `,' or a `}'---line 46 of file Referencias.bib
+ : 
+ : @book{CirI,
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+I was expecting a `,' or a `}'---line 59 of file Referencias.bib
+ : 
+ : @book{CondE,
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+I was expecting a `,' or a `}'---line 73 of file Referencias.bib
+ : 
+ : @book{BandaPBD,
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+I was expecting a `,' or a `}'---line 86 of file Referencias.bib
+ : 
+ : @book{CurvasLiss,
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+I was expecting a `,' or a `}'---line 101 of file Referencias.bib
+ : 
+ : @book{Frec,
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+I was expecting a `,' or a `}'---line 119 of file Referencias.bib
+ : 
+ : @book{Defase,
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+I was expecting a `,' or a `}'---line 133 of file Referencias.bib
+ : 
+ : @book{RS,
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+I was expecting a `,' or a `}'---line 182 of file Referencias.bib
+ : 
+ : %https://es.wikipedia.org/wiki/Anexo:Historia_de_la_computaci%C3%B3n
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+I was expecting a `,' or a `}'---line 197 of file Referencias.bib
+ : 
+ : %#####COMIENZAN REFERENCIAS DE SISTEMAS DE COMUNICACION#####
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+"%" immediately follows a field part---line 294 of file Referencias.bib
+ :   url=https://es.wikipedia.org/wiki/Distribuci\
+ :                                                %C3\%B3n_normal
+I'm skipping whatever remains of this entry
+Warning--empty publisher in IndiceModulacion
+Warning--empty year in IndiceModulacion
+You've used 1 entry,
+            2118 wiz_defined-function locations,
+            501 strings with 4100 characters,
+and the built_in function-call counts, 232 in all, are:
+= -- 16
+> -- 7
+< -- 0
++ -- 3
+- -- 2
+* -- 15
+:= -- 44
+add.period$ -- 2
+call.type$ -- 1
+change.case$ -- 3
+chr.to.int$ -- 0
+cite$ -- 3
+duplicate$ -- 12
+empty$ -- 23
+format.name$ -- 2
+if$ -- 44
+int.to.chr$ -- 0
+int.to.str$ -- 1
+missing$ -- 2
+newline$ -- 7
+num.names$ -- 2
+pop$ -- 11
+preamble$ -- 1
+purify$ -- 3
+quote$ -- 0
+skip$ -- 5
+stack$ -- 0
+substring$ -- 5
+swap$ -- 1
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 2
+warning$ -- 2
+while$ -- 2
+width$ -- 2
+write$ -- 9
+(There were 12 error messages)

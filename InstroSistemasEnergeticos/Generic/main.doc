@@ -1,0 +1,192 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <meta name="author" content="Pablo Vivar Colina" />
+  <title>Proyecto genérico</title>
+  <style type="text/css">code{white-space: pre;}</style>
+</head>
+<body>
+<div id="header">
+<h1 class="title">Proyecto genérico</h1>
+<h2 class="author">Pablo Vivar Colina</h2>
+<h3 class="date">Enero 2019</h3>
+</div>
+<h1 id="sistemas-eléctricos">Sistemas eléctricos</h1>
+<h2 id="leyes-de-kirchhoff-y-circuitos-de-parámetros-concentrados">Leyes de Kirchhoff y circuitos de parámetros concentrados</h2>
+<p>Objetivo: enseñar al alumno los modelos matemáticos de los elementos básicos de 2 terminales en el dominio del tiempo <span class="math inline">$&quot;t&quot;$</span> y en el dominio de la variable compleja <span class="math inline">$&quot;s&quot;$</span>.<br />
+Las leyes de Kirchhoff son las que rigen a los circuitos eléctricos, dichas leyes están basadas en las leyes de la conservación de la carga y de la energía y se obtienen directamente de las ecuaciones de Maxwell.<br />
+</p>
+<h3 id="ecuaciones-de-maxwell">Ecuaciones de Maxwell</h3>
+<p>Las ecuaciones de Maxwell como ahora las conocemos son las cuatro citadas anteriormente y a manera de resumen se pueden encontrar en la siguiente tabla:<br />
+</p>
+<table>
+<thead>
+<tr class="header">
+<th align="center">Nombre</th>
+<th align="center">Forma Diferencial</th>
+<th align="center">Forma Integral</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">Ley de Gauss</td>
+<td align="center"><span class="math inline">$\vec{\nabla} \cdot \vec{E} = \frac{\rho}{\varepsilon_0}$</span></td>
+<td align="center"><span class="math inline">$\oint_{S} \vec{E} \cdot d\vec{s} = \frac {q}{\varepsilon_0}$</span></td>
+</tr>
+<tr class="even">
+<td align="center">Ley de Gauss para el campo magnético</td>
+<td align="center"><span class="math inline">$\vec{\nabla} \cdot \vec{B} = 0$</span></td>
+<td align="center"><span class="math inline">$\oint_S \vec{B} \cdot d\vec{s} = 0$</span></td>
+</tr>
+<tr class="odd">
+<td align="center">Ley de Faraday</td>
+<td align="center"><span class="math inline">$\vec{\nabla} \times \vec{E} = - \frac{\partial \vec{B}}{\partial t}$</span></td>
+<td align="center"><span class="math inline">$\oint_C \vec{E} \cdot d\vec{l} =  - \ { d \over dt } \int_{S} \vec{B} \cdot d\vec{s}$</span></td>
+</tr>
+<tr class="even">
+<td align="center">Ley de Ampere Generalizada</td>
+<td align="center"><span class="math inline">$\vec{\nabla} \times \vec{B} = \mu_0 \vec{J} + \mu_0 \varepsilon_0  \frac{\partial \vec{E}}{\partial t}$</span></td>
+<td align="center"><span class="math inline">$\oint_C \vec{B} \cdot d\vec{l} = \mu_0 \int_S \vec{J} \cdot d\vec{s} + \mu_0 \varepsilon_0 \frac{d}{dt} \int_S \vec{E} \cdot d\vec{s}$</span></td>
+</tr>
+</tbody>
+</table>
+<p>Estas cuatro ecuaciones junto con la fuerza de Lorentz son las que explican cualquier tipo de fenómeno electromagnético. Una fortaleza de las ecuaciones de Maxwell es que permanecen invariantes en cualquier sistema de unidades, salvo de pequeñas excepciones, y que son compatibles con la relatividad especial y relatividad general. Además Maxwell descubrió que la cantidad <span class="math inline">$c = \frac{1}{\sqrt{\varepsilon_{0} \mu_0}}$</span> era simplemente la velocidad de la luz en el vacío, por lo que la luz es una forma de radiación electromagnética<span class="citation">(WikimediaGroupb)</span>.<br />
+</p>
+<h2 id="concepto-de-circuito-eléctrico">Concepto de circuito eléctrico</h2>
+<p>Un conjunto de elementos conectados entre si formando trayectorias cerradas por donde puede fluir una corriente eléctrica<br />
+</p>
+<p>(0,0)to[R,l=<span class="math inline"><em>R</em><sub>1</sub></span>](3,0) (3,0)to[R,l=<span class="math inline"><em>R</em><sub>2</sub></span>](3,-3) (3,-3)to[R,l=<span class="math inline"><em>R</em><sub>3</sub></span>](0,-3) (0,-3)to[R,l=<span class="math inline"><em>R</em><sub>4</sub></span>](0,0) ;</p>
+<p>(0,0)to[R,l=<span class="math inline"><em>R</em><sub>1</sub></span>](3,0) (0,-1.5)to[C,l=<span class="math inline"><em>C</em><sub>1</sub></span>](3,-1.5) (0,-1.5*2)to[L,l=<span class="math inline"><em>L</em><sub>1</sub></span>](3,-1.5*2) (0,-1.5*3)to[V,l=<span class="math inline"><em>V</em><sub>1</sub></span>](3,-1.5*3) (0,-1.5*4)to[vco,l=<span class="math inline"><em>G</em><sub>1</sub></span>](3,-1.5*4) (0,-1.5*5)to[amp,l=<span class="math inline"><em>A</em><em>m</em><em>p</em><sub>1</sub></span>](3,-1.5*5) (0,-1.5*6)to[D,l=<span class="math inline"><em>D</em><sub>1</sub></span>](3,-1.5*6) (0,-1.5*7)to[ammeter,l=<span class="math inline"><em>A</em><sub>1</sub></span>](3,-1.5*7) (0,-1.5*8)to[voltmeter,l=<span class="math inline"><em>V</em><sub>1</sub></span>](3,-1.5*8) (0,-1.5*9) to[esource] (3,-1.5*9) (1.5,-1.5*9)node <span><span class="math inline"><em>V</em><em>M</em></span></span> [black,fill=black] (3,-1.5*9)circle (.5ex) (3,-1.5*9)–(6,-1.5*9) (1,-1.5*10) node[op amp] (opamp1) <span>741</span> (1,-15.5) to (1,-16) node[ground]</p>
+<p>; [gray,shift=<span>(4,-12)</span>](0,0)rectangle (2.15,12) ;</p>
+<p>Podemos apreciar que en el circuito [fig:CircuitoEjemplo] se encuentran 4 resistores en serie, cada uno con una polaridad asociada, con una malla única en la cual circula una corriente <span class="math inline">$&quot;i&quot;$</span>.<br />
+Definiciones:<br />
+</p>
+<ul>
+<li><p>Nodo: unión de 2 o mas elementos.</p></li>
+<li><p>Malla: trayectorias cerradas de los circuitos.</p></li>
+</ul>
+<h2 id="leyes-de-kirchhoff">Leyes de Kirchhoff</h2>
+<p>Las leyes de Kirchhoff son dos igualdades que se basan en la conservación de la energía y la carga en los circuitos eléctricos. Fueron descritas por primera vez en 1846 por Gustav Kirchhoff. Son ampliamente usadas en ingeniería eléctrica e ingeniería electrónica.<br />
+Ambas leyes de circuitos pueden derivarse directamente de las ecuaciones de Maxwell, pero Kirchhoff precedió a Maxwell y gracias a Georg Ohm su trabajo fue generalizado. Estas leyes son utilizadas para hallar corrientes y tensiones en cualquier punto de un circuito eléctrico.<br />
+</p>
+<h3 id="ley-de-corrientes-de-kirchhoff">Ley de corrientes de Kirchhoff</h3>
+<p>En cualquier nodo, la suma de las corrientes que entran en ese nodo es igual a la suma de las corrientes que salen. De forma equivalente, la suma de todas las corrientes que pasan por el nodo es igual a cero.<br />
+<br /><span class="math display">$$\sum_{k=1}^n I_k = I_1 + I_2 + I_3+\dots + I_n = 0$$</span><br /></p>
+<h3 id="ley-de-tensiones-de-kirchhoff">Ley de tensiones de Kirchhoff</h3>
+<p>En un lazo cerrado, la suma de todas las caídas de tensión es igual a la tensión total suministrada. De forma equivalente, la suma algebraica de las diferencias de potencial eléctrico en un lazo es igual a cero.<span class="citation">(WikimediaGroupc)</span><br />
+<br /><span class="math display">$$\sum_{k=1}^n V_k = V_1 + V_2 + V_3\dots + V_n = 0$$</span><br /></p>
+<h2 id="circuito-de-parámetros-concentrados">Circuito de parámetros concentrados</h2>
+<p>En general, un modelo de parámetros concentrados es un método que simplifica el análisis de un sistema real espacialmente distribuido, mediante la creación de una topología de elementos discretos que aproximan el comportamiento de los componentes distribuidos reales bajo ciertas restricciones.<br />
+Matemáticamente hablando sirve para reducir las ecuaciones en derivadas parciales espaciales (PDEs) y temporales del continuo (dimensión infinita) de nuestro sistema a un conjunto de ecuaciones diferenciales ordinarias (ODEs) con un número finito de parámetros, del que podemos obtener una solución mucho más fácilmente.<br />
+</p>
+<h3 id="circuito-eléctrico-de-parámetros-concentrados">Circuito eléctrico de parámetros concentrados</h3>
+<p>En el caso concreto de sistemas eléctricos este modelo se trata con la teoría de circuitos, en la que se estudian circuitos de parámetros concentrados, asumiendo que los parámetros eléctricos del circuito (resistencia, capacitancia, inductancia) se encuentran confinados a una región pequeña del espacio, en los llamados componentes electrónicos (Resistores, condensadores, inductancias), y que están conectados en un circuito mediante hilos perfectamente conductores.<br />
+La restricción fundamental al análisis mediante este modelo es que el tamaño del circuito sea mucho menor que la longitud de onda de la señal eléctrica que circule por el propio circuito. En el caso contrario de que el tamaño del circuito sea del mismo orden o mayor que la longitud de onda se deberá tratar el problema de forma más general, con un modelo de parámetros distribuidos (como las líneas de transmisión, cuyo comportamiento dinámico se debe estudiar aplicando directamente las Ecuaciones de Maxwell).<span class="citation">(WikimediaGroupa)</span><br />
+</p>
+<h1 id="sinusoide">Sinusoide</h1>
+<p>En matemáticas se denomina sinusoide o senoide a la curva que representa gráficamente la función seno y también a dicha función en sí. Es una curva que describe una oscilación repetitiva y suave.<br />
+Su forma más básica en función del tiempo (t) es:<span class="citation">(Wikipedia 2018)</span><br />
+<br /><span class="math display">$$y(t) = A\sen(\omega t + \varphi)$$</span><br /></p>
+<p>La senoide es importante en física debido al hecho descrito por el teorema de Fourier que dice que toda onda, cualquiera que se sea su forma, puede expresarse de manera única como superposición (suma) de ondas sinosuidales de longitudes de onda y amplitudes definidas. Por este motivo se usa esta función para representar tanto a las ondas sonoras como las de la corriente alterna.<span class="citation">(Wikipedia 2018)</span><br />
+</p>
+<h2 id="características">Características</h2>
+<p>La sinusoide puede ser descrita por las siguientes expresiones matemáticas:</p>
+<p><br /><span class="math display">$$y(x) = A\ {\rm{sen}} (\omega x + \varphi)$$</span><br /></p>
+<p><br /><span class="math display">$$y(t) = A\sen(2 \pi f t + \varphi)$$</span><br /></p>
+<p><br /><span class="math display">$$y(x) = A\ {\rm{sen}}  (\frac {2\pi }{T}x + \varphi )$$</span><br /></p>
+<p>donde:<br />
+</p>
+<ul>
+<li><p><span class="math inline"><em>A</em></span> es la amplitud de oscilación.</p></li>
+<li><p><span class="math inline"><em>ω</em></span> es la velocidad angular</p></li>
+<li><p><span class="math inline"><em>ω</em> = 2<em>π</em><em>f</em></span></p></li>
+<li><p><span class="math inline"><em>f</em></span> es la frecuencia de oscilación.</p></li>
+<li><p><span class="math inline"><em>T</em></span> es el período de oscilación</p></li>
+<li><p><span class="math inline"><em>T</em> = 1/<em>f</em></span></p></li>
+<li><p><span class="math inline"><em>ω</em><em>x</em></span> + <span class="math inline"><em>φ</em></span> es la fase de oscilación.</p></li>
+<li><p><span class="math inline"><em>φ</em></span> es la fase inicial.</p></li>
+</ul>
+<div class="figure">
+<img src="Imagenes/Alg_sinusoide.png" alt="Parámetros característicos de una forma sinusoidal." style="width:60.0%" />
+<p class="caption">Parámetros característicos de una forma sinusoidal.<span data-label="fig:parametro_sinusoide"></span></p>
+</div>
+<p>[ axis lines = left, xlabel = <span class="math inline"><em>x</em></span>, ylabel = <span><span class="math inline"><em>f</em>(<em>x</em>)</span></span>, ] ; ;</p>
+<p>[ symbolic x coords=<span>A,B,C,D,E,F,G,H,I,J,K</span>, xtick=data ] coordinates <span> (A, 291) (B, 284) (C, 323) (D,323) (E,339) (F,306) (G,254) (H,282) (I,302) (J,264) (K,272) </span>;</p>
+<table>
+<thead>
+<tr class="header">
+<th align="center">Nombre</th>
+<th align="center">Periodo</th>
+<th align="center">Energía consumida [kWh]</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">I</td>
+<td align="center">11/8/17-12/10/17</td>
+<td align="center">323</td>
+</tr>
+<tr class="even">
+<td align="center">J</td>
+<td align="center">12/10/17-11/10/17</td>
+<td align="center">284</td>
+</tr>
+<tr class="odd">
+<td align="center">K</td>
+<td align="center">11/12/17-12/2/18</td>
+<td align="center">291</td>
+</tr>
+</tbody>
+</table>
+<p>[cuadro:ultimosPeriodos]</p>
+<h1 id="sinusoide-1">Sinusoide</h1>
+<p>En matemáticas se denomina sinusoide o senoide a la curva que representa gráficamente la función seno y también a dicha función en sí. Es una curva que describe una oscilación repetitiva y suave.<br />
+<br /><span class="math display">$$y(t) = A\sen(\omega t + \varphi)$$</span><br /></p>
+<h2 id="características-1">Características</h2>
+<p>La sinusoide puede ser descrita por las siguientes expresiones matemáticas:</p>
+<p><br /><span class="math display">$$y(x) = A\ {\rm{sen}}\left (\omega x + \varphi \right )$$</span><br /></p>
+<p><br /><span class="math display">$$y(t) = A\sen(2 \pi f t + \varphi)$$</span><br /></p>
+<p><br /><span class="math display">$$y(x) = A\ {\rm{sen}} \left (\frac {2\pi }{T}x + \varphi \right )$$</span><br /></p>
+<p>donde:<br />
+</p>
+<ul>
+<li><p><span class="math inline"><em>A</em></span> es la amplitud de oscilación.</p></li>
+<li><p><span class="math inline"><em>ω</em></span> es la velocidad angular</p></li>
+<li><p><span class="math inline"><em>ω</em> = 2<em>π</em><em>f</em></span></p></li>
+<li><p><span class="math inline"><em>f</em></span> es la frecuencia de oscilación.</p></li>
+<li><p><span class="math inline"><em>T</em></span> es el período de oscilación</p></li>
+<li><p><span class="math inline"><em>T</em> = 1/<em>f</em></span></p></li>
+<li><p><span class="math inline"><em>ω</em><em>x</em></span> + <span class="math inline"><em>φ</em></span> es la fase de oscilación.</p></li>
+<li><p><span class="math inline"><em>φ</em></span> es la fase inicial.</p></li>
+</ul>
+<p>[ axis lines = left, xlabel = <span>t[s]</span>, ylabel = <span>V[V]</span>, ]</p>
+<p>[thick=0.1cm, domain=0:0.1, samples=100, color=green, ] <span>(4/3.14159265359)*(sin(2*3.14159265359*1000*x)+(1/3)*sin(3*2*3.14159265359*1000*x)+(1/5)*sin(5*2*3.14159265359*1000*x)</span>;</p>
+<div id="refs" class="references">
+<div id="ref-CircuitoParametrosConcentrados">
+<p>WikimediaGroupa<em>Circuito de Parametros Concentrados</em>. <a href="https://es.wikipedia.org/wiki/Circuito_de_par%C3%A1metros_concentrados
+	
+	
+	
+	">https://es.wikipedia.org/wiki/Circuito_de_par%C3%A1metros_concentrados
+	
+	
+	
+	</a>.</p>
+</div>
+<div id="ref-EcuacionesMaxwell">
+<p>———b<em>Ecuaciones de Maxwell</em>. <a href="https://es.wikipedia.org/wiki/Ecuaciones_de_Maxwell" class="uri">https://es.wikipedia.org/wiki/Ecuaciones_de_Maxwell</a>.</p>
+</div>
+<div id="ref-LeyesKirchhoff">
+<p>———c<em>Leyes de Kirchhoff</em>. <a href="https://es.wikipedia.org/wiki/Leyes_de_Kirchhoff
+	" class="uri">https://es.wikipedia.org/wiki/Leyes_de_Kirchhoff
+	</a>.</p>
+</div>
+<div id="ref-Sinusoide">
+<p>Wikipedia. 2018. <em>Sinusoide</em>. Wikipedia group. <a href="https://es.wikipedia.org/wiki/Sinusoide" class="uri">https://es.wikipedia.org/wiki/Sinusoide</a>.</p>
+</div>
+</div>
+</body>
+</html>

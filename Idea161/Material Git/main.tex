@@ -1,0 +1,173 @@
+\documentclass[]{article}
+\usepackage[spanish.mexico]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage[a4paper]{geometry}
+
+%\usepackage{natbib}
+\usepackage{cite}
+
+
+%Grafico de barras
+\usepackage{pgfplots}
+
+
+\title{Mantenimiento de repositorios con Git en Debian o Ubuntu}
+\author{Pablo Vivar Colina}
+\date{Julio 2018}
+
+\begin{document}
+
+\maketitle
+
+\section{Introducción}
+
+El software libre es genial, sobretodo sus sistemas operativos, los sistemas GNU/Linux vienen con muchas variaciones, pero las más utilizadas en el mercado son las basadas en Ubuntu y Debian.\\
+
+\section{Debian y Ubuntu}
+
+\subsection{Debian}
+
+Debian es un sistema operativo (S.O.) libre, para su computadora. El sistema operativo es el conjunto de programas básicos y utilidades que hacen que funcione su computadora.\\
+
+Debian ofrece más que un S.O. puro; viene con 51000 paquetes, programas precompilados distribuidos en un formato que hace más fácil la instalación en su computadora.\\
+
+\subsection{Ubuntu}
+
+Ubuntu viene con todo lo que necesitas para dirigir tu organización, escuela, hogar o empresa. Todas las aplicaciones esenciales, como una suite de oficina, navegadores, correo electrónico y aplicaciones multimedia vienen preinstaladas y miles de juegos y aplicaciones más están disponibles en el Centro de Software de Ubuntu.\\
+
+Ubuntu siempre ha sido libre de descargar, usar y compartir. Creemos en el poder del software de código abierto; Ubuntu no podría existir sin su comunidad mundial de desarrolladores voluntarios.\\
+
+Con un firewall incorporado y un software de protección antivirus, Ubuntu es uno de los sistemas operativos más seguros del mercado. Y las versiones de soporte a largo plazo le ofrecen cinco años de parches y actualizaciones de seguridad.\\
+
+La informática es para todos, independientemente de su nacionalidad, sexo o discapacidad. Ubuntu está totalmente traducido a más de 50 idiomas e incluye tecnologías de asistencia esenciales.\cite{UbuntuIntro}Traducción realizada con el traductor DeepL \cite{DeepL}\\
+
+\subsection{Superusuario}
+
+El superusuario en sistemas libres es una "herramienta" que nos permite realizar ciertas acciones con más permisos en la computadora que los que podriamos realizar con los permisos por defecto\\
+
+\begin{enumerate}
+	\item sudo <comando> $Ubuntu$
+	
+	\item su (acceso terminal root) $Debian$
+\end{enumerate}
+
+\subsection{Navegación Directorios}
+
+En Debian y Ubuntu con los entornos de escritorios por defecto tenemos acceso a navegación de directorios en entornos gráficos, por ejemplo en Ubunto con gnome tenemos el navegador $nautilus$ y en Debian con XFCE tenemos el navegador $thunar$, éste último podemos accesar a él a través de invocarlo con su nombre desde la terminal.\\
+
+Para navegar entre carpetas en la terminal podemos utilizar los siguientes comandos.\\
+
+\begin{enumerate}
+	\item ls (muestra el contenido en la carpeta en la cual nos encontramos)
+	\item cd <carpeta> (accesa a carpeta)
+	\item cd .. (sale de carpeta)
+\end{enumerate}
+
+Es importante mencionar que con la tecla <TAB> podemos autocompletar nombres de directorios, programas, accesos, etc. y que con el comando cd podemos accesar a un directorio (lejano) usando diagonales </> por ejemplo:
+
+\begin{equation}
+  cd usuario/Documentos/Repositorio
+  \label{cdAcceso}
+\end{equation}
+
+Podemos notar que en \ref{cdAcceso} se utiliza una dirección directa, con esa única línea de comando ya nos podemos localizar en el directorio deseado.\\
+
+\section{Repositorios en Git}
+
+\subsection{Introducción}
+
+ Git es un sistema de control de versiones distribuido, gratuito y de código abierto, diseñado para gestionar todo tipo de proyectos, desde pequeños hasta muy grandes, con rapidez y eficacia.
+ 
+ Git es fácil de aprender y tiene una huella diminuta con un rendimiento increíblemente rápido. Supera a las herramientas SCM como Subversion, CVS, Perforce y ClearCase con características como sucursales locales baratas, áreas de preparación convenientes y múltiples flujos de trabajo.\cite{GitIntro} Traducción realizada con el traductor DeepL.\cite{DeepL}\\ 
+ 
+ \subsection{Trabajando con Git}
+ 
+ 
+ \subsubsection{Directorio de Git}
+ 
+ El directorio.git es donde Git almacena los metadatos y la base de datos de objetos para el repositorio.
+ 
+  \subsubsection{Directorio de trabajo}
+ 
+ Una copia de una versión del proyecto git, tomada de la base de datos comprimida en el directorio.git 
+ 
+  \subsubsection{Área de puesta a disposición/Índice}
+  	
+ Archivo que almacena información sobre qué se va a confirmar en el repositorio git
+  
+  \subsubsection{Configurar herramientas}
+ 
+ git config --global user.name "[nombre]"\\
+ Establece el nombre que desea adjuntar a sus transacciones de confirmación.\\[0.5cm]
+ 
+ git config --global user.email "[dirección de correo electrónico]"\\
+ Establece el correo electrónico que desea adjuntar a sus transacciones de confirmación.\\[0.5cm]
+ 
+ \subsubsection{Realizar modificaciones}
+ 
+git status\\
+ Enumera todos los archivos nuevos o modificados que se van a confirmar.\\[0.5cm]
+ 
+ git diff\\
+ Muestra las diferencias de archivos que aún no se han preparado.\\[0.5cm]
+ 
+ git add [archivo]
+ Instantáneas del archivo en preparación para el versionado (la bandera $--all$ añade todos los cambios nuevos).\\[0.5cm]
+ 
+ git diff $--etapas$
+ Muestra las diferencias de archivo entre la puesta a disposición y la última versión del archivo.\\[0.5cm]
+ 
+ git reset[archivo]\\
+ Desescribe el archivo, pero conserva su contenido.\\[0.5cm]
+ 
+ git commit -m "[mensaje descriptivo]"\\
+ Registra las instantáneas del archivo permanentemente en el repositorio.\\[0.5cm]
+ 
+ 
+ \subsubsection{Crear Repositorios}
+ 
+ git init[nombre del proyecto]\\
+ Crea un nuevo repositorio local con el nombre especificado.\\[0.5cm]
+
+ git clone[url]\\
+ Descarga un proyecto y toda su historia de versiones.\\[0.5cm]
+ 
+ 
+ \subsubsection{Sincronizar cambios}
+ 
+ git push\\
+Sube todos los compromisos de las sucursales locales al repositorio.\\[0.5cm]
+
+ git pull\\
+ Descarga el historial de marcadores e incorpora cambios.\\[0.5cm]
+ 
+ 
+  \cite{GitIntro}Traducción realizada con el traductor DeepL \cite{DeepL}.\\
+
+\section{GitLab}
+
+Para el mantenimiento de repositorios se estará usando la plataforma GitLab, ya que brinda muchas herremientas adicionales, como levantar issues, comunicación entre usuarios, etc.\\
+
+\section{Conclusión}
+
+En la creación y mantenimiento de repositorios de los comandos anteriormente mencionado se hará uso más frecuente de los siguientes y uno adicional para la creación de repositorios \\
+
+\begin{enumerate}
+    \item git pull
+	\item git status
+	\item git add [archivo] (con bandera --all)
+	\item git commit -m "[mensaje descriptivo]"
+	\item git push
+\end{enumerate}
+
+
+
+
+
+\bibliographystyle{plain}
+\bibliography{Referencias.bib}
+
+
+\end{document}

@@ -1,0 +1,512 @@
+\documentclass[]{article}
+\usepackage[spanish.mexico]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+%\usepackageB.\\{lmodern}
+\usepackage[a4paper]{geometry}
+
+%\usepackage{natbib}
+\usepackage{cite}
+
+
+%Grafico de barras
+\usepackage{pgfplots}
+
+%Graficos e imagenes
+\usepackage{graphicx}
+
+\usepackage{tikz}
+\usepackage[american voltages, american currents,siunitx]{circuitikz}
+
+
+
+\title{El generador Síncorono}
+\author{Pablo Vivar Colina}
+%\date{Mayo 2018}
+
+
+
+\begin{document}
+	
+%	\input{portada.tex} %agregar portada
+
+\maketitle
+
+%\tableofcontents  % Write out the Table of Contents
+
+%\listoffigures  % Write out the List of Figures
+
+
+
+\section{Estator}
+
+Un campo magnético rotativo o giratorio va a una velocidad uniforme (idealment) y es generado a partir de una corriente alterna trifásica. Fue descubierto por galielo ferraris en 1885
+
+\section{Rotor}
+
+Es un gran electroimán y los polos de éste pueden ser construidos de formas salientes o no salientes, dependiendo del tipo de aplicación.\\
+
+\subsection{Caracterísitcas del rotor}
+
+Se debe suministrar una corriente CD al circuito del campo del rotor. Puesto que el rotor está girando se requiere un arreglo especial para entregar potencia CD al devanado del campo .\\
+
+\section{Velocidad de giro del rotor (circuito inductor)}
+
+\begin{equation}
+ n=\frac{60*f}{p}
+\end{equation}
+
+
+\begin{itemize}
+	\item $n$ Velocidad rotorica [rpm]
+	\item $f$ frecuencia de onda de tensión
+	\item $p$ numero de pares de polos.
+\end{itemize}
+
+\section{Generador desacoplado de la red}
+
+Considerando un generador monofásico donde el rotor del generador consiste en un imán permanente que genera un campo magnético B constante y se encuentra rotando (gracias a una máquina impusora externa)  a una velocidad agular $\omega$. Si se mide la tensión $e(t)$ se observa una forma de onda de voltaje senoidal.\\
+
+La tensión inducida en los terminales de la bobina del estator.\\
+
+
+
+
+
+
+
+%Aqui vamos
+\begin{figure}[h!]
+	\centering
+	
+	\begin{tikzpicture}
+	\begin{axis}[
+	axis lines = left,
+	xlabel = {t[s]},
+	ylabel = {V[V]},
+	]
+	
+	\addplot
+	[thick=0.1cm,
+	domain=0:1, 
+	samples=300, 
+	color=green,
+	]
+	{sin(2*3.14159*x*60)};
+	
+	
+	\addplot
+	[thick=0.1cm,
+	domain=0:1, 
+	samples=300, 
+	color=red,
+	]
+	{sin((2*3.14159*x*60)+120)};
+	
+	
+	
+	\addplot
+	[thick=0.1cm,
+	domain=0:1, 
+	samples=300, 
+	color=blue,
+	]
+	{sin((2*3.14159*x*60)+240)};
+	
+	%Se añade nota :D
+	\addlegendentry{Va}
+	\addlegendentry{Vb}
+	\addlegendentry{Vc}
+	
+	\end{axis}
+	\end{tikzpicture}
+	\caption{Sistema Trifásico}
+	\label{sitemaTrifasico}
+\end{figure}
+
+
+Para el T1 es en 0.25 segundos, T2 es en 0.4 y T3 en 0.55$  $ segundos aproximadamente.\\
+
+\section{Primer cálculo T1}
+
+\begin{figure}[h!]
+	\centering
+	
+	\begin{tikzpicture}
+	\begin{axis}[
+	axis lines = left,
+	xlabel = {r},
+	ylabel = {J},
+	]
+	
+	\addplot
+	[thick=0.001cm,
+	domain=0:1, 
+	samples=3, 
+	color=black,
+	]
+	{x};
+	
+	
+
+	%Se añade nota :D
+	%\addlegendentry{Va}
+	%\addlegendentry{Vb}
+	%\addlegendentry{Vc}
+	
+	\end{axis}
+	
+	%Flecha afuera Ba
+	\draw[thick=0.5cm,
+	color=red,
+	]
+	(0,0)--(0,6);
+	
+	
+	%Flecha afuera Bb con 60 grados
+	\draw[thick=0.5cm,
+	color=red,
+	]
+	(0,0)--(6,3);
+	
+	
+	%Flecha afuera S con 210 grados
+	\draw[thick=0.5cm,
+	color=red,
+	]
+	(0,0)--(-6,-3);
+	
+		%Flecha afuera Bt con 150 grados
+	\draw[thick=0.5cm,
+	color=red,
+	]
+	(0,0)--(-6,3);
+	
+	
+	\end{tikzpicture}
+	\caption{}
+	\label{}
+\end{figure}
+
+\begin{equation}
+    B_a=0+J
+\end{equation}
+
+
+\begin{equation}
+B_b=\frac{\sqrt{3}}{4}+\frac{1}{4}J
+\end{equation}
+
+
+\begin{equation}
+B_c=-\frac{\sqrt{3}}{4}+\frac{1}{4}J
+\end{equation}
+
+
+\begin{equation}
+B_T=B_a+B_b+B_c=1.5J
+\end{equation}
+
+
+\section{Segundo cálculo T2}
+
+
+\begin{figure}[h!]
+	\centering
+	
+	\begin{tikzpicture}
+	\begin{axis}[
+	axis lines = left,
+	xlabel = {r},
+	ylabel = {J},
+	]
+	
+	\addplot
+	[thick=0.001cm,
+	domain=0:1, 
+	samples=3, 
+	color=black,
+	]
+	{x};
+	
+	
+	
+	%Se añade nota :D
+	%\addlegendentry{Va}
+	%\addlegendentry{Vb}
+	%\addlegendentry{Vc}
+	
+	\end{axis}
+	
+	%Flecha afuera Ba magnitud 0.5
+	\draw[thick=0.5cm,
+	color=red,
+	]
+	(0,0)--(0,3);
+	
+	
+	%Flecha afuera Bc con 120 grados magnitud 1
+	\draw[thick=0.5cm,
+	color=red,
+	]
+	(0,0)--(-3,6);
+	
+	
+	%Flecha afuera Bb con 210 grados
+	\draw[thick=0.5cm,
+	color=red,
+	]
+	(0,0)--(-6,-3);
+	
+	
+	
+	\end{tikzpicture}
+	\caption{}
+	\label{}
+\end{figure}
+
+\begin{equation}
+B_a=0+0.5J
+\end{equation}
+
+
+\begin{equation}
+B_c=\frac{\sqrt{3}}{2}+\frac{1}{2}J
+\end{equation}
+
+
+\begin{equation}
+B_b=\frac{\sqrt{3}}{4}-\frac{1}{4}J
+\end{equation}
+
+
+\begin{equation}
+B_T=-3\frac{\sqrt{3}}{4}+\frac{3}{4}J
+\end{equation}
+
+\begin{equation}
+B_T=\sqrt{(\frac{\sqrt{3}}{4})^2+(\frac{3}{4})^2}
+\end{equation}
+
+
+\begin{equation}
+B_T=\frac{3}{2}\angle 60^0
+\end{equation}
+
+\section{Calculo para T3}
+
+
+
+\begin{equation}
+B_a=\frac{1}{4}J
+\end{equation}
+
+
+%Angulo de 210 magnitud de 1
+\begin{equation}
+   B_b=-\frac{\sqrt{3}}{2}-\frac{1}{2}J
+\end{equation}
+
+%magnitud de 0.5 con angulo de 120
+\begin{equation}
+B_c=-\frac{\sqrt{3}}{4}+\frac{1}{4}J
+\end{equation}
+
+\section{Circuito máquina síncrona}
+
+
+\begin{figure}[h!]
+	\centering
+	\begin{circuitikz}
+		
+		\draw
+		
+		%compuerta NAND
+		%(0,0) node[nand port](xor1) {} to
+		%(1,0) 
+		
+		
+		(0,3)to[V,l=$V_F$](0,0)
+		
+		(3,3)to[vR,l=$V_F$](0,3)
+		
+		(3,3)to[L,l=$L_F$](3,1.5)
+		
+		
+		(3,1.5)to[R,l=$R_F$](3,0)
+		
+		(3,0)--(0,0)
+		
+		
+		
+		%switch
+		%(1,0)to[spst,l=$sw$](2,0)
+		
+		%led
+		
+		%(2,0)to[full led,l](4,0)
+		
+		%resistor
+		%(4,0)to[R,l](6,0)
+		
+		%tierra
+		%(6,0) to   (6,-1) node[ground]{}
+		
+		
+		%node[scale=1.2,nand port,anchor=in 1] (nand1) {}
+		%(nand1.in 2) -- (xor1.in 2|-nand1.in 2)
+		
+		%(3,0)to[push button,l=$R_1$](3,3)
+		
+		
+		%Generador de funciones
+		%(-6,0.5)--(-5,0.5)
+		%(0,3)to[V,l=$G$](0,0)
+		
+		;
+		
+	\end{circuitikz}
+	\caption{Circuito Rotor}
+	\label{fig:CircuitoRotor}
+\end{figure}
+
+En la figura \ref{fig:CircuitoRotor} podemos apreciar los componentes interno de un rotor de una máquina síncrona, sus componentes son:\\
+
+\begin{itemize}
+	\item $V_F$ Voltaje de campo
+	\item $R_X$ Reóstato
+	\item $I_F$ Corriente de campo
+	\item $L_F$ Inductancia
+	\item $R_F$ Resistor
+\end{itemize} 
+
+
+\begin{figure}[h!]
+	\centering
+	\begin{circuitikz}
+		
+		\draw
+		
+		%compuerta NAND
+		%(0,0) node[nand port](xor1) {} to
+		%(1,0) 
+		
+		
+		%Fase superior
+		(0,3)to[R,l=$R_{SA}$](3,3)
+		
+		(3,3)to[L,l=$X_{SA}$](6,3)
+		
+		
+		%Fase inferior 1
+		(2,-2)to[R,l=$R_{SB}$](5,-2)
+		
+		
+		(5,-2)to[L,l=$X_{SB}$](8,-2)
+		
+		(-2,-2)--(-2,-4)
+		
+		%Fase inferior 2
+		(-2,-4)to[R,l=$R_{SC}$](1,-4)
+		
+		
+		(1,-4)to[L,l=$X_{SC}$](4,-4)
+		
+		
+		(0,0)to[sV,l=$E_A$](0,3)
+
+        (0,0)to[sV,l=$E_C$](2,-2)        
+        (0,0)to[sV,l=$E_B$](-2,-2)
+        
+        (5.5,2.5) node[]{$I_A$}
+        
+        (6.5,3) node[]{$V_{\phi A}$}
+        
+         (7.5,-2.5) node[]{$I_B$}
+        
+        (8.5,-2) node[]{$V_{\phi B}$}
+        
+        (3.5,-4.5) node[]{$I_C$}
+        
+        (4.5,-4) node[]{$V_{\phi C}$}
+        
+        
+        
+		;
+		
+	\end{circuitikz}
+	\caption{Circuito Estator}
+	\label{fig:CircuitoEstator}
+\end{figure}
+
+
+En la figura \ref{fig:CircuitoEstator} podemos apreciar Los elementos $R_{SA}$ y $X_{SA}$ que conforman la impedancia de la fase $Z_{SA}$. los componentes interno de un rotor de una máquina síncrona, sus componentes son:\\
+
+\begin{itemize}
+	\item $E_{ABC}$ Voltaje inducido interno
+	\item $R_{SABC}$ Resisitencia debandado
+	\item $X_{SABC}$ Reactancia síncrona
+	\item $Z_{SABC}$ Impedancia síncrona
+\end{itemize} 
+
+Las terminales $V_{\phi A}$,$V_{\phi B}$y$V_{\phi C}$ de la figura \ref*{fig:CircuitoEstator} van conectadas a la red de carga.\\
+
+
+La ecuación \ref{impedanciaMaquinaSincrona} nos sirve para calcular la impedancia de la máquina síncrona.\\
+
+\begin{equation}
+ Z_{SABC}=\sqrt{R_{SABC}^2+X_{SABC}^2}
+ \label{impedanciaMaquinaSincrona}
+\end{equation}
+
+
+
+\begin{equation}
+   E_{ABC}=I_A*R_{SA}+J*I_A*X_{SA}+V_{\phi A}
+\end{equation}
+
+\begin{itemize}
+	\item $V_{\phi ABC}$ Voltaje en terminales
+	\item $I_{ABC}$ Corriente de fase 
+\end{itemize}
+
+\section{Apendice}
+
+La máquina síncrona conserva la velocidad del rotor a pesar de tener una carga, el motor de inducción no conserva ésta propiedad.\\
+
+\section{Referencias}
+
+%\bibliographystyle{plain}
+%\bibliography{Prac1}
+
+
+
+\begin{thebibliography}{9}
+	%\bibitem{latexcompanion} 
+	%Michel Goossens, Frank Mittelbach, and Alexander Samarin. 
+	%\textit{The \LaTeX\ Companion}. 
+	%Addison-Wesley, Reading, Massachusetts, 1993.
+	
+	%\bibitem{einstein} 
+	%Albert Einstein. 
+	%\textit{Zur Elektrodynamik bewegter K{\"o}rper}. (German) 
+	%[\textit{On the electrodynamics of moving bodies}]. 
+	%Annalen der Physik, 322(10):891–921, 1905.
+	
+	
+	%\bibitem{ebullicion} 
+	 %Punto ebullición,
+	%\\\texttt{http://www.cie.unam.mx/~ojs/pub/Liquid3/node8.html}
+	
+	
+	%\bibitem{coccion} 
+   %UnComo:Tiempo de cocción de los frijoles,
+	%\\\texttt{https://comida.uncomo.com/articulo/tiempo-de-coccion-de-los-frijoles-34777.html}
+\end{thebibliography}
+
+
+
+
+
+
+\end{document}

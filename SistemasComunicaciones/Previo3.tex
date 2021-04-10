@@ -1,0 +1,190 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish.mexico]{babel}
+\usepackage[american voltages, american currents,siunitx]{circuitikz}
+
+%Plotting
+
+\usepackage{pgfplots}
+\pgfplotsset{width=10cm,compat=1.9} 
+ \usepgfplotslibrary{external}
+\tikzexternalize 
+
+
+
+
+\title{Previo 2: Análisis espectral de una señal senoidal}
+\author{Pablo Vivar Colina\\
+Grupo 13
+}
+%\date{Septiembre 2017}
+
+\usepackage{natbib}
+\usepackage{graphicx}
+
+\begin{document}
+
+\maketitle
+
+\section{Señales determinísticas}
+
+Una señal determinística es una señal en la cual cada valor esta fijo y puede ser determinado por una expresión matemática, regla, o tabla. Los valores futuros de esta señal pueden ser calculados usando sus valores anteriores teniendo una confianza completa en los resultados.\citep{SenialesDeterministicas}\\
+
+Una señal aleatoria, tiene mucha fluctuación respecto a su comportamiento. Los valores futuros de una señal aleatoria no se pueden predecir con exactitud, solo se pueden basar en los promedios de conjuntos de señales con características similares. No se pueden representar unívocamente por una función del tiempo. Cada una de las funciones que la componen se llama realización o muestra.\citep{SenialesDeterministicas}\\
+
+\section{Señal Triangular}
+
+Deduzca matemáticamete el factor de cresta para una señal triangular.\\
+
+Recordando el factor de cresta es el cociente entre el valor pico de una señal y el valor promedio ($V_{RMS}$) de la misma. Para una señal triangular el valor promedio es: $V_{RMS}=\frac{V_p}{\sqrt{3}}=\frac{V_{pp}}{2\sqrt{3}}$ por lo que el factor de cresta es:\\
+
+\begin{equation}
+    F_{cresta}=\frac{2\sqrt{3}V_p}{V_{pp}}=\sqrt{3}
+\end{equation}
+
+\section{Señal cuadrada}
+
+Calcule matemáticamente el factor de cresta de una señal cuadrada.\\
+
+Para la señal cuadrada el valor pico es el mismo que el valor promedio, por lo que el factor de cresta es 1.\\
+
+\section{Tren de pulsos}
+
+Se solicita el espectro teórico de un tren de pulsos de 1 [kHz] y 20 [V_{pp}].\\
+
+Considerando el tren de pulsos como una señal cuadrada con un ciclo de trabajo ($\tau$) de 5\% tenemos el espectro mostrado en la figura \ref{fig:senialCuadrada5porc}. y en el espectro de frecuencias aparecería en 1 [kHz] con amplitud de 10 [V].\\
+
+
+\begin{figure}[h!]
+    \centering
+    
+   
+\begin{tikzpicture}
+\begin{axis}[
+    axis lines = left,
+    xlabel = {t[ms]},
+    ylabel = {V[V]},
+]
+%Primer impulso
+\addplot [
+thick=0.1,
+    domain=0:0.05, 
+    samples=100, 
+    color=blue,
+]
+{10};
+\addplot [
+thick=0.1cm,
+    domain=0.05:(1), 
+    samples=100, 
+    color=blue,
+]
+{0};
+
+%Segundo impulso
+\addplot [
+thick=0.1cm,
+    domain=1:1.05, 
+    samples=100, 
+    color=blue,
+]
+{10};
+
+\addplot [
+thick=0.1cm,
+    domain=1.05:(2), 
+    samples=100, 
+    color=blue,
+]
+{0};
+
+%Tercer impulso
+\addplot [
+thick=0.1cm,
+    domain=2:2.05, 
+    samples=100, 
+    color=blue,
+]
+{10};
+
+\addplot [
+thick=0.1cm,
+    domain=2.05:(3), 
+    samples=100, 
+    color=blue,
+]
+{0};
+
+%Cuarto impulso
+\addplot [
+thick=0.1cm,
+    domain=3:3.05, 
+    samples=100, 
+    color=blue,
+]
+{10};
+
+\addplot [
+thick=0.1cm,
+    domain=3.05:(4), 
+    samples=100, 
+    color=blue,
+]
+{0};
+
+\addlegendentry{Pulsos (5\% ciclo de trabajo)}
+%Here the blue parabloa is defined
+%\addplot [
+ %   domain=-10:10, 
+  %  samples=100, 
+    %color=blue,
+   % ]
+    %{x^2 + 2*x + 1};
+%\addlegendentry{$x^2 + 2x + 1$}
+ 
+\end{axis}
+\end{tikzpicture}
+\caption{Tren de impulsos ($\tau=0.05[ms]$)}
+    \label{fig:senialCuadrada5porc}
+ 
+\end{figure}
+
+\section{Relación de Parseval}
+
+En matemáticas, la Relación de Parseval demuestra que la Transformada de Fourier es unitaria; es decir, que la suma (o la integral) del cuadrado de una función es igual a la suma (o a la integral) del cuadrado de su transformada. Esta relación procede de un teorema de 1799 sobre series, cuyo creador fue Marc Antoine Parseval. Esta relación se aplicó más tarde a las Series de Fourier.\citep{RelacionParseval}\\
+
+Aunque la Relación de Parseval se suele usar para indicar la unicidad de cualquier transformada de Fourier, sobre todo en física e ingeniería, la forma generalizada de este teorema es la Relación de Plancherel.\citep{RelacionParseval}\\
+
+En física e ingeniería, la Relación de Parseval se suele escribir como:\citep{RelacionParseval}
+
+    \begin{equation}
+        \int_{-\infty}^{\infty} | f(t) |^2 dt   = \int_{-\infty}^{\infty} | \mathcal{F} [ f(t) ] (\alpha ) |^2 d\alpha 
+    \end{equation}
+    
+    
+donde $\mathcal{F} [ f(t) ] (\alpha )$ representa la transformada continua de Fourier de $f(t)$ y $$\alpha$ representa la frecuencia [Hz] de $f$.\citep{RelacionParseval}\\
+
+La interpretación de esta fórmula es que la energía total de la señal $f(t)$ es igual a la energía total de su transformada de Fourier $\mathcal{F} [ f(t)]$ a lo largo de todas sus componentes frecuenciales.\citep{RelacionParseval}\\
+
+Para señales de tiempo discreto, la relación es la siguiente:\citep{RelacionParseval}\\
+
+\begin{equation}
+    \sum_{n=-\infty}^{\infty} | x[n] |^2  =  \frac{1}{2\pi} \int_{-\pi}^{\pi} | X(e^{i\phi}) |^2 d\phi 
+\end{equation}
+
+
+donde $X$ es la [transformada de Fourier de tiempo discreto] (DTFT) de $x$ y $\phi$ representa la [frecuencia angular] (en [radianes]) de $x$.\citep{RelacionParseval}\\
+
+Por otro lado, para la [transformada discreta de Fourier] (DFT), la relación es:\citep{RelacionParseval}\\
+
+\begin{equation}
+    \sum_{n=0}^{N-1} | x[n] |^2  =   \frac{1}{N} \sum_{k=0}^{N-1} | X[k] |^2
+\end{equation}
+
+donde $X[k]$ es la DFT de $x[n]$, ambas de longitud $N$.\citep{RelacionParseval}\\
+
+\bibliographystyle{plain}
+\bibliography{Referencias.bib}
+
+
+\end{document}

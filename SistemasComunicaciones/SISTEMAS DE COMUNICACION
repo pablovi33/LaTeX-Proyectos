@@ -1,0 +1,65 @@
+%\usepackage[top=2cm,bottom=2cm,left=1cm,right=1cm]{geometry}
+
+
+\begin{titlepage}
+     \begin{center}
+	\includegraphics[width=0.09\textwidth]{Imagenes/UNAM}\Large Universidad Nacional Autónoma de México
+        	\includegraphics[width=0.09\textwidth]{Imagenes/FI}\\[1cm]
+        \Large Facultad de Ingeniería\\[1cm]
+       % \Large División de Ciencias Básicas\\[1cm]
+         \Large Laboratorio de Sistemas de Comunicaciones Electrónicas (6657)\\[1cm]
+         %la clave antes era:4314
+         \footnotesize Profesor: López Cervantes José Alberto Ing.\\[1cm]
+        \footnotesize Semestre 2018-2\\[1cm]
+        %\Large Práctica No. 1\\[1cm]
+        
+        %\Large Práctica No. 2\\[1cm]
+        
+        %\Large Práctica No. 3\\[1cm]
+        %\Large Práctica No. 4\\[1cm]
+      
+        \Large Práctica No. 5\\[1cm]
+          %####AQUI VAMOES
+        %Large Práctica No. 7\\[1cm]
+        %\Large Práctica No. 9\\[1cm]
+        %\Large Práctica No. 11\\[1cm]
+        %\Large Práctica No. 12\\[1cm]
+        %\Large Práctica No. 13\\[1cm]
+        
+        %\Large Amplificador Operacional como Integrador\\[1cm]
+        %\Large{Filtros}\\[1cm]
+        %%####SITEMAS###
+        % UNO 1
+         %\Large{Parámetros básicos de señales en el tiempo}\\[1cm]
+         % DOS 2
+         %\Large{Análisis espectral de una señal senoidal}\\[1cm]
+         %TRES 3
+        
+         %\Large{Análisis de señales determinísticas}\\[1cm]
+         
+         %CUATRO
+         \Large{Distorsión Alineal}\\[1cm]
+        
+         %CINCO
+         \Large{Ruido}\\[1cm]
+        
+        
+         %Texto a la derecha
+          \begin{flushright}
+\footnotesize  Grupo 13\\[0.5cm]
+\footnotesize Brigada: 7\\[0.5cm]
+%\footnotesize Integrantes:\\[0.5cm]
+%\footnotesize Cruz Garrido Jesús Andrés\\[0.5cm]
+\footnotesize Martínez Hernández Fernando\\[0.5cm]
+\footnotesize Vivar Colina Pablo\\[0.5cm]
+ \end{flushright}
+    %Texto a la izquierda
+          \begin{flushleft}
+        \footnotesize Ciudad Universitaria Abril de 2018.\\
+          \end{flushleft}
+         
+          
+        %\vfill
+        %\today
+   \end{center}
+\end{titlepage}

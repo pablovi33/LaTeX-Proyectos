@@ -1,0 +1,9 @@
+\babel@toc {spanish}{}
+\contentsline {section}{\numberline {1}Marco Te\IeC {\'o}rico}{1}% 
+\contentsline {subsection}{\numberline {1.1}\IeC {\'I}ndice de modulaci\IeC {\'o}n}{1}% 
+\contentsline {section}{\numberline {2}Desarrollo}{2}% 
+\contentsline {subsection}{\numberline {2.1}Ruido Blanco en Osciloscopio}{2}% 
+\contentsline {subsection}{\numberline {2.2}Ruido Blanco en Bocina}{2}% 
+\contentsline {subsection}{\numberline {2.3}Generador de ruido blanco conectado a un filtro}{4}% 
+\contentsline {section}{\numberline {3}Conclusiones Pablo Vivar Colina}{6}% 
+\contentsline {section}{\numberline {4}Comentarios Pablo Vivar Colina}{6}% 

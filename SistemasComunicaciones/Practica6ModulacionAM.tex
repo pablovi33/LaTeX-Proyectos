@@ -1,0 +1,272 @@
+
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish.mexico]{babel}
+%\title{Dispositivos}
+\author{Pablo Vivar Colina}
+%\date{Septiembre 2017}
+
+\usepackage{natbib}
+\usepackage{graphicx}
+
+%Circuitos
+\usepackage{tikz}
+
+\usepackage[american voltages, american currents,siunitx]{circuitikz}
+
+%Diagrama de bloques
+%El diagrama de bloques no funciona sin tikz
+\usetikzlibrary{shapes.geometric, arrows}
+
+\tikzstyle{startstop} = [rectangle, rounded corners, minimum width=3cm, minimum height=1cm,text centered, draw=black, fill=red!30]
+\tikzstyle{io} = [trapezium, trapezium left angle=70, trapezium right angle=110, minimum width=3cm, minimum height=1cm, text centered, draw=black, fill=blue!30]
+\tikzstyle{process} = [rectangle, minimum width=3cm, minimum height=1cm, text centered, draw=black, fill=orange!30]
+\tikzstyle{decision} = [diamond, minimum width=3cm, minimum height=1cm, text centered, draw=black, fill=green!30]
+
+
+\tikzstyle{arrow} = [thick,->,>=stealth]
+%###MIO###
+\tikzstyle{point} = [circle,(0.5cm),minimum with=1cm,draw=black,fill=black!50]
+
+
+
+
+%Circuitos
+\usepackage{tikz}
+
+\usepackage[american voltages, american currents,siunitx]{circuitikz}
+
+%Plotting
+
+\usepackage{pgfplots}
+\pgfplotsset{width=10cm,compat=1.9} 
+ \usepgfplotslibrary{external}
+\tikzexternalize 
+
+%#####Fracciones DIAGONALES :B #####
+
+\usepackage{amsmath}
+\usepackage{mathtools}
+
+%running fraction with slash - requires math mode.
+\newcommand*\rfrac[2]{{}^{#1}\!/_{#2}}
+
+
+%\maketitle
+
+\input{portada.tex} %agregar portada
+
+\begin{document}
+
+
+
+\tableofcontents  % Write out the Table of Contents
+
+\listoffigures  % Write out the List of Figures
+
+
+\section{Marco Teórico}
+
+\subsection{Índice de modulación}
+
+El índice de modulación es una relación sin unidad y se utiliza sólo para describir la profundidad de la modulación lograda para una señal modulada en amplitud y frecuencia dada.\citep{IndiceModulacion}\\
+
+Es el proceso de cambiar la amplitud de una portadora de acuerdo con las variaciones de amplitud de la señal moduladora. La envolvente de la portadora es la información transmitida, y podremos verla en los semiciclos positivos y negativos de la portadora. El porcentaje en que la señal moduladora cambia la portadora senoidal es conocido como el
+índice de modulación.\citep{IndiceModulacion}\\
+
+En modulación AM, la señal mensaje y la portadora se combinan en una señal compuesta. La expresión matemática de esta señal es:\citep{IndiceModulacion}\\
+
+\begin{equation}
+    s(t)=A_c[1+m(t)]cos(2 \pi f_c(t))
+    \label{portadora}
+\end{equation}
+
+El índice o porcentaje de modulación de una señal AM es una medida que indica cuanto varía el voltaje de la señal portadora debido a la señal moduladora o mensaje. El índice de modulación toma valores entre 0 y 1. Reescribiendo la ecuación (\ref{portadora}), tenemos:\citep{IndiceModulacion}\\
+
+
+    \begin{equation}
+    s(t)=A_c[1+a*m(t)]cos(2 \pi f_c(t))
+    \label{portadoraPorA}
+\end{equation}
+
+Siendo a: el índice de modulación, $m_n(t)$ es la señal mensaje normalizada, con la condición:\citep{IndiceModulacion}\\
+
+\begin{equation}
+    |m_n(t)|<1
+\end{equation}
+
+Si $a > 1$, entonces la señal AM esta sobremodulada, el resultado es una señal que presenta distorsiones. Otra expresión para definir el índice de modulación en circuitos reales, es la siguiente:\citep{IndiceModulacion}\\
+
+\begin{equation}
+    a=\frac{k*A_m}{A_c}
+\end{equation}
+
+Donde Am es el valor máximo en amplitud de $m(t)$, y $k$ es un parámetro deganancia que se puede ajustar para modificar el índice de modulación a discreción del operador.\citep{IndiceModulacion}\\
+
+%####### AQUI VA LA PRACTICA :D ##########
+
+\section{Desarrollo}
+
+
+
+
+
+\subsection{Ruido Blanco en Osciloscopio}
+
+Para el experimento se ajustó el generador de ruido a su amplitud máxima y se conectó al osciloscopio y al analizador de espectros, el oscilograma y lectura del analizador de espectros correspondientes se pueden apreciar en las figuras \ref{fig:RuidoBlanco} y \ref{fig:RuidoBlancoEspectros}.\\
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.7\textwidth]{Imagenes/RuidoBlanco.jpg}
+   
+    \caption{Ruido Blanco en el osciloscopio}
+    \label{fig:RuidoBlanco}
+\end{figure}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.7\textwidth]{Imagenes/RuidoBlancoEspectros.jpg}
+  
+    \caption{Ruido blanco en el analizador de espectros}
+    \label{fig:RuidoBlancoEspectros}
+\end{figure}
+
+
+\subsection{Ruido Blanco en Bocina}
+
+Posteriormente se conectó al sistema una bocina a la salida del ruido blanco, algunos ejemplos de ruido blanco que se pueden apreciar en la vida cotidiana son:\\
+
+\begin{itemize}
+    \item Radio sin señal
+    \item Televisión sin señal
+    \item agua cayendo aleatoriamientee lluvia, arrollo)
+    \item Baleros sin engrasar girando
+    \item hojas de lija rasgándose
+    \item Semillas o partículas cayendo (palo de lluvia)
+\end{itemize}
+
+El ruido blanco en analogía con la luz blanca (que tiene toda la gama de frecuencias de la luz o la mayoría) se dice que tiene toda la gama de frecuencias del sonido, los fenómenos antes listados se asemejan al ruido escuchado en el laboratorio porque están relacionados con partículas que provocan distintos sonido al mismo tiempo, esto se puede explicar debido a la aleatoriedad de sus condiciones. Por ejemplo distintas alturas, distintos tamaños de partículas, entro otros factores que hacen que el ruido generado por cada uno de los elementos que lo conforman sea tan diferente, aunado a que se genera en el mismo tiempo.\\
+
+\subsection{Generador de ruido blanco conectado a un filtro}
+
+
+\begin{figure}[h!]
+    \centering
+    \begin{tikzpicture}[node distance=4cm]
+
+%startstop-->ROJO
+\node (start) [process] {Generador de señales};
+
+\node (GeR) [process,below of=start] {Generador de Ruido};
+
+
+
+\node (FPB) [process, right of=start] {Filtro Paso Bajas};
+
+
+
+\node (Mult) [process, above of=start] {Multímetro};
+%yshift=-0.5cm
+
+\node (Osc) [process, right of=FPB] {Multímetro};
+%yshift=-0.5cm
+
+
+
+%Línea inicio a filtro paso bajas
+\draw [arrow] (start) -- (FPB);
+
+
+%Línea de generador de ruido a filtro paso bajas 
+\draw [arrow] (GeR) -|(FPB);
+
+
+
+\draw [arrow] (Mult) -|(FPB);
+
+\draw [arrow] (FPB) --(Osc);
+
+
+\end{tikzpicture}
+    \caption{Sistema con generador de ruido blanco ($f=[1kHz],v=v_{ruido}$}
+    \label{fig:sistRuidoBlanco}
+\end{figure}
+
+
+Para el experimento siguiente se conectó el generador de funciones con una función senoidal de 1 [kHz] en paralelo con el generador de ruido blanco para ésto teniendo el equipo previamente conectado se midió con el multímetro el voltaje (RMS) del generador del ruido blanco y se ingresó el mismo valor en el generador de funciones, el sistema de éste experimento se puede apreciar en el gráfico \ref{fig:DiagramaBloques} y el oscilograma del osciloscopio y el espectro del experimento se pueden apreciar en  las figuras: \ref{fig:ruidoSenoFiltro} y \ref{fig:ruidoSenoEspectros}.\\
+
+%\begin{figure}[h!]
+ %   \centering
+  %  \includegraphics[width=0.7\textwidth]{Imagenes/DiagramaBloques.jpg}
+   
+   % \caption{Diagrama de Bloques}
+    %\label{fig:DiagramaBloques}
+%\end{figure}
+
+%\begin{figure}[h!]
+ %   \centering
+  %  \includegraphics[width=0.7\textwidth]{Imagenes/EspectroRuidoSenoFiltro.jpg}
+  
+   % \caption{}
+%    \label{fig:EspectroRuidoSenoFiltro}
+%\end{figure}
+
+%\begin{figure}[h!]
+    %\centering
+   % \includegraphics[width=0.7\textwidth]{Imagenes/RuidoEspectrosArr.png.jpg}
+   
+  %  \caption{Diagrama de Bloques}
+ %   \label{fig:Ruido Espectros Arreglos}
+%\end{figure}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.7\textwidth]{Imagenes/RuidoSenoEspectros.jpg}
+    
+    \caption{Señal de 1[kHz] con generador de ruido Blanco}
+    \label{fig:ruidoSenoEspectros}
+\end{figure}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.7\textwidth]{Imagenes/RuidoSenoFiltro.jpg}
+   
+    \caption{Espectro a la salida del sistema mostrado en \ref{fig:DiagramaBloques}}
+    \label{fig:ruidoSenoFiltro}
+\end{figure}
+
+La relación señal ruido se puede obtener mediante la expresión:\\
+
+\begin{equation}
+    \frac{S}{N}=\frac{V_{senoSinRuido}}{\sqrt{V_{total}^2-V_{senoSinRuido}^2}}
+\end{equation}
+
+Para éste experimento se determinarosn éstas relaciones en la entrada y en la salida del sistema, los voltajes a ocupar fueron los siguientes:\\
+
+\begin{itemize}
+    \item $V_{totalEntrada}=2.95[V]$
+    \item $V_{totalSalida}=2.64[V]$
+    \item $V_{senoEntrada}=2.81[V]$
+    \item $V_{senoSalida}=2.5[V]$
+\end{itemize}
+
+Por lo que la relaciones sonido ruido obtenidas en la entrada y en la salida fueron las siguientes.\\
+
+\begin{itemize}
+    \item A la entrada: 3.12
+    \item A la salida: 2.94
+\end{itemize}
+
+\section{Conclusiones Pablo Vivar Colina}
+
+Se pudo apreciar como puede el ruido afectar una señal, se conoce que el ruido puede generarse por distintos motivos (líneas de transmisión, efectos electromagnéticos, etc.) y es necesario tener éste fenómeno presente para que la información pueda ser reconocible por el receptor, y es por eso que se necesitan diseñar filtros que nos ayuden a recuperar la información lo más parecida posible a lo que el transmisor ha enviado.
+
+\section{Comentarios Pablo Vivar Colina}
+
+El ruido es algo que se busca suprimir en una señal, sin embargo el generador de ruido blanco puede ser una buena aproximación del ruido que se presentará en una línea de comunicaciones, y es útil para poder diseñar filtros que nos ayuden a suprimir éste tipo de imperfecciones en los sistemas de comunicación.
+
+%.\\[100cm]
+\bibliographystyle{plain}
+\bibliography{Referencias.bib}
+
+\end{document}

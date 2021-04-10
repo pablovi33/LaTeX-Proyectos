@@ -1,0 +1,8 @@
+\babel@toc {spanish}{}
+\beamer@sectionintoc {1}{Biolog\IeC {\'\i }a Elemental}{3}{0}{1}
+\beamer@subsectionintoc {1}{1}{Mecanismos de los efectos de la radiaci\IeC {\'o}n.}{11}{0}{1}
+\beamer@sectionintoc {2}{Muerte Celular}{13}{0}{2}
+\beamer@sectionintoc {3}{C\IeC {\'a}ncer}{16}{0}{3}
+\beamer@subsectionintoc {3}{1}{Efectos gen\IeC {\'e}ticos}{21}{0}{3}
+\beamer@sectionintoc {4}{La radiaci\IeC {\'o}n LET alta y baja induce de manera diferencial la normalidad Se\IeC {\~n}ales de da\IeC {\~n}o tisular}{31}{0}{4}
+\beamer@sectionintoc {5}{Estad\IeC {\'\i }sticas del da\IeC {\~n}o del c\IeC {\'a}ncer en M\IeC {\'e}xico}{35}{0}{5}

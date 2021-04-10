@@ -1,0 +1,6 @@
+\babel@toc {spanish}{}
+\contentsline {section}{\numberline {1}Ciclo cerrado y abierto}{1}% 
+\contentsline {section}{\numberline {2}Procesamiento Inicial Separaci\IeC {\'o}n Isot\IeC {\'o}pica y Fabricaci\IeC {\'o}n}{1}% 
+\contentsline {section}{\numberline {3}Irradiaci\IeC {\'o}n}{2}% 
+\contentsline {section}{\numberline {4}Almacenamiento, Reprocesamiento y Disposici\IeC {\'o}n Final}{3}% 
+\contentsline {section}{\numberline {5}Conclusiones}{7}% 

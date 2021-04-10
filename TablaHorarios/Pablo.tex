@@ -1,0 +1,129 @@
+\documentclass[a4paper,10pt]{report}
+
+ \usepackage[spanish.mexico]{babel}
+ \usepackage[T1]{fontenc}
+ \usepackage[utf8]{inputenc}
+ %\usepackage{lmodern}
+
+ 
+ 
+ 
+ 
+ % Definitions
+ \usepackage{lscape}
+ \usepackage[height=25cm]{geometry}
+ \usepackage{timetable}
+ 
+ \begin{document}
+ \thispagestyle{empty}
+ \begin{landscape}
+ %\printheading{Time table $6^\mathsf{th}$ Semester}
+ 
+ % Define the layout of your time tables
+ %\setslotsize{2.8cm}{0.25cm}
+ \setslotsize{3cm}{0.33cm}
+ % (columnas de días), 5 porque se asiste hasta el viernes (se puede agregar el sabado con 6) y 40 espacios para que cupiera en el documento
+ \setslotcount{5}{40}
+ \settopheight{3}
+ \settextframe{1.0mm}
+ 
+ % Define event types
+ %            type         r     g     b     t_r  t_g  t_b
+ 
+ 
+ %INTRODUCCION A LOS SISTEMAS ENERGETICOS
+ \defineevent{ISE}{0.98} {0.15}{0.44} {1.0}{1.0}{1.0}
+ 
+ %FUNDAMENTOS DE CONTROL
+  \defineevent{FDC}    {0.4} {0.85} {0.94} {1.0}{1.0}{1.0}
+ 
+ %MAQUINAS ELECTRICAS I
+ \defineevent{MEI}       {0.65}{0.89} {0.18}{1.0}{1.0}{1.0}
+
+%RECURSOS Y NECESIDADES DE MEXICO 
+ \defineevent{RNM}{0.77}{0.55}{1.0}{1.0}{1.0}{1.0}
+ 
+ %MICROPROCESADORES Y MICROCONTROLADOR 
+ \defineevent{MM}{0.93}{0.89}{0.49}{0.45}{0.45}{0.45}
+ 
+ %LAB. MICROPROCESADORES Y MICREOCONTR
+ \defineevent{LMM}{0.47}{0.37}{1.0}{1.0}{1.0}{1.0}
+ 
+ %PLANEAC. DE SISTEMAS DE GENER.ELECTR 
+  \defineevent{PSGE}{0.1}{0.67}{1.0}{1.0}{1.0}{1.0}
+ 
+ %DISPOSITIVOS Y CIRCUITOS ELECTRONICOS
+ \defineevent{DCE}{1.0}{0.65}{0.0}{1.0}{1.0}{1.0}
+ 
+ %\defineevent{double}{0.8}{0.0}{0.20}{1.0}{1.0}{1.0}
+ 
+ % Start the time table
+ \begin{timetable}
+ 
+   \hours{7}{15}{1}
+
+   %\frenchdays{1}
+ \spanishdays{1}
+ 
+   %      x start  end    name                                     lecturer          location              type
+   
+   %######LUNES#####
+   
+   \event 1 {0700}{0830}{ Dispositivos y Circuitos Elec.}{A302}{{\tiny Principal}}{DCE}
+   
+   \event 1 {0900}{1030}{Intr. sistemas energéticos}{U304}{{\tiny  Anexo}}{ISE}
+   
+
+   %#####MARTES######
+    
+  
+  
+   \event 2 {0700}{0907}{Máquinas Eléctricas }{B402}{{\tiny Principal}}{MEI}
+   
+    \event 2 {0907}{1030}{Microprocesadores y Micros}{B402}{{\tiny Principal}}{MM}
+  
+   \event 2 {1100}{1330}{Laboratorio Microprocesadores y Micros}{Q102}{{\tiny Anexo}}{MM}
+  
+  
+  \event 2 {1345}{1600}{Fundamentos de Control}{A302}{{\tiny Principal}}{FDC}
+  
+   %####MIERCOLES####
+   
+     \event 3 {0700}{0830}{ Dispositivos y Circuitos Elec.}{A302}{{\tiny Principal}}{DCE}
+   
+   \event 3 {0900}{1030}{Intr. sistemas energéticos}{U304}{{\tiny  Anexo}}{ISE}
+  
+   
+ \event 3 {1430}{1600}{Planeación Gen. Energía}{U304}{{\tiny Anexo}}{PSGE}
+ 
+ 
+ 
+   
+   %######JUEVES####
+   
+ \event 4 {0700}{0907}{Máquinas Eléctricas }{B402}{{\tiny Principal}}{MEI}
+
+\event 4 {0907}{1030}{Microprocesadores y Micros}{Q102}{{\tiny Anexo}}{MM}
+
+ \event 4 {1345}{1600}{Fundamentos de Control}{A302}{{\tiny Principal}}{FDC}
+
+   %VIERNES
+
+\event 5 {0700}{0830}{ Dispositivos y Circuitos Elec.}{A302}{{\tiny Principal}}{DCE}
+
+\event 5 {1130}{1430}{Recursos y Necesidades de México}{A103}{{\tiny Principal}}{RNM}
+
+
+
+\event 5 {1430}{1600}{Planeación Gen. Energía}{U304}{{\tiny Anexo}}{PSGE}
+
+  
+   %####SABADO#####
+   
+  
+  
+    
+   
+ \end{timetable}
+ \end{landscape}
+ \end{document}

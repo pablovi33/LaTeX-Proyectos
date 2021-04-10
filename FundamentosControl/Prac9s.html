@@ -1,0 +1,160 @@
+<!DOCTYPE html><html>
+<head>
+<title></title>
+<style type="text/css">
+<!--
+.xflip {
+    -moz-transform: scaleX(-1);
+    -webkit-transform: scaleX(-1);
+    -o-transform: scaleX(-1);
+    transform: scaleX(-1);
+    filter: fliph;
+}
+.yflip {
+    -moz-transform: scaleY(-1);
+    -webkit-transform: scaleY(-1);
+    -o-transform: scaleY(-1);
+    transform: scaleY(-1);
+    filter: flipv;
+}
+.xyflip {
+    -moz-transform: scaleX(-1) scaleY(-1);
+    -webkit-transform: scaleX(-1) scaleY(-1);
+    -o-transform: scaleX(-1) scaleY(-1);
+    transform: scaleX(-1) scaleY(-1);
+    filter: fliph + flipv;
+}
+-->
+</style>
+</head>
+<body>
+<a name=1></a><img src="Prac9-1_1.png"/><br/>
+<img src="Prac9-1_2.png"/><br/>
+Universidad&#160;Nacional&#160;Autónoma&#160;de&#160;México<br/>
+Facultad&#160;de&#160;Ingeniería<br/>
+Laboratorio&#160;de&#160;Fundamentos&#160;de&#160;Control(6655)<br/>
+Profesor:&#160;Salcedo&#160;Ubilla&#160;María&#160;Leonor&#160;Ing.<br/>
+Semestre&#160;2019-1<br/>
+Práctica&#160;No.&#160;9<br/>
+Control&#160;de&#160;Presion<br/>
+Grupo&#160;2<br/>
+Brigada:&#160;4<br/>
+Vivar&#160;Colina&#160;Pablo<br/>
+Ciudad&#160;Universitaria&#160;Agosto&#160;de&#160;2018.<br/>
+<hr/>
+<a name=2></a>Índice<br/>
+1.&#160;Resumen<br/>
+1<br/>
+2.&#160;Introducción<br/>
+1<br/>
+2.1.&#160;NI&#160;ELVIS&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.<br/>
+2<br/>
+3.&#160;Objetivos<br/>
+2<br/>
+3.1.&#160;Generales&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.<br/>
+2<br/>
+3.2.&#160;Específicos&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.&#160;.<br/>
+2<br/>
+4.&#160;Materiales&#160;y&#160;métodos<br/>
+2<br/>
+5.&#160;Resultados<br/>
+2<br/>
+6.&#160;Análisis&#160;de&#160;Resultados<br/>
+2<br/>
+7.&#160;Conclusiones<br/>
+2<br/>
+8.&#160;Referencias<br/>
+2<br/>
+1.<br/>
+Resumen<br/>
+2.<br/>
+Introducción<br/>
+Sintonizar&#160;los&#160;parámetros&#160;de&#160;un&#160;controlador&#160;PID&#160;consiste&#160;en&#160;determinar&#160;el&#160;valor&#160;de&#160;la&#160;cons-<br/>
+tante&#160;de&#160;tiempo&#160;que&#160;les&#160;corresponde&#160;a&#160;cada&#160;uno&#160;de&#160;los&#160;controladores,&#160;es&#160;decir,&#160;se&#160;debe&#160;determinar<br/>el&#160;valor&#160;de&#160;kp,&#160;el&#160;de&#160;T&#160;i,&#160;y&#160;el&#160;de&#160;T&#160;d&#160;para&#160;lograr&#160;que&#160;el&#160;sistema&#160;de&#160;control&#160;tenga&#160;un&#160;comportamiento<br/>aceptable&#160;y&#160;robusto,&#160;en&#160;conformidad&#160;con&#160;los&#160;criterios&#160;de&#160;desempeño&#160;establecidos&#160;para&#160;el&#160;sistema.<br/>
+Existen&#160;diversos&#160;métodos&#160;para&#160;ello,&#160;mas&#160;en&#160;los&#160;sistemas&#160;de&#160;ajuste&#160;de&#160;malla&#160;cerrada&#160;no&#160;es<br/>
+necesario&#160;conocer&#160;los&#160;parámetros&#160;de&#160;la&#160;función&#160;de&#160;transferencia&#160;que&#160;caracterizan&#160;al&#160;sistema.<br/>
+El&#160;Método&#160;Harriot,&#160;se&#160;usa&#160;cuando&#160;el&#160;proceso&#160;no&#160;se&#160;puede&#160;llevar&#160;a&#160;una&#160;oscilación&#160;sostenida.<br/>
+Este&#160;método&#160;consiste&#160;en&#160;crear&#160;un&#160;sistema&#160;en&#160;malla&#160;cerrada&#160;con&#160;un&#160;controlador&#160;proporcional<br/>
+puro&#160;donde&#160;los&#160;otros&#160;dos&#160;no&#160;tienen&#160;influencia&#160;alguna,&#160;después&#160;se&#160;va&#160;incrementando&#160;el&#160;valor&#160;de&#160;la<br/>ganancia&#160;del&#160;P&#160;hasta&#160;que&#160;se&#160;obtiene&#160;una&#160;curva&#160;donde&#160;la&#160;proporción&#160;del&#160;primer&#160;sobre&#160;paso&#160;y&#160;el<br/>segundo&#160;es&#160;del&#160;25&#160;porciento.<br/>
+De&#160;esa&#160;curva&#160;solo&#160;se&#160;anota&#160;el&#160;valor&#160;del&#160;periodo&#160;P&#160;con&#160;el&#160;que&#160;se&#160;dan&#160;ambas&#160;oscilaciones.&#160;Con&#160;el<br/>
+periodo&#160;P&#160;se&#160;calculan&#160;las&#160;constantes&#160;de&#160;tiempo&#160;Ti&#160;y&#160;Td,&#160;usando&#160;las&#160;siguientes&#160;formulas;&#160;T&#160;i&#160;=&#160;P&#160;,<br/>
+6<br/>
+T&#160;d&#160;=&#160;P&#160;,&#160;de&#160;acuerdo&#160;con&#160;la&#160;siguiente&#160;tabla.&#160;Después&#160;se&#160;hace&#160;funcionar&#160;el&#160;sistema&#160;con&#160;los&#160;valores<br/>
+1,5<br/>
+calculados&#160;de&#160;TI&#160;y&#160;Td,&#160;y&#160;nuevamente&#160;se&#160;ajusta&#160;la&#160;ganancia&#160;a&#160;la&#160;misma&#160;razón&#160;de&#160;1&#160;en&#160;la&#160;respuesta.<br/>
+4<br/>
+La&#160;ganancia&#160;así&#160;obtenida&#160;será&#160;el&#160;valor&#160;usado&#160;para&#160;el&#160;Kp&#160;en&#160;el&#160;controlador.<br/>
+1<br/>
+<hr/>
+<a name=3></a>2.1.<br/>
+NI&#160;ELVIS<br/>
+Para&#160;crear&#160;una&#160;aplicación&#160;completa&#160;de&#160;NI&#160;ELVIS,&#160;explore&#160;otras&#160;soluciones&#160;de&#160;laboratorio&#160;para<br/>
+NI&#160;ELVIS.<br/>
+Proporciona&#160;una&#160;experiencia&#160;de&#160;aprendizaje&#160;basada&#160;en&#160;proyectos,&#160;usando&#160;medidas&#160;en&#160;línea&#160;y<br/>
+diseño&#160;práctico&#160;y&#160;embebido.<br/>
+El&#160;NI&#160;Educational&#160;Laboratory&#160;Virtual&#160;Instrumentation&#160;Suite&#160;(NI&#160;ELVIS)&#160;es&#160;un&#160;dispositivo<br/>
+modular&#160;de&#160;laboratorio&#160;educativo&#160;de&#160;ingeniería&#160;desarrollado&#160;específicamente&#160;para&#160;la&#160;academia.<br/>Con&#160;este&#160;enfoque&#160;práctico,&#160;los&#160;profesores&#160;pueden&#160;ayudar&#160;a&#160;los&#160;estudiantes&#160;a&#160;aprender&#160;habilidades<br/>de&#160;ingeniería&#160;prácticas&#160;y&#160;experimentales.&#160;NI&#160;ELVIS&#160;incluye&#160;un&#160;osciloscopio,&#160;multímetro&#160;digital,<br/>generador&#160;de&#160;funciones,&#160;fuente&#160;de&#160;alimentación&#160;variable,&#160;analizador&#160;de&#160;Bode&#160;y&#160;otros&#160;instrumentos<br/>comunes&#160;de&#160;laboratorio.&#160;Puede&#160;conectar&#160;una&#160;PC&#160;al&#160;NI&#160;ELVIS&#160;usando&#160;USB&#160;y&#160;desarrollar&#160;circuitos<br/>en&#160;su&#160;protoboard&#160;desmontable.&#160;[1]<br/>
+3.<br/>
+Objetivos<br/>
+3.1.<br/>
+Generales<br/>
+El&#160;estudiante&#160;conocerá&#160;la&#160;estructura&#160;de&#160;los&#160;módulos&#160;G35&#160;y&#160;TY35/EV.<br/>
+3.2.<br/>
+Específicos<br/>
+Caracterizará&#160;el&#160;Transductor&#160;del&#160;Sistema.<br/>
+Comprenderá&#160;la&#160;operación&#160;analógica&#160;y&#160;digital&#160;del&#160;sistema&#160;de&#160;control&#160;de&#160;presión.<br/>
+Aplicará&#160;los&#160;conceptos&#160;de&#160;controlador&#160;Proporcional,&#160;Proporcional&#160;Integral&#160;Derivativo&#160;(PID),<br/>a&#160;un&#160;sistema&#160;analógico&#160;y&#160;a&#160;un&#160;sistema&#160;digital.<br/>
+4.<br/>
+Materiales&#160;y&#160;métodos<br/>
+NI&#160;Elvis<br/>
+Computadora&#160;con&#160;Suite&#160;de&#160;herramientas&#160;Texas&#160;Instruments<br/>
+5.<br/>
+Resultados<br/>
+6.<br/>
+Análisis&#160;de&#160;Resultados<br/>
+7.<br/>
+Conclusiones<br/>
+8.<br/>
+Referencias<br/>
+Referencias<br/>
+[1]&#160;NationalInstruments.&#160;NI&#160;Elvis,&#160;2018.<br/>
+2<br/>
+<hr/>
+<a name=4></a><img src="Prac9-4_1.png"/><br/>
+Presión&#160;[bar]<br/>
+Ventrada&#160;[V]<br/>
+Vsalida&#160;[V]<br/>
+0<br/>
+0<br/>
+0<br/>
+0.2<br/>
+0.764<br/>
+0.888<br/>
+0.4<br/>
+1.373<br/>
+1.513<br/>
+0.6<br/>
+1.787<br/>
+1.935<br/>
+0.8<br/>
+2.245<br/>
+2.399<br/>
+1<br/>
+3.577<br/>
+3.75<br/>
+1.2<br/>
+4.23<br/>
+4.409<br/>
+1.4<br/>
+4.833<br/>
+5.018<br/>
+1.6<br/>
+5.966<br/>
+5.1966<br/>
+1.8<br/>
+7.14<br/>
+7.35<br/>
+2<br/>
+7.35<br/>
+7.57<br/>
+Cuadro&#160;1

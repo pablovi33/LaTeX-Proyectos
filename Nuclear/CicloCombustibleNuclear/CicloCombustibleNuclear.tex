@@ -1,0 +1,186 @@
+\documentclass[]{article}
+\usepackage[russian, spanish.mexico]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+%\usepackage{lmodern}
+\usepackage[a4paper]{geometry}
+
+%DIAGRAMAS
+\usepackage{smartdiagram}
+\usesmartdiagramlibrary{additions}
+%ARBOLES
+%\usetikzlibrary{trees}
+
+%Plotting
+
+\usepackage{pgfplots}
+\pgfplotsset{width=10cm,compat=1.9} 
+%\usepgfplotslibrary{external}
+%\tikzexternalize 
+
+%Graficos e imagenes
+\usepackage{graphicx}
+%\graphicspath{ Imagenes/ }
+\usetikzlibrary{arrows}
+
+\usepackage{natbib}
+\usepackage{cite}
+
+\usepackage{subcaption}
+
+%Grafico de barras
+%\usepackage{pgfplots}
+%Arrreglos
+\usepackage{array}
+
+\usepackage{tikz}
+\usepackage[american voltages, american currents,siunitx]{circuitikz}
+
+\title{Ciclo de Combustible Nuclear}
+\author{Pablo Vivar Colina}
+%Comentar para obtener fecha de HOYs
+%\date{Octubre 2019}
+
+
+\begin{document}
+	
+%\input{portada.tex} %agregar portada
+
+\maketitle
+
+\tableofcontents  % Write out the Table of Contents
+
+%\listoffigures  % Write out the List of Figures
+
+%#Puntos cubiertos en el proyecto
+
+\section{Ciclo cerrado y abierto}
+
+El ciclo de combustible nuclear son los pasos para tratar material radiactivo para utilizarlo en una planta generadora para ser utilizado reutilizado o almacenado.\\
+
+Para comenzar el proceso de vida de un material radiactivo candidato para su explotación primero se comienza por la extracción como el uranio, y a partir de ese momento puede utilizarse para generar energía o ser utilizado en un reactor productor de combustible.\\
+
+Se distinguen dos tipos de ciclo para el combustible nuclear: el ciclo cerrado y el ciclo abierto. En el ciclo abierto el combustible ya utilizado en el reactor es almacenado en piscinas de combustible gastado para posteriormente ser dispuesto en depósitos de Almacenamiento Geológico Profundo. En el ciclo cerrado el combustible es reciclado, recuperándose la mayor parte del mismo y el volumen de residuos de alta actividad que van al depósito final es menor que en el de ciclo abierto.\\
+
+
+\section{Procesamiento Inicial Separación Isotópica y Fabricación}
+
+El uranio es un mineral que está presente en toda la corteza terrestre, en concentraciones muy bajas. Comprende entre el 0.003 $\%$ y el 0.004 $\%$ de la corteza terrestre, pero son pocos los depósitos que la concentración supere 1$\%$.
+
+Otro depósito de uranio se encuentra en el mar. Disuelto en el agua, se encuentra en una concentración promedio de 0.0033 ppm (partes por millón). Sumando el total asciende a 4500 millones de toneladas, equivalente al doble de la cantidad total que hay en la corteza terrestre. Hasta ahora no se ha encontrado un método que técnica y económicamente sea satisfactorio. Éste mineral se encuentra en toda la superficie terrestre uniformemente y es difícil encontrar depósitos con concentraciones mayores al 0.5 $\%$.\\
+
+Muy frecuentemente se encuentra con sulfuros de fierro, cobre, cobalto, plomo, níquel, plata y bismuto, al grado que algunas veces la concentración  de esos otros metales es suficientemente alta para que sea económica su recuperación, haciendo que la recuperación de uranio sea un proceso secundario.\\
+
+ Los minerales del uranio se clasifican en primarios y secundarios Los primarios, en los que el uranio tiene forma tetravalente, son los que se formaron a partir de soluciones hidrotermales, proviniendo de las capas profundas de la corteza terrestre.\\
+
+Los minerales secundarios, en cambio, en los que el uranio está en un estado hexavalente, son minerales que se han originado de transformaciones de los minerales primarios, debido a causas físicas, como las acciones de la intemperie, de la circulación de aguas subterráneas, etc.\\
+
+Los principales minerales primarios con importancia económica son la uranita (óxido cristalino de uranio), la plechblenda (óxido amorfo de uranio) y la davidita (óxido de titanio, metales de las tierras raras y del uranio).\\
+
+ Los minerales secundarios del uranio, con importancia económica son la carnotita (vanadato de uranio y potasio), la torbernita (fosfato hidratado de cobre y uranio), la tiuyumunita (vanadato de calcio y de uranio), la autunita (fosfato hidratado de calcio y de uranio) y el uranofano (silicato hidratado de calcio y de uranio).\\
+ 
+Para la explotación de cualquier mineral, se debe realizar primero una prospección, en la cual se busca una región que tenga altas posibilidades de ser encontrado, para ello se ha utilizado la prospección aérea, que tiene ciertas ventajas pero tiene dificultades en áreas con alta vegetación y en su lugar es más conveniente utilizar el muestreo hidrogeoquímico que ha brindado mejores resultados.\\
+
+Después de la prospección viene la exploración, y ésta sirve para situar económicamente los depósitos de uranio, lo cual solamente se puede lograr por medio de un programa de perforación intensivo. El tipo de trabajo y los métodos utilizados dependerán del tipo de depósito. Los aspectos más importantes son el mapeo al detalle, la radiometría, el muestreo sistemático y sobre todo la perforación para cubicar. Todo este trabajo deberá definir perfectamente el tipo de depósito, es decir, el número de toneladas, su concentración, la profundidad, etc. En esta etapa también es necesario estudiar los aspectos metalúrgicos del mineral, de tal forma que se puedan hacer estimaciones sobre los costos de extracción y de beneficio del mineral localizado.\\
+
+Por último se ha registrado una dificultad creciente para probar reservas económicas de uranio. Conforme se encuentra el uranio en los sitios más favorables, los futuros descubrimientos se van tornando más difíciles y más costosos.\\
+
+\section{Irradiación}
+
+La irradiación es la utilización del combustible en el reactor para producir energía. El núcleo de un reactor está compuesto por cientos de ensambles combustibles (444 en el caso de la Central Nucleoeléctrica de Laguna Verde) y de barras de control (109 en Laguna Verde).\\
+
+Debido al proceso de fisión que consume los combustibles, los ensambles de combustible viejos deben ser cambiados periódicamente por nuevos (al período se le llama un ciclo). Sólo una parte de los ensambles (normalmente una cuarta parte) son retirados ya que el agotamiento del combustible no es uniforme. Por razones de eficiencia, no es recomendable colocar nuevos ensambles exactamente en la localización de los retirados. Incluso lotes de ensambles combustibles de la misma antigüedad tienen distintos niveles de radiactividad. Los ensambles disponibles son colocados en la manera en que se maximice el rendimiento, siempre que se cumplan las limitaciones de seguridad y de funcionamiento.\\
+
+Los operadores de reactores se enfrentan con el problema de recarga de combustible óptima, que consiste en optimizar el acomodamiento de todos los ensambles, los viejos y los nuevos, de modo que se maximice la energía producida por el núcleo del reactor. Esto da lugar a una reducción de los costos del ciclo de combustible.\\
+
+Este problema,  es de hecho un problema de optimización discreta, imposible de solventar con los métodos combinatorios actuales, debido al enorme número de permutaciones y a la complejidad de cada cálculo. Se han propuesto muchos métodos numéricos para resolverlo, y se han escrito muchas aplicaciones de “software” para ayudar en la gestión del combustible. Este es un tema todavía en progreso sin que se haya conseguido todavía una solución, por lo que los operadores utilizan una combinación de técnicas de cálculo y empíricas para gestionar el combustible.\\
+
+Algunos diseños de reactores, tales como el CANDU y el RBMK pueden ser recargados de combustible sin tener que detenerlos, a diferencia de los reactores de agua ligera en los que hay que parar el reactor periódicamente (por ejemplo, cada 18 meses).\\
+
+%Esto se consigue mediante el uso de muchos pequeños tubos de presión que contienen el combustible y el refrigerante, de modo opuesto a un recipiente de gran presión como sucede en los diseños de reactores de agua presurizada y de agua hirviente. Cada tubo puede ser aislado individualmente, recargado mediante una máquina controlada por un operador, habitualmente a una cadencia de hasta 8 canales por día (de un total aproximado de 400) en los reactores CANDU. La recarga sobre la marcha permite que se trate de un modo continuado el problema de recarga de combustible óptima, lo que conduce a un uso más eficiente del combustible. Este incremento de eficiencia es parcialmente contrarrestado por la complejidad añadida de requerir cientos de tubos de presión y las máquinas de recarga que los atienden.\\
+
+\section{Almacenamiento, Reprocesamiento y Disposición Final}
+
+Esta parte del ciclo de combustible comprende todas las etapas que se llevan a cabo después de la irradiación o utilización del combustible en un reactor nuclear.\\
+
+Para la disposición final del combustible gastado se tiene la estrategia de disposición final o la estrategia de reprocesamiento y/o reciclado de combustible gastado.\\
+
+Después de haber sido descargado del núcleo del reactor el combustible gastado es depositado en una alberca de enfriamiento, que como su nombre lo indica, es en donde el combustible es enfriado y su campo de radiación se contiene a través de un blindaje. Durante el almacenamiento en la planta, los productos de fisión de vida media corta decaen rápidamente con su correspondiente decremento en el calor generado. Con el combustible de reactores de agua a presión (PWR, por sus siglas en inglés), por ejemplo, el calor de un ensamble de combustible (0.46 TMU con quemado de 33,000 MWD/TMU)  es de 75 kW después de un mes, 4 kW después de un año y 0.8 k W después de cinco años a partir de la descarga del reactor.\\
+
+El período de enfriamiento en la alberca del  sitio del reactor puede variar de menos de un año hasta unas cuantas décadas, dependiendo de la política en materia de gestión  de combustible gastado, la capacidad de un almacenamiento interino, la capacidad de reprocesamiento y/o la facilidad de depósito. Si se planea  un período largo de almacenamiento en sitio, el combustible será transferido de la alberca del reactor a un almacenamiento seco o un almacenamiento húmedo auxiliar.\\
+
+Los procesos de acondicionamiento son usados para reducir el potencial de dispersión del desecho mediante su conversión en una forma sólida estable que es insoluble y que prevenga su dispersión al medio ambiente circundante.\\
+
+ Una propuesta sistemática incorpora la elección del material conveniente como cemento, polímeros o  vidrio de borosilicato, para la formación de un dispositivo que asegurará la estabilidad de los materiales radioactivos el período requerido para su embalaje en contenedores metálicos.\\
+
+Los depósitos de cobre puro en el mundo han comprobado que el cobre también puede ser usado en el contenedor de disposición final ya que puede permanecer  inalterable dentro del manto rocoso por extremadamente largos períodos de tiempo, si las condiciones geoquímicas son apropiadas es decir que hay reducidos mantos acuíferos. El cobre ha demostrado resistir la corrosión a largo plazo, haciéndolo un material candidato para el almacenamiento de desechos radioactivos. Otros países están actualmente considerando el uso de contenedores de acero, el cual ofrece un nivel de resistencia a largo plazo a la corrosión y alta estabilidad.\\
+
+Después del período inicial de almacenamiento de combustible gastado en el sitio del reactor, el transporte es una parte esencial de la gestión de combustible gastado, independientemente de la opción escogida. Los estándares de la transportación son cubiertos por las Regulaciones para la Seguridad de Transporte de Materiales Radioactivos del Organismo Internacional de Energía Atómica (OIEA) y controlados por regulaciones específicas llevadas a cabo de manera individual por cada gobierno. Estas regulaciones requieren, entre otras cosas, que un prototipo de cada tonel transportado sea puesto bajo prueba  en condiciones específicas que simulen accidentes severos como parte del proceso de licenciamiento.\\
+
+Un tonel para transporte de combustible gastado es una caja o cilindro de 50 a 120 toneladas que puede contener de 1 a 8 toneladas de combustible. El grueso de las paredes del tonel junto al blindaje son de acero, uranio gastado y/o material con contenido de hidrógeno, tal como el polietileno o cera de parafina proveen un amplio escudo de radiación tanto para la radiación gamma como para la radiación neutrónica. Estos toneles están también diseñados para disipar el calor generado en el combustible. La radiación y la disipación de calor decrece con el tiempo y el diseño del tonel y su seguridad están referidos específicamente a la carga de calor que es una función de la masa de combustible y el tiempo de enfriamiento.\\
+
+En algunas estrategias de administración de combustible gastado será transferido de las albercas de enfriamiento en el sitio del reactor a  instalaciones de almacenamiento interino a determinada distancia del sitio del reactor y guardado ahí por algún tiempo antes del reprocesamiento o previo acondicionamiento para su disposición final.  La necesidad para el almacenamiento interino y la longitud del período de almacenamiento está determinada por la capacidad de las instalaciones de almacenamiento en el reactor y la disponibilidad de la capacidad de reprocesamiento o de las facilidades para la disposición final. \\
+
+%En algunos países la  estrategia consiste en el almacenamiento  extendido, con la finalidad de permitir el decaimiento radioactivo y reducir la generación de calor del combustible gastado antes de su disposición final, esta alternativa  permitirá en un momento dado mejorar la estrategia de disposición final.\\
+
+La ubicación de un sitio para la instalación de un almacenamiento interino dependerá de las circunstancias de cada país. Con frecuencia es colocado en el sitio de un reactor y podría servir a un reactor o a todos los reactores del país. Alternativamente, podría localizarse en el sitio de reprocesamiento o de disposición final o en un lugar separado. En algunos países, una cantidad considerable de combustible se ha estado acumulando  y será almacenado por un período relativamente largo. Este medio favorece el desarrollo de instalaciones centrales de gran escala dedicadas al almacenamiento de combustible gastado y buscar desarrollos de economía de escala, aunque se requiere adicionalmente el transporte de los desechos radioactivos.\\
+
+El proceco PUREX es utilizado actualmente a escala industrial. Utiliza un solvente llamado TBP (tri-n-butil fosfato) y principios de extracción líquido-líquido, combinado con reacciones químicas de oxidación-reducción. El proceso inicia cuando los elementos combustibles se transportan a una celda mecánica, donde se cortan los extremos superior e inferior; por medio de una sierra o por un disco cortante con abrasivos. Las barras combustibles se rebanan en pequeños trozos de unos cinco milímetros, que caen directamente al recipiente de disolución, en donde se disuelven con ácido nítrico. Los elementos pesados se van en la solución, separándose del encamisado del combustible. La solución de ácido nítrico que contiene el uranio y el plutonio es procesada mediante extracción de solventes, separando, de esta manera, los productos de fisión y los elementos transuránicos del uranio y del plutonio. Después de esto, el uranio y el plutonio se separan usando un proceso químico, el cual reduce solamente al plutonio, pero no al uranio, a un estado orgánico insoluble; quedando, de esta manera, separados el uranio y el plutonio, los cuales pueden ser utilizados para la fabricación de nuevo combustible.\\
+
+Cuando el  combustible se disuelve en ácido nítrico, se liberan gases tales como: tritio, kriptón, xenón, yodo, dióxido de carbono, óxidos de nitrógeno y vapor. Los gases son enviados a un sistema de tratamiento, en donde algunos son almacenados para su posterior tratamiento y/o liberación, y otros son reciclados, como los óxidos de nitrógeno que se convierte en ácido nítrico. Es importante mencionar que una planta de reprocesamiento tiene un elaborado sistema de ventilación y opera a presión negativa.\\
+
+El Piroprocesado es un término genérico para los procesos pirometalúrgicos. El combustible gastado se coloca en una cesta del ánodo que está en contacto con la sal fundida. A continuación se aplica una corriente eléctrica, el uranio se separará, como un dióxido de uranio conductivo en un cátodo de metal sólido, en tanto que los otros actínidos podrán ser absorbidos en un cátodo de cadmio líquido. Muchos de los productos de fisión (como el cesio, el circonio y el estroncio) quedarán en la sal. Alternativamente al uso del electrodo de cadmio triturado es posible usar uno de bismuto, o uno de aluminio sólido.\\
+
+Como alternativa a la electrólisis, el metal deseado puede ser aislado usando una aleación fundida de un metal electropositivo y un metal menos reactivo.\\
+
+Dado que la mayoría de la radioactividad a largo plazo y de volumen del combustible gastado procede de los actínidos, el eliminar los actínidos produce residuos más compactos, y mucho menos peligrosos en el largo plazo. La radiactividad de este residuo decaerá entonces a los niveles de la radiactividad natural de varios minerales y rocas dentro de unos pocos cientos de años, en lugar de miles. Los actínidos mezclados producidos por el procesado pirometálico pueden ser utilizados de nuevo como combustible nuclear, ya que ellos virtualmente son físiles o fértiles.\\
+
+Ventajas
+\begin{itemize}
+	\item No utiliza agua. El agua es problemática en la química nuclear por muchos motivos. En primer lugar, tiene a actuar como un moderador, y acelera las reacciones nucleares. En segundo, es contaminada con facilidad, y no es fácil su limpieza, tiende a evaporarse, arrastrando tritio.
+	\item Separa todos los actínidos, y por tanto genera combustible que está fuertemente mezclado con actínidos pesados, tales como el Plutonio y el Curio. Esto no impide que el combustible sea adecuado para reactores, pero lo hace difícil de manipular, segregar o fabricar armas nucleares a partir de él. Esto normalmente es considerado como una propiedad bastante deseable. En contraste, el proceso PUREX puede producir uranio y plutonio de concentración para armamento, y también tiende a dejar detrás los restantes actínidos (como el Curio), produciendo residuos nucleares más peligrosos.
+	\item Es más eficiente y considerablemente más compacto que los métodos de procesamiento acuosos como el PUREX, permitiendo que el reprocesado de los residuos nucleares pueda realizarse en la propia planta de generación de ellos. Esto evita varios temas de transporte y seguridad, permitiendo que se almacene un pequeño volumen (tal vez un escaso porcentaje del volumen original del combustible consumido) en la propia planta del reactor, hasta su desinstalación, momento en el que todas las cosas deberán ser afrontadas conjuntamente.
+	\item Los restantes productos de fisión no tienen una vida tan larga como la tendrían de otro modo. La mayoría de la radioactividad a largo plazo (superior a 200 años) producida por los residuos nucleares es debida a los actínidos no eliminados. Estos actínidos en su mayor parte pueden ser consumidos por reactores como combustible, por lo que el extraerlos de los residuos y reinsertarlos en el reactor reduce la amenaza a largo plazo de los residuos, al tiempo que reduce las necesidades de combustible del reactor.
+	
+\end{itemize}
+
+Un gran inconveniente es que la sal usada procedente del piroprocesado no es válida para su conversión en vidrio.\\
+
+En muchos países la estrategia de reprocesamiento ha sido llevada a cabo y el almacenamiento interino es también considerado para los desechos del reprocesamiento durante el periodo entre el acondicionamiento y la disposición final (esto es, por algunas décadas). Este almacenamiento provee flexibilidad para  el momento de la disposición final, debido al decaimiento radioactivo durante el periodo de almacenamiento. La razón de generación de calor decrece por un factor de 50 o más entre el primer y el centésimo año después del reprocesamiento. Respecto a la instalación de almacenamiento, algunos países, consideran ubicarla en el sitio de la planta de reprocesamiento o en el sitio de la disposición final.\\
+
+El método más viable de disposición considerado en el presente es la disposición geológica, donde los desechos son empaquetados apropiadamente para disponerlos en repositorios los cuales serán construidos entre varios cientos y mil metros bajo tierra. El repositorio para la disposición de desecho radioactivo debe proveer una alta capacidad de aislamiento y ser adecuadamente estable. El diseño del repositorio ha de ser adecuado para cada sitio, teniendo en cuenta el tipo de desecho, el tipo de roca del depósito, las condiciones específicas del sitio.\\
+
+ Dado que existen condiciones geológicas diferentes alrededor del mundo,  diferentes medios han sido considerados  para la disposición final de combustible gastado o desecho de reprocesamiento. Entre los países que están contribuyendo a este estudio, los siguientes medios geológicos son considerados:\\
+ 
+ \begin{itemize}
+ 	 
+ 	\item Roca ígnea (Canadá, Finlandia, Francia, Japón, España, Suecia, Suiza, la Gran Bretaña y los Estados Unidos).
+ 	
+ 	\item Sal (Francia, Alemania, Holanda y España).
+ 	
+ 	\item Arcilla (Bélgica, Francia, Japón y Suiza).
+ 	
+ 	\item Roca metamórfica (Francia y Japón).
+ 	
+ \end{itemize}
+
+ Las instalaciones superficiales son un componente esencial para el depósito, tales como:\\
+ 
+ \begin{itemize}
+ 	\item La recepción del desecho de la planta de embalaje.
+ 	\item La manipulación y administración de la roca de desecho de las operaciones en el subsuelo.
+ 	\item La recepción, almacenamiento y preparación de los materiales de blindaje necesarios.
+ 	\item El acceso, seguridad, salud, salvaguarda, administración, personal y sistemas necesarios para operar el sitio y el depósito.
+ \end{itemize}
+
+\section{Conclusiones}
+
+En el siguiente reporte se describió la disposición del mineral de uranio en el planeta, la forma en la que se extrae y algunas formas de aprovechamiento y tratamiento además de algunas formas de disposiciones finales ya una vez utilizado.\\
+
+Es importante mencionar que en tanto en las primeras fases, intermedias y finales todavía existen puntos a investigar y mejorar, y en la fase que más se necesita implementar soluciones es en la fase final para el manejo de combustible gastado. Es por eso la vital importancia de un ciclo cerrado en el reaprovechamiento de combustibles e incentivar la producción de reactores productores para una mayor eficiencia de combustible.\\
+
+
+%\bibliographystyle{plain}
+%\bibliography{Referencias.bib}
+
+\end{document}

@@ -1,0 +1,66 @@
+\documentclass[border=10pt]{standalone}%{article}
+%\usepackage[margin=1cm]{geometry}
+\usepackage{pgfgantt}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage[spanish.mexico]{babel}
+\usepackage[utf8]{inputenc}
+%\usetikzlibrary{positioning}
+
+\ganttset{group/.append style={orange},
+milestone/.append style={red},
+progress label node anchor/.append style={text=red}}
+
+\begin{document}
+
+%    \begin{figure}
+%    \centering
+     \begin{ganttchart}[%Specs
+     y unit title=0.5cm,
+     y unit chart=0.7cm,
+     vgrid,hgrid,
+     title height=1,
+%     title/.style={fill=none},
+     title label font=\bfseries\footnotesize,
+     bar/.style={fill=blue},
+     bar height=0.7,
+%   progress label text={},
+     group right shift=0,
+     group top shift=0.7,
+     group height=.3,
+     group peaks width={0.2},
+     inline]{1}{24}
+    %labels
+    \gantttitle{Proyecto Final}{24}\\  % title 1
+    \gantttitle[]{Abril}{24}\\                 % title 2
+              
+    \gantttitle{Q1}{6}                      % title 3
+    \gantttitle{Q2}{6}
+    \gantttitle{Q3}{6}
+    \gantttitle{Q4}{6}
+   \\
+    % Setting group if any
+    \ganttgroup[inline=false]{Diseño Mecánico}{1}{6}\\ 
+    \ganttbar[progress=50,inline=false]{Planeación}{1}{6}\\
+    \ganttmilestone[inline=false]{Objetivo 1}{6} \\
+
+     \ganttgroup[inline=false]{Programación}{6}{12}\\ 
+   \ganttbar[progress=0,inline=false]{Planeación}{6}{12}\\
+   \ganttmilestone[inline=false]{Objetivo 2}{12} \\
+   
+   
+    \ganttgroup[inline=false]{Pruebas}{12}{18}\\ 
+   \ganttbar[progress=0,inline=false]{Planeación}{12}{18}\\
+   \ganttmilestone[inline=false]{Objetivo 3}{18} \\
+   
+   
+   \ganttgroup[inline=false]{Reprogramación y Ajustes}{18}{24}\\ 
+   \ganttbar[progress=0,inline=false]{Planeación}{18}{24}\\
+   \ganttmilestone[inline=false]{Objetivo 4}{24} \\
+   
+   
+   
+\end{ganttchart}
+%    \caption{Gantt diagram for 2013--2014 Project}
+%\end{figure}
+\end{document}

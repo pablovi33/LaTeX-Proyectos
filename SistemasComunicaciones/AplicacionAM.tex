@@ -1,0 +1,353 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish.mexico]{babel}
+\usepackage[american voltages, american currents,siunitx]{circuitikz}
+
+%Plotting
+
+\usepackage{pgfplots}
+\pgfplotsset{width=10cm,compat=1.9} 
+ \usepgfplotslibrary{external}
+\tikzexternalize 
+
+%Diagrama de bloques
+
+\usetikzlibrary{shapes.geometric, arrows}
+
+\tikzstyle{startstop} = [rectangle, rounded corners, minimum width=3cm, minimum height=1cm,text centered, draw=black, fill=red!30]
+\tikzstyle{io} = [trapezium, trapezium left angle=70, trapezium right angle=110, minimum width=3cm, minimum height=1cm, text centered, draw=black, fill=blue!30]
+\tikzstyle{process} = [rectangle, minimum width=3cm, minimum height=1cm, text centered, draw=black, fill=orange!30]
+\tikzstyle{decision} = [diamond, minimum width=3cm, minimum height=1cm, text centered, draw=black, fill=green!30]
+
+
+\tikzstyle{arrow} = [thick,->,>=stealth]
+%###MIO###
+\tikzstyle{point} = [circle,(0.5cm),minimum with=1cm,draw=black,fill=black!50]
+
+
+
+
+\title{Aplicaciones de los tipos de modulación AM }
+\author{Pablo Vivar Colina\\
+Grupo 13
+}
+%\date{Septiembre 2017}
+
+\usepackage{natbib}
+\usepackage{graphicx}
+
+\begin{document}
+
+\maketitle
+
+\section{Modulación}
+
+Es el proceso de situar una señal de baja frecuencia sobre una señal de más alta frecuencia.\\
+
+\begin{itemize}
+    \item  Señal de baja frecuencia   :     moduladora
+    \item Señal de alta frecuencia    :     portadora
+\end{itemize}
+
+Una portadora puede modificarse por la moduladora en :\\
+
+\begin{itemize}
+    \item amplitud
+    \item frecuencia
+      \item  fase
+\end{itemize}
+
+Razones de porqué se emplea la modulación:\\
+
+\begin{itemize}
+    \item La Tx directa  resultaría en problemas de interferencia, si las señales de diferentes usuarios  tendrían la misma frecuencia.
+   \item  La mayoría de las señales  de información son de banda base, de frecuencias bajas,su Tx directa necesitarían grandes antenas. 
+   \item  Con la modulación se simplifica la estructura del transmisor con altas frecuencias 
+\end{itemize}
+
+¿Porqué emplear portadora?\\
+Si la señal es audio  es de: 3000 Hz\\
+
+\begin{itemize}
+    \item $\lambda=  c/f$     muy grande,
+                                                                       antena muy grande
+
+    \item En cambio si se emplea una portadora   a 
+                                                                       $f = 1000 [Mhz]$
+    \item  Una antena con $\lambda/4$ es posible (teléfonos celulares)\citep{Tomasi}\\
+\end{itemize}
+
+
+Los sistemas son generalmente bidireccionales . Se emplea un modulador a la transmisión y un demodulador la recepción. Para posibilitar un diálogo  se emplea u MODEM en cada extremo .\\
+
+El método utilizado para producir una señal AM es aplicar la portadora y la moduladora en un dispositivo no lineal.\\
+
+En este caso a la salida del modulador  se tendrá  :\\
+
+\begin{itemize}
+    \item un nivel de C.D.
+
+ \item componentes de las frecuencias originales
+
+ \item componentes de intermodulación.
+
+ \item componentes de  distorsión armónica.
+\end{itemize}
+
+\section{Índice de modulación}
+
+El índice de modulación es una relación sin unidad y se utiliza sólo para describir la profundidad de la modulación lograda para una señal modulada en amplitud y frecuencia dada.\citep{IndiceModulacion}\\
+
+Es el proceso de cambiar la amplitud de una portadora de acuerdo con las variaciones de amplitud de la señal moduladora. La envolvente de la portadora es la información transmitida, y podremos verla en los semiciclos positivos y negativos de la portadora. El porcentaje en que la señal moduladora cambia la portadora senoidal es conocido como el
+índice de modulación.\citep{IndiceModulacion}\\
+
+En modulación AM, la señal mensaje y la portadora se combinan en una señal compuesta. La expresión matemática de esta señal es:\citep{IndiceModulacion}\\
+
+\begin{equation}
+    s(t)=A_c[1+m(t)]cos(2 \pi f_c(t))
+    \label{portadora}
+\end{equation}
+
+El índice o porcentaje de modulación de una señal AM es una medida que indica cuanto varía el voltaje de la señal portadora debido a la señal moduladora o mensaje. El índice de modulación toma valores entre 0 y 1. Reescribiendo la ecuación (\ref{portadora}), tenemos:\citep{IndiceModulacion}\\
+
+
+    \begin{equation}
+    s(t)=A_c[1+a*m(t)]cos(2 \pi f_c(t))
+    \label{portadoraPorA}
+\end{equation}
+
+Siendo a: el índice de modulación, $m_n(t)$ es la señal mensaje normalizada, con la condición:\citep{IndiceModulacion}\\
+
+\begin{equation}
+    |m_n(t)|<1
+\end{equation}
+
+Si $a > 1$, entonces la señal AM esta sobremodulada, el resultado es una señal que presenta distorsiones. Otra expresión para definir el índice de modulación en circuitos reales, es la siguiente:\citep{IndiceModulacion}\\
+
+\begin{equation}
+    a=\frac{k*A_m}{A_c}
+\end{equation}
+
+Donde Am es el valor máximo en amplitud de $m(t)$, y $k$ es un parámetro deganancia que se puede ajustar para modificar el índice de modulación a discreción del operador.\citep{IndiceModulacion}\\
+
+ \section{Modulación de amplitud AM}
+ 
+ A amplitud de la portadora cambia en proporción directa a la amplitud instantánea de la moduladora, como se puede apreciar en la figura \ref{fig:sistemaAM}
+
+
+
+\begin{figure}[h!]
+    \centering
+    \begin{tikzpicture}[node distance=4cm]
+
+%startstop-->ROJO
+\node (Portadora) [process] {Portadora};
+
+
+
+\node (Moduladora) [process, below of=Portadora] {Moduladora};
+
+
+
+\node (Sistema) [process, right of=Portadora, ] {Sistema};
+%yshift=-0.5cm
+
+\node (PortadoraModulada) [process,right of=Sistema] {Portadora Modulada};
+
+%\node (PortadoraModulada) [process,yshift=-2cm,above of=Canal2] {Portadora Modulada};
+
+%Líneas
+\draw [arrow] (Portadora) -- (Sistema);
+
+ 
+\draw [arrow] (Moduladora) -| (Sistema);
+
+\draw [arrow] (Sistema) --(PortadoraModulada);
+
+
+\end{tikzpicture}
+    \caption{El modulador en AM tiene dos entradas y una salida}
+    \label{fig:sistemaAM}
+\end{figure}
+
+\subsection{Modulación de amplitud convencional doble banda lateral con portadora completa}
+
+\begin{itemize}
+    \item Portadora                      $v_c(t)=E_c sen(2\pi f_c t)$
+
+     \item Moduladora                  $v_m(t)=E_m sen(2\pi f_m t)$
+
+     \item Portadora modulada      $V_{AM}(t)$
+\end{itemize}
+
+
+\begin{figure}[h!]
+    \centering
+
+\begin{tikzpicture}
+\begin{axis}[
+    axis lines = left,
+    xlabel = {t[s]},
+    ylabel = {V[V]},
+]
+
+%ENVOLVENTE SUPERIOR
+\addplot
+[thick=0.1cm,
+    domain=0:0.05, 
+    samples=300, 
+    color=blue,
+]
+{sin(2*3.14159*x*1000)+2};
+
+
+
+\addplot
+[thick=0.1cm,
+    domain=0:0.05, 
+    samples=300, 
+    color=red,
+]
+{sin(2*3.14159*x*10000)};
+
+
+
+
+
+%Se añade nota :D
+\addlegendentry{Moduladora}
+\addlegendentry{Portadora}
+
+\end{axis}
+\end{tikzpicture}
+\caption{Modulación AM}
+\label{modulacionAM}
+\end{figure}
+
+
+%SEGUNDA FIGURA DE AM
+
+
+\begin{figure}[h!]
+    \centering
+
+\begin{tikzpicture}
+\begin{axis}[
+    axis lines = left,
+    xlabel = {t[s]},
+    ylabel = {V[V]},
+]
+
+%ENVOLVENTE SUPERIOR
+\addplot
+[thick=0.1cm,
+    domain=0:0.05, 
+    samples=300, 
+    color=blue,
+]
+{sin(2*3.14159*x*1000)+1.5};
+
+%ENVOLVENTE INFERIOR
+
+
+\addplot
+[thick=0.1cm,
+    domain=0:0.05, 
+    samples=300, 
+    color=blue,
+]
+{-sin(2*3.14159*x*1000)-1.5};
+
+
+%\addplot
+%[thick=0.1cm,
+ %   domain=0:0.05, 
+  %  samples=300, 
+   % color=red,
+%]
+%{sin(2*3.14159*x*10000)};
+
+%CONVOLUCION
+\addplot
+[thick=0.1cm,
+    domain=0:0.05, 
+    samples=300, 
+    color=green,
+]
+{(sin(2*3.14159*x*1000)+1.5)*sin(2*3.14159*x*10000)};
+
+%NO MODULACION
+\addplot
+[thick=0.1cm,
+    domain=-0.025:0, 
+    samples=300, 
+    color=blue,
+]
+{+1.5};
+
+\addplot
+[thick=0.1cm,
+    domain=-0.025:0, 
+    samples=300, 
+    color=blue,
+]
+{-1.5};
+
+\addplot
+[thick=0.1cm,
+    domain=-0.025:0, 
+    samples=300, 
+    color=green,
+]
+{1.5*sin(2*3.14159*x*10000)};
+
+
+
+
+
+
+%Se añade nota :D
+\addlegendentry{Envolvente superior}
+\addlegendentry{Envolvente inferior}
+\addlegendentry{Convolución}
+
+\end{axis}
+\end{tikzpicture}
+\caption{No hay modulación hasta llegar al tiempo cero}
+\label{modulacionAM}
+\end{figure}
+
+
+\begin{itemize}
+    \item sin señal  :  sólo existe la portadora
+    \item la amplitud de la portadora  varía con la moduladora.
+   \item la envolvente de la amplitud de salida tiene la misma forma de la moduladora. 
+   \item sin embargo, la forma de onda AM no contiene ninguna componente de la señal moduladora
+   \item la envolvente no es una componente de la forma de onda AM y no se vería en un osciloscopio.
+\end{itemize}
+
+\subsection{Ancho de Banda en Amplitud modulada de doble landa lateral con portadora completa}
+
+Un modulador es un dispositivo no lineal. A la salida de AM  se consideran útiles  (si la señal moduladora contiene un frecuencia única fm)  :
+
+\begin{itemize}
+    \item frecuencia portadora
+    \item frecuencias:(fc+fm)  (fc-fm)    
+
+\end{itemize}
+
+En general, la mezcla de dos frecuencias en un dispositivo no lineal genera un número mayor de componentes además de las deseadas.
+
+El efecto de la modulación es trasladar  la señal moduladora   a una frecuencia más alta.
+ 
+%####AQUI VAMOS###
+
+
+
+
+
+\bibliographystyle{plain}
+\bibliography{Referencias.bib}
+
+
+\end{document}

@@ -1,0 +1,258 @@
+\documentclass[]{article}
+\usepackage[spanish.mexico]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+%\usepackageB.\\{lmodern}
+\usepackage[a4paper]{geometry}
+
+%\usepackage{natbib}
+\usepackage{cite}
+
+
+%Grafico de barras
+\usepackage{pgfplots}
+
+%Graficos e imagenes
+\usepackage{graphicx}
+\usepackage{subcaption}
+
+%circuitos
+\usepackage{tikz}
+\usepackage[american voltages, american currents,siunitx]{circuitikz}
+
+%Plotting
+
+\usepackage{pgfplots}
+\pgfplotsset{width=10cm,compat=1.9} 
+
+
+%\title{Proyecto de Optimización de Energía}
+%\author{Pablo Vivar Colina}
+%\date{Mayo 2018}
+
+%agregar portada
+
+\begin{document}
+	
+	\input{portada.tex} 
+	
+
+	%\maketitle
+	
+	%\tableofcontents  % Write out the Table of Contents
+	
+	%\listoffigures  % Write out the List of Figures
+		
+	\section{Introducción}
+	
+	El concepto de polaridad se asocia a los transformadores monofásicos y el de secuencia de fases a los transformadores trifásicos.\\
+	Prueba de polaridad\\
+	Identificar una terminal de alta tensión con una de baja tensión que tenga la misma polaridad. Para verificar la polaridad se recomienda tres métodos:\\
+	
+	\begin{itemize}
+		\item 	Método de los dos voltímetros: Se colocan dos voltímetros, uno en las terminales de alta tensión y otro en las terminales de baja tensión.
+			\item Método del transformador patrón.
+			\item Método de descarga inductiva: Aplicar corriente directa a cada devanado, por medio de un voltímetro averiguar la polaridad de la tensión aplicada.
+	\end{itemize}
+	
+
+	
+	
+	Prueba de secuencia de fases\\
+	Un sistema trifásico con tres tensiones alternas de misma magnitud, frecuencia y desfasadas entre sí 120$^o$. Para averiguar la secuencia de un sistema trifásico existen varios tipos de secuencímetros:\cite{Angelo-kun2015}\\
+	
+	\begin{itemize}
+		\item 	Secuencímetro indicador: Instrumento que trabaja con el principio del motor de inducción.
+		\item Secuencímetro de dos resistencias y un capacitor: las dos resistencias se componene de dos lámparas incandescentes y un capacitor conectados en estrella. Al energizar el circuito se observa que una lámpara brilla más que la otra.
+		\item Secuencímetro de dos resistencias y un inductor. Similar al anterior pero con un inductor.
+	\end{itemize}
+
+		
+	\section{Objetivos}
+	
+     Aplicar alguno de los métodos mencionados en la introducción para verificar experimentalmente la secuencia de fases del mismo.
+     
+	\section{Resultados}
+	
+	\subsection{Prueba de descarga inductiva}
+	
+	
+	\begin{figure}[h!]
+		\centering
+		\begin{circuitikz}
+			
+			\draw
+			
+			%Generador de funciones
+			
+			
+			
+			%(-6,0.5) to   (-6,-0.5) node[ground]{}
+			%(-6,0.5)--(-5,0.5)
+			(0,0)to[vco,l=$V_1$](2,0)
+			(0,0)--(0,-0.5)
+			(2,0)--(2,-0.5)
+			
+			(2,-1) node {$H_2$}
+			(0,-1) node {$H_1$}
+			
+			
+			(2,-0.5)--(3,-0.5)
+		    (3,-0.5) to[voltmeter,l=$V_m$](3,-2.5) 
+		    
+		    (5,-1.5) node {$110 [V]$}
+			
+			(0,-0.5)--(-1,-0.5)
+			(-1,-0.5)--(-1,-2.5)
+			
+		(-1,-3) node {$X_1$}
+		(3,-3) node {$X_2$}
+		
+		
+		
+			
+			;
+		
+		\end{circuitikz}
+		\caption{Prueba de descarga inductiva}
+		\label{fig:PruebaDescargaInductiva}
+	\end{figure}
+	
+	En la figura \ref{fig:PruebaDescargaInductiva} podemos apreciar la prueba de descarga inductiva y como se hacen las conexiones correspondientes para la misma, entre las terminales  $H_2$ y $X_2$ se conectó un voltmetro $V_m$ en el cual la lectura fue de 110[V].\\
+	
+	Cabe mencionar que si el voltaje en el generador es mayor a la suma de los voltajes involucrados se dice que la polaridad del transformador es $Sustractiva$, en cambio si el voltaje del generador es menor a la suma de los voltajes involucrados se dice que tiene polaridad $Aditiva$.\\
+	
+	En la prueba al transformador se cumplió la regla para la polaridad $Sustractiva$.\\
+	
+
+\subsection{Secuencia de fases}
+
+
+	
+	
+	
+	\begin{figure}[h!]
+		\centering
+		\begin{subfigure}[b]{0.3\textwidth}
+			
+			%\begin{figure}
+				\centering
+				
+				
+				\begin{tikzpicture}[scale=0.5]
+				\begin{axis}[
+				axis lines = left,
+				xlabel = $t$,
+				ylabel = {$v(t)$},
+				]
+				
+				\addplot [
+				domain=-(1*3.14159):+(1*3.14159), 
+				samples=100, 
+				color=red,
+				]
+				{110*sin(deg(x))};
+				\addlegendentry{$fase C$}
+				
+				\addplot [
+				domain=-(1*3.14159):+(1*3.14159), 
+				samples=100, 
+				color=green,
+				]
+				{110*sin(deg(x)+120)};
+				\addlegendentry{$fase B$}
+				
+				\addplot [
+				domain=-(1*3.14159):+(1*3.14159), 
+				samples=100, 
+				color=blue,
+				]
+				{110*sin(deg(x)+240)};
+				\addlegendentry{$fase A$}
+				
+				
+				
+				
+				\end{axis}
+				\end{tikzpicture}
+				
+				\caption{Secuencia Positiva}
+				\label{fig:SecuenciaPositiva}
+			
+		\end{subfigure}
+		~ %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc. 
+		%(or a blank line to force the subfigure onto a new line)
+		\begin{subfigure}[b]{0.3\textwidth}
+			
+			%\begin{figure}
+			\centering
+			
+			
+			\begin{tikzpicture}[scale=0.5]
+			\begin{axis}[
+			axis lines = left,
+			xlabel = $t$,
+			ylabel = {$v(t)$},
+			]
+			
+			\addplot [
+			domain=-(1*3.14159):+(1*3.14159), 
+			samples=100, 
+			color=blue,
+			]
+			{110*sin(deg(x))};
+			\addlegendentry{$fase A$}
+			
+			\addplot [
+			domain=-(1*3.14159):+(1*3.14159), 
+			samples=100, 
+			color=green,
+			]
+			{110*sin(deg(x)+120)};
+			\addlegendentry{$fase B$}
+			
+			\addplot [
+			domain=-(1*3.14159):+(1*3.14159), 
+			samples=100, 
+			color=red,
+			]
+			{110*sin(deg(x)+240)};
+			\addlegendentry{$fase C$}
+			
+	
+			\end{axis}
+			\end{tikzpicture}
+			
+			\caption{Secuencia Negativa}
+			\label{fig:SecuenciaNegativa}
+			
+		\end{subfigure}
+		\caption{Gráfica de voltajes de fases (110 Vpp)}\label{fig:SecuenciaDeFases}
+	\end{figure}
+	
+	En la figura \ref{fig:SecuenciaDeFases} podemos apreciar las dos polaridades verificadas en el laboratorio con el secuenciador de fases, en la sección \ref{fig:SecuenciaPositiva} conectamos las terminales del aparato correctamente al sistema trifásico verificando su correcto funcionamiento, y en la sección \ref{fig:SecuenciaNegativa} invertimos la conexión del aparato para verificar que éste es capaz de leer una secuencia negativa de fases.\\
+	
+
+
+
+
+
+
+    
+	
+	\section{Conclusiones}
+	
+	El objetivo de la práctica se cumplió porque logramos verificar de manera presencial la polaridad de un transformador por el método de carga inductiva además de revisar la secuencia de fases del sistema trifásico de potencia.
+
+	\section{Referencias}
+	
+
+	\bibliographystyle{plain}
+    \bibliography{Referencias}
+    
+
+
+	
+	
+\end{document}
+

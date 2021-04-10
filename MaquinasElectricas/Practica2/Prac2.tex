@@ -1,0 +1,177 @@
+\documentclass[]{article}
+\usepackage[spanish.mexico]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+%\usepackageB.\\{lmodern}
+\usepackage[a4paper]{geometry}
+
+%\usepackage{natbib}
+\usepackage{cite}
+
+
+%Grafico de barras
+\usepackage{pgfplots}
+
+%Graficos e imagenes
+\usepackage{graphicx}
+
+
+%\title{Proyecto de Optimización de Energía}
+%\author{Pablo Vivar Colina}
+%\date{Mayo 2018}
+
+%agregar portada
+
+\begin{document}
+	
+	\input{portada.tex} 
+	
+
+	%\maketitle
+	
+	%\tableofcontents  % Write out the Table of Contents
+	
+	%\listoffigures  % Write out the List of Figures
+		
+	\section{Introducción}
+	
+	
+	\subsection{Resistencia de Aislamiento}
+	
+	La resistencia de aislamiento
+	de un aislante es la resistencia que opone al paso de 
+	la   corriente   eléctrica,   medida   en   la   dirección   en   que   se   tiene   que   asegurar   
+	el aislamiento.\\
+	
+	La corriente de fuga de un aislante sigue dos caminos: uno sobre la superficie y 
+	otro  a  través  del  interior  del  material.  La  resistencia  de  aislamiento  que  presenta  el  
+	material se debe al efecto de estos dos caminos en paralelo.\\
+	
+	La 
+	$resistividad$ $de$ $aislamiento$ $superficial$
+	se mide
+	en $M \Omega$
+	y es debida a la resistencia 
+	que  ofrece  la  superficie  del  material  al  paso  de  la  corriente  cuando  se  aplica  tensión  
+	entre dos puntos de dicha superficie. Evidentemente esta magnitud está muy 
+	afectada  por  el  estado  de  limpieza  de  la  superficie.  La  suciedad  (grasa,  polvo,  etc.)  
+	depositada  sobre  la  superficie  de  un  aislante 
+	reduce  la  resistividad  de  aislamiento  
+	superficial. Por esta razón, las piezas aislantes hay que construirlas lisas y pulidas.\\
+	
+	Según  la  norma  UNE
+	21303  la  resistividad  superficial  es  igual  a  la  resistencia  
+	superficial 
+	que presenta una superficie cuadrada y es independiente del tamaño de este 
+	cuadrado. Para 
+	obtener
+	esta resistividad [...] se mide 
+	la resistencia entre los electrodos 
+	(por ejemplo, 
+	usando  una  fuente  de  tensión  continua, 
+	midiendo la corriente que aparece y aplicando la ley de Ohm) y l
+	a resistividad 
+	se calcula 
+	multiplicando  esta
+	resistencia
+	por  el  perímetro  de  un  electrodo  y  dividiéndola 
+	por  la  
+	distancia
+	entre 
+	los 
+	electrodos.
+	La 
+	resistividad de aislamiento transversal o volumétrica
+	se mide en $\frac{M \Omega cm^2}{cm}$ y 
+	es debida a la resistencia que ofrece el dieléctrico a ser atravesado por una corriente 
+	cuando  se  aplica  tensión  entre  dos  de  sus  caras.  Esta  magnitud  no  tiene  un  
+	valor constante para un mismo material, ya que le afectan la temperatura, la humedad, 
+	el espesor de la pieza, el envejecimiento del material.\\
+	
+	\section{Objetivos}
+	
+	Los conductores de los devanados del transformador deben estar perfectamente asilados para evitar que entren en contacto las espiras, la bobina de alta y baja tensión, así como con el núcleo.\\
+	
+	La primera prueba para detectar el estado de los aislamientos es la medición de su resistencia (valor de orden de cuentos de megaohms). El aislamiento se debe medir:\\
+	
+	\begin{itemize}
+		\item 	Entre los devanados de alta y baja tensión.
+	    \item 	Entre el devanado de alta tensión y tierra.
+		\item   Entre el devanado de baja tensión y tierra.
+	\end{itemize}
+
+	\section{Resultados}
+	
+	\begin{table}[h!]\footnotesize
+		\caption{Resultados de la prueba de resistencia de aislamiento}
+		\centering
+		\begin{tabular}{ |c|c| }
+			\hline
+			\multicolumn{2}{|c|}{Resistencia de Aislamiento} \\
+	        \hline
+			Referencias & Valor Medio $M \Omega$  \\
+			\hline
+			Alta y Baja Tensión & 240  \\
+			\hline
+			Alta Tensión y Tierra & 172.5  \\
+			\hline
+			Baja Tensión y Tierra & 137  \\
+			\hline
+		\end{tabular}
+    \end{table}
+    
+    \begin{table}[h!]\footnotesize
+    	\caption{Resultados de la prueba de resistencia de aislamiento}
+    	\centering
+    	\begin{tabular}{ |c|c| }
+    		\hline
+    		\multicolumn{2}{|c|}{Resistencia de Aislamiento} \\
+    		\hline
+    		Referencias & Valor Medio $M \Omega$  \\
+    		\hline
+    		Alta y Baja Tensión & 350  \\
+    		\hline
+    		Alta Tensión y Tierra & 200  \\
+    		\hline
+    		Baja Tensión y Tierra & 180  \\
+    		\hline
+    	\end{tabular}
+    \end{table}
+    
+    Para Un transformador trifásico con una potencia de 50KVA se realizaron las mediciones que se aprecian en el cuadro \ref{ultimo}.\\
+    
+    \begin{table}[h!]\footnotesize
+    	\caption{Resultados de la prueba de resistencia de aislamiento}
+    	\centering
+    	\begin{tabular}{ |c|c| }
+    		\hline
+    		\multicolumn{2}{|c|}{Resistencia de Aislamiento} \\
+    		\hline
+    		Referencias & Valor Medio $M \Omega$  \\
+    		\hline
+    		Alta y Baja Tensión & 400 \\
+    		\hline
+    		Alta Tensión y Tierra & 400  \\
+    		\hline
+    		Baja Tensión y Tierra & 1  \\
+    		\hline
+    	\end{tabular}
+    	\label{ultimo}
+    \end{table}
+    
+	
+	\section{Conclusiones}
+	
+Logramos comprobar experimentalmente que las terminales del transformador están correctamente aisladas, ya que la resistencia entre ellas se encuentra en el orden de $M \Omega$, por lo tento podemos decir que no exixtirá continuidad entre ellas.
+	%\section{Referencias}
+	
+
+	%\bibliographystyle{plain}
+    %\bibliography{Prac2}
+    
+
+
+	
+	
+\end{document}
+

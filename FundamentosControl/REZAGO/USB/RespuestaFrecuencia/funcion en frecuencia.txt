@@ -1,0 +1,4 @@
+frac{V_s(t){V_e(t)}=frac{-R_1}{cR_1R_2
+S+R_2}
+
+La entrada fue el caqnal cero y la salida fue el canal 1

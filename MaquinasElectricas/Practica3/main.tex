@@ -1,0 +1,138 @@
+\documentclass[]{article}
+\usepackage[spanish.mexico]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+%\usepackageB.\\{lmodern}
+\usepackage[a4paper]{geometry}
+
+%\usepackage{natbib}
+\usepackage{cite}
+
+
+%Grafico de barras
+\usepackage{pgfplots}
+
+%Graficos e imagenes
+\usepackage{graphicx}
+
+%circuitos
+\usepackage{tikz}
+\usepackage[american voltages, american currents,siunitx]{circuitikz}
+
+
+
+%\title{Proyecto de Optimización de Energía}
+%\author{Pablo Vivar Colina}
+%\date{Mayo 2018}
+
+%agregar portada
+
+\begin{document}
+	
+	\input{portada.tex} 
+	
+
+	%\maketitle
+	
+	%\tableofcontents  % Write out the Table of Contents
+	
+	%\listoffigures  % Write out the List of Figures
+		
+	\section{Introducción}
+	
+	Para determinar la relación de transformación existen tres métodos:\cite{Angelo-kun2015}\\
+	
+	\begin{itemize}
+		\item Método de los voltímetros
+		\item Método del transformador patrón.
+		\item Método del potenciómetro de resistencia.
+	\end{itemize}
+	
+	Básicamente los tres métodos consisten en aplicar a uno de los devanados una tensión alterna y detectar el voltaje inducido en el otro devanado.\\
+		
+	\section{Objetivos}
+		
+	Aplicar alguno de los métodos mencionados en la introducción para verificar experimentalmente la secuencia de fases del mismo.
+
+	\section{Resultados}
+	
+\subsection{Método del transformador patrón}
+
+	\begin{figure}[h!]
+		\centering
+		\begin{circuitikz}
+			
+			\draw
+			
+			(-2,0)to[vco,l=$G_E$](-2,-2)
+			
+			(-1,0.25) node {$A$}
+			(-2,0)--(0,0)
+			(-2,-2)--(0,-2)
+			(-1,-2.25) node {$B$}
+			
+			(0,0)to[L](0,-2)
+			(0.4,0)--(0.4,-2)
+			(0.7,0)--(0.7,-2)
+		    (1,0)to[L](1,-2)
+		    
+		    (1,0.25) node {$C$}
+		    (1,-2.25) node {$D$}
+		    
+		    (1,0)--(2,0)
+		    
+		    
+		    (0,-2.75) node {$E$}
+		    (0,-5.25) node {$F$}
+		    
+		    (0,-3)to[L](0,-5)
+		    (0.4,-3)--(0.4,-5)
+		    (0.7,-3)--(0.7,-5)
+		    (1,-3)to[L](1,-5)
+		
+		    (1,-2.75) node {$G$}
+		    (1,-5.25) node {$H$}
+		
+		    (1,-3)--(2,-3)
+		    
+		    (2,0) to[voltmeter,l=$V_m$](2,-3) 
+		    
+		     (-2.25,-4) node {$A$}
+		      (-2,-4)--(-1.5,-4)
+		       (-1.25,-4) node {$E$}
+		      
+		      (-2.25,-4.5) node {$F$}
+		      (-2,-4.5)--(-1.5,-4.5)
+		      (-1.25,-4.5) node {$B$}
+		       (-2.25,-4.5)
+		       
+		       (-2.25,-5)
+		        node {$D$}
+		       (-2,-5)--(-1.5,-5)
+		       (-1.25,-5) node {$H$}
+			;
+			
+		\end{circuitikz}
+		\caption{Prueba del transformador patrón}
+		\label{fig:PruebaTransformadorPatron}
+	\end{figure}
+	
+	En la figura \ref{fig:PruebaTransformadorPatron} se muestra la conexión realizada en el laboratorio, y se comprobó que la relación de transformación del transfomador patrón y de prueba era la misma ya que al energizar el generador $G_E$ no existió diferencia de potencial, esto lo verificamos a través de un voltmetro $V_m$ conectado entre los nodos C y G.\\
+    
+	
+	\section{Conclusiones}
+	
+	El objetivo de la práctica se cumplió porque logramos verificar de manera presencial, la medición de la relación de transformación con instrumentos de medición
+
+	\section{Referencias}
+	
+
+	\bibliographystyle{plain}
+    \bibliography{Referencias}
+    
+
+
+	
+	
+\end{document}
+

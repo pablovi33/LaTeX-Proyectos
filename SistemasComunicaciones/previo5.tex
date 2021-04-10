@@ -1,0 +1,142 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish.mexico]{babel}
+\usepackage[american voltages, american currents,siunitx]{circuitikz}
+
+%Plotting
+
+\usepackage{pgfplots}
+\pgfplotsset{width=10cm,compat=1.9} 
+ \usepgfplotslibrary{external}
+\tikzexternalize 
+
+%Diagrama de bloques
+
+\usetikzlibrary{shapes.geometric, arrows}
+
+\tikzstyle{startstop} = [rectangle, rounded corners, minimum width=3cm, minimum height=1cm,text centered, draw=black, fill=red!30]
+\tikzstyle{io} = [trapezium, trapezium left angle=70, trapezium right angle=110, minimum width=3cm, minimum height=1cm, text centered, draw=black, fill=blue!30]
+\tikzstyle{process} = [rectangle, minimum width=3cm, minimum height=1cm, text centered, draw=black, fill=orange!30]
+\tikzstyle{decision} = [diamond, minimum width=3cm, minimum height=1cm, text centered, draw=black, fill=green!30]
+
+
+\tikzstyle{arrow} = [thick,->,>=stealth]
+%###MIO###
+\tikzstyle{point} = [circle,(0.5cm),minimum with=1cm,draw=black,fill=black!50]
+
+
+
+
+\title{Previo 5: Distorsión Alineal}
+\author{Pablo Vivar Colina\\
+Grupo 13
+}
+%\date{Septiembre 2017}
+
+\usepackage{natbib}
+\usepackage{graphicx}
+
+\begin{document}
+
+\maketitle
+
+\section{Distorsión alineal}
+
+Es un tipo de distorsión no lineal y ocurre cuando un sistema, debido a su ganancia  no línea,  genera  nuevas  componentes  espectrales  en  frecuencias  múltiplo  de  las  frecuencias  ya presente (armónicas) o bien, genera nuevas componentes espectrales en frecuencias suma y diferencia de las  frecuencias  ya  presentes  en  la  señal  (intermodulación).\citep{Distorsion}\\
+
+Un dispositivo lineal puede ser cualquiera que no sea un resistor.\\
+
+\section{Curva dispositivo no lineal}
+
+En la figura \ref{fig:dispNoLin} podemos apreciar la curva característica de un dispositivo no lineal, como está escrito en la sección anterior éste dispositivo puede ser prácticamente cualquiera que no sea un resistor (diodo, capacitor, inductor, etc.)\\
+
+\begin{figure}[h!]
+    \centering
+    
+   
+\begin{tikzpicture}
+\begin{axis}[
+    axis lines = left,
+    xlabel = {V[V]},
+    ylabel = {I[A]},
+]
+%Primer impulso
+\addplot [
+thick=0.1,
+    domain=0:10, 
+    samples=100, 
+    color=red,
+]
+{x^2};
+
+\addlegendentry{Dispositivo no lineal}
+%Here the blue parabloa is defined
+%\addplot [
+ %   domain=-10:10, 
+  %  samples=100, 
+    %color=blue,
+   % ]
+    %{x^2 + 2*x + 1};
+%\addlegendentry{$x^2 + 2x + 1$}
+ 
+\end{axis}
+\end{tikzpicture}
+\caption{Curva característica de dispositivo no lineal}
+    \label{fig:dispNoLin}
+ 
+\end{figure}
+
+\section{Diagrama Experimentos}
+
+En la figura \ref{fig:sistPruebas} se pude apreciar el diagrama de instrumentos a aplicar en el laboratorio.
+
+\begin{figure}[h!]
+    \centering
+    \begin{tikzpicture}[node distance=4cm]
+
+%startstop-->ROJO
+\node (start) [process] {Generador de señales};
+
+
+
+\node (ReP) [process, right of=start] {Red en Prueba};
+
+
+
+\node (Volt) [process, right of=ReP, ] {Voltímetro};
+%yshift=-0.5cm
+
+\node (Canal1) [process,yshift=-2cm,above of=Canal2] {Canal 1 Osciloscopio};
+
+\node (Canal2) [process, above,yshift=-2cm, above of=Volt] {Canal 2 Osciloscopio};
+
+\node (AeE) [process,yshift=2cm, below of=Volt] {Analizador de Espectros};
+
+
+%Línea inicio a red en prueba
+\draw [arrow] (start) -- (ReP);
+
+
+%Línea de red en prueba aVoltimetro 
+\draw [arrow] (ReP) |- (Volt);
+
+\draw [arrow] (start) --(Canal1);
+
+\draw [arrow] (Volt) -- (Canal2);
+\draw [arrow] (ReP) |- (AeE);
+
+\end{tikzpicture}
+    \caption{Sistema de pruebas}
+    \label{fig:sistPruebas}
+\end{figure}
+
+
+
+
+
+
+\bibliographystyle{plain}
+\bibliography{Referencias.bib}
+
+
+\end{document}

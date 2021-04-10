@@ -1,0 +1,31 @@
+\babel@toc {spanish}{}
+\contentsline {section}{\numberline {1}Introducci\IeC {\'o}n}{2}
+\contentsline {section}{\numberline {2}Programa}{2}
+\contentsline {subsection}{\numberline {2.1}Conceptos}{2}
+\contentsline {subsection}{\numberline {2.2}Sintaxis}{3}
+\contentsline {subsubsection}{\numberline {2.2.1}Variables}{3}
+\contentsline {subsection}{\numberline {2.3}2D}{3}
+\contentsline {subsubsection}{\numberline {2.3.1}C\IeC {\'\i }rculos}{3}
+\contentsline {subsubsection}{\numberline {2.3.2}Cuadrado}{4}
+\contentsline {subsubsection}{\numberline {2.3.3}Pol\IeC {\'\i }gonos Regulares}{5}
+\contentsline {subsubsection}{\numberline {2.3.4}Pol\IeC {\'\i }gono}{6}
+\contentsline {subsubsection}{\numberline {2.3.5}Texto}{6}
+\contentsline {subsection}{\numberline {2.4}3D}{7}
+\contentsline {subsubsection}{\numberline {2.4.1}Esfera}{7}
+\contentsline {subsubsection}{\numberline {2.4.2}Cubo}{8}
+\contentsline {subsubsection}{\numberline {2.4.3}Cilindro}{9}
+\contentsline {subsection}{\numberline {2.5}Transformaciones}{11}
+\contentsline {subsubsection}{\numberline {2.5.1}Translado}{11}
+\contentsline {subsubsection}{\numberline {2.5.2}Rotaci\IeC {\'o}n}{11}
+\contentsline {subsubsection}{\numberline {2.5.3}Escala}{11}
+\contentsline {subsubsection}{\numberline {2.5.4}Redimensionar}{12}
+\contentsline {subsubsection}{\numberline {2.5.5}Espejo}{12}
+\contentsline {subsection}{\numberline {2.6}Operaciones Booleanas}{12}
+\contentsline {subsubsection}{\numberline {2.6.1}Union}{12}
+\contentsline {subsubsection}{\numberline {2.6.2}Diferencia}{13}
+\contentsline {subsubsection}{\numberline {2.6.3}Intersecci\IeC {\'o}n}{14}
+\contentsline {subsection}{\numberline {2.7}Simplificaci\IeC {\'o}n}{14}
+\contentsline {subsubsection}{\numberline {2.7.1}Modulos}{14}
+\contentsline {subsubsection}{\numberline {2.7.2}Include}{14}
+\contentsline {subsubsection}{\numberline {2.7.3}Use}{15}
+\contentsline {subsection}{\numberline {2.8}Modificador de simplificaci\IeC {\'o}n}{15}

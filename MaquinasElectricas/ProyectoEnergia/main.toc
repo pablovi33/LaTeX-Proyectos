@@ -1,0 +1,17 @@
+\babel@toc {spanish}{}
+\contentsline {section}{\numberline {1}Introducci\IeC {\'o}n}{1}% 
+\contentsline {subsection}{\numberline {1.1}Objetivo}{1}% 
+\contentsline {subsection}{\numberline {1.2}Conceptos}{2}% 
+\contentsline {section}{\numberline {2}Consumo de energ\IeC {\'\i }a Dispositivos}{2}% 
+\contentsline {subsection}{\numberline {2.1}L\IeC {\'a}mpara Incandescente}{2}% 
+\contentsline {subsection}{\numberline {2.2}L\IeC {\'a}mpara fluorescente compacta}{2}% 
+\contentsline {subsection}{\numberline {2.3}L\IeC {\'a}mpara LED}{2}% 
+\contentsline {section}{\numberline {3}Consumo hogar}{3}% 
+\contentsline {subsection}{\numberline {3.1}Iluminaci\IeC {\'o}n natural}{3}% 
+\contentsline {section}{\numberline {4}Suministro de Energ\IeC {\'\i }a }{3}% 
+\contentsline {subsection}{\numberline {4.1}Historial de consumo de energ\IeC {\'\i }a}{3}% 
+\contentsline {section}{\numberline {5}Ahorro de energ\IeC {\'\i }a}{5}% 
+\contentsline {subsection}{\numberline {5.1}Estrategia de Cambio Focos tradicionales por LED}{5}% 
+\contentsline {subsection}{\numberline {5.2}Estrategia Iluminaci\IeC {\'o}n como uso final}{6}% 
+\contentsline {section}{\numberline {6}Discusi\IeC {\'o}n}{6}% 
+\contentsline {section}{\numberline {7}Conclusi\IeC {\'o}n}{7}% 

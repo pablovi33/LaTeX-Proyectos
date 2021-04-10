@@ -1,0 +1,11 @@
+\babel@toc {spanish}{}
+\beamer@sectionintoc {1}{Impresi\IeC {\'o}n en 3D}{3}{0}{1}
+\beamer@sectionintoc {2}{Tipos de tecnolog\IeC {\'\i }as}{4}{0}{2}
+\beamer@subsectionintoc {2}{1}{Fotopolimerizaci\IeC {\'o}n por luz ultravioleta [SGC]}{4}{0}{2}
+\beamer@subsectionintoc {2}{2}{Modelado por deposici\IeC {\'o}n fundida [FDM]}{6}{0}{2}
+\beamer@sectionintoc {3}{Dise\IeC {\~n}o y Fabricaci\IeC {\'o}n}{8}{0}{3}
+\beamer@sectionintoc {4}{Internet}{9}{0}{4}
+\beamer@sectionintoc {5}{Software}{11}{0}{5}
+\beamer@subsectionintoc {5}{1}{Software Dise\IeC {\~n}o}{11}{0}{5}
+\beamer@subsectionintoc {5}{2}{Software Particionado}{13}{0}{5}
+\beamer@sectionintoc {6}{Aplicaciones}{14}{0}{6}

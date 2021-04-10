@@ -1,0 +1,150 @@
+\documentclass[]{article}
+\usepackage[spanish.mexico]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+%\usepackageB.\\{lmodern}
+\usepackage[a4paper]{geometry}
+
+%\usepackage{natbib}
+\usepackage{cite}
+
+
+%Grafico de barras
+\usepackage{pgfplots}
+
+%Graficos e imagenes
+\usepackage{graphicx}
+\usepackage{subcaption}
+
+%circuitos
+\usepackage{tikz}
+\usepackage[american voltages, american currents,siunitx]{circuitikz}
+
+%Plotting
+
+\usepackage{pgfplots}
+\pgfplotsset{width=10cm,compat=1.9} 
+
+
+%\title{Proyecto de Optimización de Energía}
+%\author{Pablo Vivar Colina}
+%\date{Mayo 2018}
+
+%agregar portada
+
+\begin{document}
+	
+	\input{portada.tex} 
+	
+
+	%\maketitle
+	
+	%\tableofcontents  % Write out the Table of Contents
+	
+	%\listoffigures  % Write out the List of Figures
+		
+	\section{Introducción}
+	
+	\subsection{Representación fasorial}
+		
+	La corriente alterna se puede representar con una flecha girando a velocidad angular $\omega$. Este elemento recibe el nombre de fasor y se representa como un número complejo.\\
+	
+	Su longitud coincide con el valor máximo de la tensión o corriente (según sea la magnitud que se esté representando). También se utiliza el valor RMS en lugar del valor máximo (ver transformación a fasores). En ese caso habría que dividir el valor máximo por raíz de 2.\\
+	
+	El ángulo (corrimiento de la señal sobre el eje horizontal) representa la fase. La velocidad de giro $\omega$ está relacionada con la frecuencia de la señal.\cite{FisicaPractica}\\
+
+		
+	\section{Objetivos}
+	
+    Para verificar el diagrama, se aplica al lado de alta tensión un sistema trifásico de voltajes, tomando lecturas con un voltímetro, interconectando a la vez una terminal de alta tensión y una de baja tensión.
+     
+	\section{Resultados}
+	
+	
+	\begin{table}[h!]
+		\centering
+		\begin{tabular}{|c|c|c|}
+			\hline
+			Terminales Alta	& Terminales Baja  & Defasamiento  \\ \hline
+		$\Delta$	& $\Delta$ & 0 $^o$  \\ \hline
+			& $\lambda$  &  30 $^o$ \\ \hline
+		$\lambda$ 	& $\lambda$  & 0 $^o$ \\ \hline
+		$\lambda$ 	& $\Delta$ &  30 $^o$\\ \hline
+		
+		\end{tabular}
+		\caption{Conexiones en Transformador}
+	\end{table}
+	
+	\begin{table}[h!]
+		\centering
+		\begin{tabular}{|c|c|}
+			\hline
+		$T_2[V]$	& Medición $T_1[V]$  \\ \hline
+		286.6	& $H_3-X_2=$ 56 \\ \hline
+		286.8	& $H_3-X_3=$ 55.2 \\ \hline
+		292.7	& $H_1-H_3=$ 109.7 \\ \hline
+		280.3	& $H_2-X_2=$ 56.2 \\ \hline
+		290.3	& $H_2-H_3=$ 151.6  \\ \hline
+		\end{tabular}
+		\caption{Relacion de conexiones}
+	\end{table}
+	
+	Las relaciones mostradas a continuación deben cumplirse para las sitaciones donde existan $30^o$ de defasamiento.\\
+	
+	\begin{eqnarray}
+	H_3-X_2=H_3-X_3\\
+	H_3-X_2<H_1-H_3\\
+	H_2-X_2<H_2-X_3\\
+	H_2-X_2<H_1-H_3
+	\end{eqnarray}
+	
+	Para el primer transformador se obtuvo lo siguiente:\\
+	
+	\begin{eqnarray}
+	56[V]\approx 55.2[V]\\
+	56[V]<109.7[V]\\
+	56.2<151.6[V]\\
+	56.2<109.7[V]
+	\end{eqnarray}
+	
+	Para el segundo transformador se obtuvo lo siguiente:\\
+	
+	\begin{eqnarray}
+	286.6[V] \approx 286.8[V]\\
+	286.6[V]<292[V]\\
+	280.3[V]<290.3[V]\\
+	280.3<292.7[V]
+	\end{eqnarray}
+	
+		Para el tercer transformador se obtuvo lo siguiente:\\
+		
+		\begin{eqnarray}
+		285.2[V] \approx 284.8[V]\\
+		285.2[V]<284.8[V]\\
+		283.2[V]<293.3[V]\\
+		280.3<292.7[V]
+		\end{eqnarray}
+	
+	%AQUI VAMOS
+	
+	Es importante mencionar que las cargas lineales no deforman la forma de la onda, sin embargo las cargas no lineales sí lo hacen.\\
+	
+	Ejemplos de cargas lineales pueden ser una resistencia o una inductancia, y ejemplos de cargas no lineales pueden ser la luz led, semiconductores, etc.\\
+    
+	cd ..
+	\section{Conclusiones}
+	
+	El objetivo de la práctica se cumplió porque logramos verificar de manera presencial el desfasamiento fasorial que se producen entre las conexiones delta y estrela que pueden presentar los transformadores.
+
+	\section{Referencias}
+	
+
+	\bibliographystyle{plain}
+    \bibliography{Referencias}
+    
+
+
+	
+	
+\end{document}
+

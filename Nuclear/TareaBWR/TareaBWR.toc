@@ -1,0 +1,13 @@
+\babel@toc {spanish}{}
+\contentsline {section}{\numberline {1}Ventajas BWR}{1}% 
+\contentsline {section}{\numberline {2}BWR-6 General Electric}{2}% 
+\contentsline {subsection}{\numberline {2.1}Dise\IeC {\~n}o}{2}% 
+\contentsline {subsection}{\numberline {2.2}Reactividad}{4}% 
+\contentsline {subsection}{\numberline {2.3}Situaci\IeC {\'o}n Actual}{4}% 
+\contentsline {section}{\numberline {3}ABWR General Electric, Hitachi}{5}% 
+\contentsline {subsection}{\numberline {3.1}Dise\IeC {\~n}o}{5}% 
+\contentsline {section}{\numberline {4}ESBWR General Electric, Hitachi, Toshiba}{5}% 
+\contentsline {subsection}{\numberline {4.1}Introducci\IeC {\'o}n}{5}% 
+\contentsline {subsection}{\numberline {4.2}Dise\IeC {\~n}o}{6}% 
+\contentsline {subsection}{\numberline {4.3}Situaci\IeC {\'o}n Actual}{7}% 
+\contentsline {section}{\numberline {5}Conclusiones}{7}% 

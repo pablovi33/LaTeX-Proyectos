@@ -1,0 +1,266 @@
+\documentclass[]{article}
+\usepackage[spanish.mexico]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+%\usepackage{lmodern}
+\usepackage[a4paper]{geometry}
+
+%Plotting
+
+\usepackage{pgfplots}
+\pgfplotsset{width=10cm,compat=1.9} 
+%\usepgfplotslibrary{external}
+%\tikzexternalize 
+
+%Graficos e imagenes
+\usepackage{graphicx}
+%\graphicspath{ Imagenes/ }
+
+\usepackage{natbib}
+%\usepackage{cite}
+
+\usepackage{subcaption}
+
+%Grafico de barras
+%\usepackage{pgfplots}
+
+
+\usepackage{tikz}
+\usepackage[american voltages, american currents,siunitx]{circuitikz}
+
+\title{Formulario Nuclear}
+\author{Pablo Vivar Colina}
+%\date{Mayo 2018}
+
+
+\begin{document}
+	
+%\input{portada.tex} %agregar portada
+
+\maketitle
+
+%\tableofcontents  % Write out the Table of Contents
+
+%\listoffigures  % Write out the List of Figures
+
+\section{Partículas de interés}
+
+\subsection{Positrón y Negatrón (electrón)}
+
+\begin{itemize}
+	\item Masa en reposo $9.10954x10^{31}[Kg]$
+	\item Carga $e=1.60219x10^{-19}[C]$ 
+\end{itemize}
+
+\subsection{Protón}
+
+\begin{itemize}
+	\item Masa en reposo $1.67265x10^{-27}[Kg]$
+	\item Carga $1.60219x10^{-19}[C]$
+\end{itemize}
+
+\subsection{Neutrón}
+
+\begin{itemize}
+	\item Masa en reposo $1.67265x10^{-27}[Kg]$
+	\item Carga Neutro
+\end{itemize}
+
+\subsection{Neutrino}
+
+\begin{itemize}
+	\item Masa en reposo cero
+	\item electrón neutrinos y electrón antineutrinos
+\end{itemize}
+
+\section{Estructura nuclear}
+
+\begin{figure}
+	\centering
+	$^A_ZNe$
+	\caption{Z=Número Atómico, A=Número de nucleones
+}
+\end{figure}
+
+
+	$A= Z+N$,	N=Número de neutrones en el núcleo, Isótopo: Igual Z pero diferente N.
+
+\section{Peso atómico}
+
+\begin{equation}
+   M(^AZ)=12x\frac{m(^AZ)}{m(^{12}C)}
+\end{equation}
+
+\section{Número de Avogadro}
+
+\begin{equation}
+    N_A= 0.6022045 x 10^{24}
+\end{equation}
+
+\section{Radio atómico y nuclear}
+
+\subsection{Radio atómico}
+
+\begin{equation}
+  2x10^{-10}[m]
+\end{equation}
+
+\subsection{Radio nuclear}
+
+\begin{equation}
+R = 1.25(fm)A^{\frac{1}{3}} 
+\end{equation}
+
+Donde: R está en fentómetros $(fm = 1 x 10^{-13}cm)$ y A es
+el número de masa atómica.
+
+\section{Ecuación de Einstein}
+
+\begin{equation}
+E=mc^2
+\end{equation}
+
+\section{Electrón Volt}
+
+\begin{equation}
+1[eV]=1.60219x10^{-19}[C]x1[V]=1.60219x10^{-19}[J]
+\end{equation}
+
+Incremento de energía cinética de un
+electrón cuando pasa a través de una diferencia de
+potencial de un volt.\\
+
+La carga de un electrón es 0.5110 [MeV].\\
+
+\section{Movimiento del átomo}
+
+Cuando un cuerpo entra en movimiento, la relación de
+masa se incrementa de acuerdo con la fórmula:\\
+
+\begin{equation}
+ m=\frac{m_0}{\sqrt{\frac{1-v^2}{c^2}}}
+\end{equation}
+
+Donde $v$ es su velocidad.\\
+
+\subsection{Energía total de una partícula}
+
+\begin{equation}
+   E_{total}=mc^2
+\end{equation}
+
+\subsection{Energía cinética de una partícula}
+
+\begin{equation}
+E=mc^2-m_0c^2=m_0c^2[\frac{1}{\sqrt{1-\frac{v^2}{c^2}}}-1]
+\end{equation}
+
+Cuándo $v<<c$ se utiliza la fórmula clásica de la energía cinética $E=\frac{1}{2}m_0v^2$
+
+
+\begin{itemize}
+	\item Para electrones: Mecánica Clásica $E<10 [KeV]$
+	\item Para Neutrones: Mecánica Clásica $E<20 [MeV]$
+\end{itemize}
+
+
+
+
+
+
+
+
+
+\section{Energía de ligadura}
+
+Ionización de un electrón de un átomo
+
+\begin{equation}
+  Es=[M_n+M(^{A-1}Z)-M(^AZ)]931MeV
+\end{equation}
+
+$Es$ es la suficiente para remover el último neutrón del núcleo sin proveerle energía cinética alguna. Si el proceso fuera al revés, y un neutrón sin energía cinética es absorbido por el núcleo, la energía $E$ es liberada.\\
+
+\begin{equation}
+  m_0 n+mC^{12}+mC^{13}
+\end{equation}
+
+\begin{equation}
+  (1.008664923+12-13.003354838)*931.5MeV=4.946344178MeV
+\end{equation}
+
+
+\section{Constante de Planck}
+
+
+\begin{equation}
+  h=6.62607015x10^{-34}[\frac{kgm^2}{s}]
+\end{equation}
+
+\begin{equation}
+ E=hf
+\end{equation}
+
+Donde h es la constante de planck, y f es la frecuencia de oscilación de la partícula. La longitud de onda de una partícula con un momentum $p$ es:\\
+
+
+\begin{equation}
+   \lambda=\frac{h}{p}
+\end{equation}
+
+Para las partículas con energía potencial diferente de cero es :\\
+
+\begin{equation}
+   p=mf
+\end{equation}
+
+Para energías no relativistas el momentum $p$ se calcula:\\
+
+\begin{equation}
+  p=\sqrt{2m_0E}
+\end{equation}
+
+Y de la misma forma la longitud de onda de la partícula puede ser descrita como:\\
+
+\begin{equation}
+   \lambda=\frac{h}{\sqrt{2m_oE}}
+\end{equation}
+
+La longitud de onda del neutrón se obtiene:\\
+
+\begin{equation}
+   \lambda=\frac{2.860x10^-9}{\sqrt{E}}
+\end{equation}
+
+Donde $\lambda$ está en [cm] y $E$ en [eV].\\
+
+Para el caso relativista $p$ se calcula a partir de:\\
+
+\begin{equation}
+p=\frac{\sqrt{E_{total}^2-E_{rep}^2}{c}
+\end{equation}
+
+Entonces la longitud de onda la podemos obtener como:\\
+
+\begin{equation}
+ \lambda=\frac{hc}{\sqrt{E_{total}^2-E_{rep}^2}
+\end{equation}
+
+Para las partículas con energía potencial igual a cero tenemos que:\\
+
+\begin{equation}
+p=\frac{E}{c}
+\end{equation}
+
+\begin{equation}
+\lambda=\frac{hc}{E}
+\end{equation}
+
+%\section{Referencias}
+
+%\bibliographystyle{plain}
+%\bibliography{Referencias.bib}
+
+
+
+\end{document}
